@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d9ee0eb-3b76-4b4e-97f8-52b8060c6c76" name="Changes" comment="Added new test properties" />
+    <list default="true" id="6d9ee0eb-3b76-4b4e-97f8-52b8060c6c76" name="Changes" comment="Adding test Case directorys, creating first file">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/testParameters.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/testProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/testProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testCases/allTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCases/allTests.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -120,7 +126,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698942606599</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Adding test Case directorys, creating first file">
+      <created>1698942955592</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1698942955592</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -130,6 +143,7 @@
     <MESSAGE value="Added test properties" />
     <MESSAGE value="Cleaned up project" />
     <MESSAGE value="Added new test properties" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added new test properties" />
+    <MESSAGE value="Adding test Case directorys, creating first file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding test Case directorys, creating first file" />
   </component>
 </project>

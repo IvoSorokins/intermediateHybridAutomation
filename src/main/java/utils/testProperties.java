@@ -20,7 +20,7 @@ public class testProperties {
     private static final String propsPath = "src/main/resources/config.properties";
 
     // Create a DesiredCapabilities object to hold the desired capabilities for Appium
-    private static final DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
+    public static final DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
 
     /**
      * Loads test properties from a config.properties file located at resources
