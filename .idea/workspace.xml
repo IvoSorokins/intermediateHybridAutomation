@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d9ee0eb-3b76-4b4e-97f8-52b8060c6c76" name="Changes" comment="Added properties">
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/testProperties.java" afterDir="false" />
+    <list default="true" id="6d9ee0eb-3b76-4b4e-97f8-52b8060c6c76" name="Changes" comment="Cleaned up project">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/testProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/testProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,13 +103,29 @@
       <option name="project" value="LOCAL" />
       <updated>1698926173864</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added test properties">
+      <created>1698931750116</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1698931750116</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Cleaned up project">
+      <created>1698931779470</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1698931779470</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Innit Commit" />
     <MESSAGE value="Updating project name" />
     <MESSAGE value="Added properties" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added properties" />
+    <MESSAGE value="Added test properties" />
+    <MESSAGE value="Cleaned up project" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleaned up project" />
   </component>
 </project>

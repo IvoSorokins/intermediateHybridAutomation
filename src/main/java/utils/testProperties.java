@@ -45,15 +45,40 @@ public class testProperties {
         loadProperties();
 
         // Set the desired capabilities based on the loaded properties
-        desiredCapabilities.setCapability("platformName", props.getProperty("platformName"));
+        desiredCapabilities.setCapability("appium:appiumURL", props.getProperty("appiumURL"));
+        desiredCapabilities.setCapability("appium:platformName", props.getProperty("platformName"));
         desiredCapabilities.setCapability("appium:automationName", props.getProperty("automationName"));
         desiredCapabilities.setCapability("appium:appPackage", props.getProperty("appPackage"));
         desiredCapabilities.setCapability("appium:appActivity", props.getProperty("appActivity"));
+        desiredCapabilities.setCapability("appium:udid", props.getProperty("udid"));
+        desiredCapabilities.setCapability("appium:deviceName", props.getProperty("deviceName"));
         desiredCapabilities.setCapability("appium:noReset", props.getProperty("noReset"));
+        desiredCapabilities.setCapability("appium:newCommandTimeout", props.getProperty("newCommandTimeout"));
+        desiredCapabilities.setCapability("appium:fullContextList", props.getProperty("fullContextList"));
+        desiredCapabilities.setCapability("appium:nativeWebview", props.getProperty("nativeWebview"));
+        desiredCapabilities.setCapability("appium:nativeWebScreenshot", props.getProperty("nativeWebScreenshot"));
+        desiredCapabilities.setCapability("appium:autoWebview", props.getProperty("autoWebview"));
+        desiredCapabilities.setCapability("appium:broswerName", props.getProperty("broswerName"));
+        desiredCapabilities.setCapability("appium:ignoreUnimportantViews", props.getProperty("ignoreUnimportantViews"));
+
 
         // Return the DesiredCapabilities object
         return desiredCapabilities;
     }
-
+    /**
+     * Gets the value of a property from the loaded properties
+     *
+     * @param name The name of the property to retrieve
+     * @return The value of the specified property
+     * @throws IllegalArgumentException if the name parameter is null
+     */
+    public static String getProperty(String name){
+        // Throw an exception if the name parameter is null
+        if (name == null) {
+            throw new IllegalArgumentException("Name parameter cannot be null");
+        }
+        // Return the value of the specified property
+        return props.getProperty(name);
+    }
 
 }
