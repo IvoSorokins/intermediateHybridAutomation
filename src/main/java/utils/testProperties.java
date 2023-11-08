@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+
 /**
  This class provides methods for loading test properties from a config.properties file and
  setting desired capabilities for Appium.
@@ -20,11 +21,9 @@ public class testProperties {
     private static final String propsPath = "src/main/resources/config.properties";
 
     // Create a DesiredCapabilities object to hold the desired capabilities for Appium
-    public static final DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
+    private static final DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
 
-    /**
-     * Loads test properties from a config.properties file located at resources
-     */
+
     private static void loadProperties() {
         // Use try-with-resources to automatically close the input stream
         try ( InputStream input = new FileInputStream(propsPath)){
@@ -35,43 +34,46 @@ public class testProperties {
             ex.printStackTrace();
         }
     }
-    /**
-     * Sets desired capabilities for Appium based on properties loaded from config.properties file.
-     *
-     * @return DesiredCapabilities object containing desired capabilities for Appium.
-     */
-    public static DesiredCapabilities setDesiredCapabilities() {
+
+    public static DesiredCapabilities setDesiredCapabilities(String platform) {
         // Load the properties from the config.properties file
         loadProperties();
 
-        // Set the desired capabilities based on the loaded properties
-        desiredCapabilities.setCapability("appium:appiumURL", props.getProperty("appiumURL"));
-        desiredCapabilities.setCapability("appium:platformName", props.getProperty("platformName"));
-        desiredCapabilities.setCapability("appium:automationName", props.getProperty("automationName"));
-        desiredCapabilities.setCapability("appium:appPackage", props.getProperty("appPackage"));
-        desiredCapabilities.setCapability("appium:appActivity", props.getProperty("appActivity"));
-        desiredCapabilities.setCapability("appium:udid", props.getProperty("udid"));
-        desiredCapabilities.setCapability("appium:deviceName", props.getProperty("deviceName"));
-        desiredCapabilities.setCapability("appium:noReset", props.getProperty("noReset"));
-        desiredCapabilities.setCapability("appium:newCommandTimeout", props.getProperty("newCommandTimeout"));
-        desiredCapabilities.setCapability("appium:fullContextList", props.getProperty("fullContextList"));
-        desiredCapabilities.setCapability("appium:nativeWebview", props.getProperty("nativeWebview"));
-        desiredCapabilities.setCapability("appium:nativeWebScreenshot", props.getProperty("nativeWebScreenshot"));
+        // Common Caps
         desiredCapabilities.setCapability("appium:autoWebview", props.getProperty("autoWebview"));
-        desiredCapabilities.setCapability("appium:broswerName", props.getProperty("broswerName"));
-        desiredCapabilities.setCapability("appium:ignoreUnimportantViews", props.getProperty("ignoreUnimportantViews"));
+        desiredCapabilities.setCapability("appium:fullContextList", props.getProperty("fullContextList"));
+        desiredCapabilities.setCapability("appium:simplicityWaitForElement", props.getProperty("simplicityWaitForElement"));
 
+        // Set the desired capabilities based on the loaded properties
+        if (platform.equals("iOS")) {
+            desiredCapabilities.setCapability("appium:bundleId", props.getProperty("bundleId"));
+            desiredCapabilities.setCapability("appium:automationName", props.getProperty("iOSAutomationName"));
+            desiredCapabilities.setCapability("appium:udid", props.getProperty("iOSUdId"));
+            desiredCapabilities.setCapability("appium:platformName", props.getProperty("iOSPlatformName"));
+            desiredCapabilities.setCapability("appium:deviceName", props.getProperty("iOSDeviceName"));
+            desiredCapabilities.setCapability("appium:nativeWebTap", props.getProperty("nativeWebTap"));
+            desiredCapabilities.setCapability("appium:includeSafariInWebviews", props.getProperty("includeSafariInWebviews"));
+            desiredCapabilities.setCapability("appium:waitForQuiescence", props.getProperty("waitForQuiescence"));
+            desiredCapabilities.setCapability("appium:platformVersion", props.getProperty("iOSPlatformVersion"));
+        } else {
+            desiredCapabilities.setCapability("appium:appActivity", props.getProperty("appActivity"));
+            desiredCapabilities.setCapability("appium:appPackage", props.getProperty("appPackage"));
+            desiredCapabilities.setCapability("appium:automationName", props.getProperty("androidAutomationName"));
+            desiredCapabilities.setCapability("appium:platformName", props.getProperty("androidPlatformName"));
+            desiredCapabilities.setCapability("appium:deviceName", props.getProperty("androidDeviceName"));
+            desiredCapabilities.setCapability("appium:udId", props.getProperty("androidUdId"));
+            desiredCapabilities.setCapability("appium:broswerName", props.getProperty("broswerName"));
+            desiredCapabilities.setCapability("appium:nativeWebScreenshot", props.getProperty("nativeWebScreenshot"));
+            desiredCapabilities.setCapability("appium:newCommandTimeout", props.getProperty("newCommandTimeout"));
+            desiredCapabilities.setCapability("appium:platformVersion", props.getProperty("AndroidPlatformVersion"));
+            desiredCapabilities.setCapability("appium:ignoreUnimportantViews", props.getProperty("ignoreUnimportantViews"));
+
+        }
 
         // Return the DesiredCapabilities object
+        System.out.println(desiredCapabilities.toString());
         return desiredCapabilities;
     }
-    /**
-     * Gets the value of a property from the loaded properties
-     *
-     * @param name The name of the property to retrieve
-     * @return The value of the specified property
-     * @throws IllegalArgumentException if the name parameter is null
-     */
     public static String getProperty(String name){
         // Throw an exception if the name parameter is null
         if (name == null) {
