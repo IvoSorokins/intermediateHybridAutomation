@@ -71,7 +71,6 @@ public class testProperties {
         }
 
         // Return the DesiredCapabilities object
-        System.out.println(desiredCapabilities.toString());
         return desiredCapabilities;
     }
     public static String getProperty(String name){

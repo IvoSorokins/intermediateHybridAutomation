@@ -1,21 +1,25 @@
 package utils;
 
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.ios.IOSDriver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
+
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.time.Duration;
+import java.util.Set;
 
 
 public class testSetup {
-    private static WebDriver driver;
+    private static  WebDriver driver;
 
     // iOs or else Android caps will be used
-    public static void startServer(String platform) {
+    public static WebDriver startServer(String platform) {
 
         DesiredCapabilities capabilities = testProperties.setDesiredCapabilities(platform);
         String serverUrlString = testProperties.getProperty("appiumURL");
-        System.out.println(serverUrlString);
+
         URL serverUrl;
 
         try {
@@ -26,13 +30,20 @@ public class testSetup {
         }
 
         try {
-            driver = new RemoteWebDriver(serverUrl, capabilities);
+            if (platform.equalsIgnoreCase("iOS")) {
+                driver = new IOSDriver(serverUrl, capabilities);
+            } else {
+                driver = new AndroidDriver(serverUrl, capabilities);
+
+            }
         } catch (Exception e) {
             e.printStackTrace();
             throw new RuntimeException("Failed to start the Appium server. Please check your configuration and the Appium server logs.");
         }
-    }
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+        return driver;
 
-    // This method is used in tearDownClass() to close the AndroidDriver instance
+
+    }
 
 }

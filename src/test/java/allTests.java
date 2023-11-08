@@ -10,11 +10,11 @@ public class allTests {
 
     @BeforeMethod(alwaysRun = true)
     public void setUp(){
-        startServer("iOS"); // Select platform iOS or else(Android caps)
+        driver = startServer(""); // Select platform iOS or else(Android caps)
         WelcomeScreen = new welcomeScreen(driver);
     }
     @Test(description ="Part 1 Sign Up",enabled=true, priority = 0)
-    public void SignUp() throws InterruptedException {
+    public void SignUp() throws Exception {
         WelcomeScreen.isDisplayed();
     }
 

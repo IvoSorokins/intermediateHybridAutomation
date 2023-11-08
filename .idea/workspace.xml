@@ -4,17 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d9ee0eb-3b76-4b4e-97f8-52b8060c6c76" name="Changes" comment="Created set up for test suite">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pages/welcomeScreen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/testSetup.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/allTests.java" afterDir="false" />
+    <list default="true" id="6d9ee0eb-3b76-4b4e-97f8-52b8060c6c76" name="Changes" comment="Inital commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/testParameters.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/welcomeScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/welcomeScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utils/testProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/testProperties.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testCases/allTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/testSetup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/testSetup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/allTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/allTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +64,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.allTests">
+  <component name="RunManager" selected="TestNG.allTests.SignUp">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="automation_Intermediate" />
@@ -138,8 +133,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.allTests" />
         <item itemvalue="TestNG.allTests.SignUp" />
+        <item itemvalue="TestNG.allTests" />
         <item itemvalue="TestNG.allTests.appDownload_1" />
         <item itemvalue="Application.Main" />
       </list>
@@ -210,7 +205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698946014968</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Inital commit">
+      <created>1699438793464</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1699438793464</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -222,6 +224,7 @@
     <MESSAGE value="Added new test properties" />
     <MESSAGE value="Adding test Case directorys, creating first file" />
     <MESSAGE value="Created set up for test suite" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created set up for test suite" />
+    <MESSAGE value="Inital commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Inital commit" />
   </component>
 </project>
