@@ -1,7 +1,6 @@
 package utils;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
-
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -69,7 +68,6 @@ public class testProperties {
             desiredCapabilities.setCapability("appium:ignoreUnimportantViews", props.getProperty("ignoreUnimportantViews"));
 
         }
-
         // Return the DesiredCapabilities object
         return desiredCapabilities;
     }

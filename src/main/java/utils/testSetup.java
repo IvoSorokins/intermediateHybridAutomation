@@ -1,25 +1,23 @@
 package utils;
 
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
-import org.openqa.selenium.WebDriver;
+import io.appium.java_client.remote.SupportsContextSwitching;
 import org.openqa.selenium.remote.DesiredCapabilities;
-
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
-import java.util.Set;
 
 
 public class testSetup {
-    private static  WebDriver driver;
+    private static AppiumDriver driver;
 
     // iOs or else Android caps will be used
-    public static WebDriver startServer(String platform) {
+    public static AppiumDriver startServer(String platform) {
 
         DesiredCapabilities capabilities = testProperties.setDesiredCapabilities(platform);
         String serverUrlString = testProperties.getProperty("appiumURL");
-
         URL serverUrl;
 
         try {
@@ -40,6 +38,14 @@ public class testSetup {
             e.printStackTrace();
             throw new RuntimeException("Failed to start the Appium server. Please check your configuration and the Appium server logs.");
         }
+
+        // Switch to 'WEBVIEW_com.ionicframework.conferenceapp' context
+        ((SupportsContextSwitching) driver).context("WEBVIEW_com.ionicframework.conferenceapp");
+
+        // Print the current context
+        System.out.println("Current Context: " + ((SupportsContextSwitching) driver).getContext()); // get current context
+
+        // Set the implicit wait timeout to 30 seconds
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         return driver;
 

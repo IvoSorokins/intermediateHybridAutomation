@@ -1,21 +1,34 @@
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
 import pages.welcomeScreen;
+import io.appium.java_client.AppiumDriver;
+
+import java.io.OutputStream;
+import java.io.PrintStream;
+
 import static utils.testSetup.startServer;
 
+
 public class allTests {
-    private WebDriver driver;
+    private AppiumDriver driver;
+    public welcomeScreen WelcomeScreen;
 
-    public  welcomeScreen WelcomeScreen;
-
-    @BeforeMethod(alwaysRun = true)
+   @BeforeMethod(alwaysRun = true)
     public void setUp(){
-        driver = startServer(""); // Select platform iOS or else(Android caps)
-        WelcomeScreen = new welcomeScreen(driver);
+       driver = startServer(""); // Select platform iOS or else(Android caps)
+       WelcomeScreen = new welcomeScreen(driver);
     }
-    @Test(description ="Part 1 Sign Up",enabled=true, priority = 0)
-    public void SignUp() throws Exception {
-        WelcomeScreen.isDisplayed();
+
+    @Test(  groups ={"TC_1","Tutorial flow"},
+            enabled=true,
+            priority = 0)
+    public void displayTutorialScreen(){
+        WelcomeScreen.tutorialIsDisplayed();
+    }
+    @Test(groups ={"TC_2","Tutorial flow"},
+            enabled=true,
+            priority = 0)
+    public void skipTutorialScreen(){
+        WelcomeScreen.tutorialSkipped();
     }
 
 }
