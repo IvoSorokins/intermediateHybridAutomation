@@ -97,6 +97,13 @@ This method will load the desired capabilities defined in the config.properties 
 
 # Running the Tests
 
+Before running the tests, make sure the Appium server is up and running.  
+For Android testing use start Appium server with:  
+```appium --allow-insecure chromedriver_autodownload```  
+For iOS testing use start Appium server with:
+```appium```
+
+
 To run the sample test case, execute the `allTests` class located in the `test` package. Right-click on your test class in your IDE and select "Run" or "Run as TestNG test." Alternatively, you can use Maven to run your tests by executing the following command in your project's root directory:
 ```mvn clean test```  
 
