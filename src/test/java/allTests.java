@@ -16,12 +16,12 @@ public class allTests {
 
    @BeforeClass(alwaysRun = true)
     public void setUp(){
-       driver = startServer(""); // Select platform iOS or else(Android caps)
+       driver = startServer("iOS"); // Select platform iOS or else(Android caps)
        WelcomeScreen = new welcomeScreen(driver);
        ScheduleScreen = new scheduleScreen(driver);
     }
 
-    @Test(  groups ={"TC_1","Tutorial flow"},
+    @Test(groups ={"TC_1","Tutorial flow"},
             enabled=true,
             priority = 0)
     public void displayTutorialScreen(){
@@ -33,6 +33,12 @@ public class allTests {
     public void skipTutorialScreen(){
         WelcomeScreen.tutorialSkipped();
         ScheduleScreen.isDisplayed();
+    }
+    @Test(groups ={"TC_3","Tutorial flow"},
+            enabled=true,
+            priority = 0)
+    public void userSwipesTutorialScreen(){
+        ScheduleScreen.swipeRight();
     }
 
 }
