@@ -8,6 +8,9 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 
 public class testSetup {
@@ -39,8 +42,8 @@ public class testSetup {
             throw new RuntimeException("Failed to start the Appium server. Please check your configuration and the Appium server logs.");
         }
 
-        // Switch to 'WEBVIEW_com.ionicframework.conferenceapp' context
-        ((SupportsContextSwitching) driver).context("WEBVIEW_com.ionicframework.conferenceapp");
+
+
 
         // Print the current context
         System.out.println("Current Context: " + ((SupportsContextSwitching) driver).getContext()); // get current context
