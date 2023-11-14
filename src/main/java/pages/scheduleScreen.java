@@ -30,27 +30,5 @@ public class scheduleScreen {
     public void isDisplayed(){
         scheduleTitle.isDisplayed();
     }
-    public void swipeRight(){
-        ((SupportsContextSwitching) driver).context("NATIVE_APP");
-        // Get the size of the screen
-        Dimension size = driver.manage().window().getSize();
 
-        // Calculate start and end points for the swipe
-        int startX = (int) (size.width * 0.8);
-        int endX = (int) (size.width * 0.2);
-        int startY = size.height / 2;
-
-        // Perform the swipe
-        new TouchAction((PerformsTouchActions) driver)
-                .press(PointOption.point(startX, startY))
-                .moveTo(PointOption.point(endX, startY))
-                .release()
-                .perform();
-        List<String> contexts = (List<String>) ((SupportsContextSwitching) driver).getContextHandles();
-        // Switch back to WebView context
-        ((SupportsContextSwitching) driver).context(String.valueOf(contexts.size()-1));
-        // Print the current context
-        System.out.println("Current Context: " + ((SupportsContextSwitching) driver).getContext()); // get current context
-
-    }
 }
