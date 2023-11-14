@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d9ee0eb-3b76-4b4e-97f8-52b8060c6c76" name="Changes" comment="Switched to iOS 16.1">
+    <list default="true" id="6d9ee0eb-3b76-4b4e-97f8-52b8060c6c76" name="Changes" comment="Switched simulator for iOS">
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/context.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/scheduleScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/scheduleScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/welcomeScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/welcomeScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utils/testSetup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/testSetup.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/allTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/allTests.java" afterDir="false" />
@@ -67,7 +69,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.allTests.displayTutorialScreen">
+  <component name="RunManager" selected="TestNG.allTests.userSwipesTutorialScreen">
     <configuration name="allTests" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="automation_Intermediate" />
       <extension name="coverage">
@@ -103,17 +105,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="allTests.appDownload_1" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="allTests.displayTutorialScreen" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="automation_Intermediate" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value=".*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="testSuites" />
+      <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="allTests" />
-      <option name="METHOD_NAME" value="appDownload_1" />
+      <option name="METHOD_NAME" value="displayTutorialScreen" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -121,11 +117,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="allTests.displayTutorialScreen" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="allTests.skipTutorialScreen" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="automation_Intermediate" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="allTests" />
-      <option name="METHOD_NAME" value="displayTutorialScreen" />
+      <option name="METHOD_NAME" value="skipTutorialScreen" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -147,11 +143,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.allTests.displayTutorialScreen" />
         <item itemvalue="TestNG.allTests.userSwipesTutorialScreen" />
+        <item itemvalue="TestNG.allTests.displayTutorialScreen" />
         <item itemvalue="TestNG.allTests" />
+        <item itemvalue="TestNG.allTests.skipTutorialScreen" />
         <item itemvalue="TestNG.allTests.SignUp" />
-        <item itemvalue="TestNG.allTests.appDownload_1" />
       </list>
     </recent_temporary>
   </component>
@@ -262,7 +258,28 @@
       <option name="project" value="LOCAL" />
       <updated>1699536910360</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Cleanup">
+      <created>1699651568678</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1699651568678</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Added 3rd TC">
+      <created>1699651612388</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1699651612388</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Switched simulator for iOS">
+      <created>1699651630515</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1699651630515</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -279,6 +296,19 @@
     <MESSAGE value="Added more information about running the tests" />
     <MESSAGE value="Added schedueleScreen" />
     <MESSAGE value="Switched to iOS 16.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Switched to iOS 16.1" />
+    <MESSAGE value="Cleanup" />
+    <MESSAGE value="Added 3rd TC" />
+    <MESSAGE value="Switched simulator for iOS" />
+    <option name="LAST_COMMIT_MESSAGE" value="Switched simulator for iOS" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ClassCastException" package="java.lang" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
