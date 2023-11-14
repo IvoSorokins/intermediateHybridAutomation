@@ -3,14 +3,10 @@ package utils;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
-import io.appium.java_client.remote.SupportsContextSwitching;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
 
 
 public class testSetup {
@@ -41,12 +37,6 @@ public class testSetup {
             e.printStackTrace();
             throw new RuntimeException("Failed to start the Appium server. Please check your configuration and the Appium server logs.");
         }
-
-
-
-
-        // Print the current context
-        System.out.println("Current Context: " + ((SupportsContextSwitching) driver).getContext()); // get current context
 
         // Set the implicit wait timeout to 30 seconds
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
