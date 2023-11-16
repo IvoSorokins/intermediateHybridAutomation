@@ -4,13 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d9ee0eb-3b76-4b4e-97f8-52b8060c6c76" name="Changes" comment="Switched simulator for iOS">
+    <list default="true" id="6d9ee0eb-3b76-4b4e-97f8-52b8060c6c76" name="Changes" comment="New implementations">
+      <change afterPath="$PROJECT_DIR$/src/main/java/dataProviders/eventNames.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/screens/eventScreen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/screens/welcomeScreen.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/utils/context.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/scheduleScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/scheduleScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/welcomeScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/welcomeScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/scheduleScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/scheduleScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/welcomeScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/interactions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/testProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/testProperties.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utils/testSetup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/testSetup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/allTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/allTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,18 +48,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/ivosorokins/IdeaProjects/automation_Intermediate&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "/Users/ivosorokins/IdeaProjects/automation_Intermediate",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "Errors"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="testCases" />
@@ -69,7 +73,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.allTests.userSwipesTutorialScreen">
+  <component name="RunManager" selected="TestNG.allTests.favouriteEvent">
     <configuration name="allTests" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="automation_Intermediate" />
       <extension name="coverage">
@@ -87,17 +91,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="allTests.SignUp" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="allTests.continueToSchedueleScreen" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="automation_Intermediate" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value=".*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="testSuites" />
+      <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="allTests" />
-      <option name="METHOD_NAME" value="SignUp" />
+      <option name="METHOD_NAME" value="continueToSchedueleScreen" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -105,11 +103,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="allTests.displayTutorialScreen" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="allTests.favouriteEvent" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="automation_Intermediate" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="allTests" />
-      <option name="METHOD_NAME" value="displayTutorialScreen" />
+      <option name="METHOD_NAME" value="favouriteEvent" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -117,11 +115,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="allTests.skipTutorialScreen" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="allTests.navigateToEvents" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="automation_Intermediate" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="allTests" />
-      <option name="METHOD_NAME" value="skipTutorialScreen" />
+      <option name="METHOD_NAME" value="navigateToEvents" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -143,11 +141,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.allTests.favouriteEvent" />
+        <item itemvalue="TestNG.allTests.navigateToEvents" />
+        <item itemvalue="TestNG.allTests.continueToSchedueleScreen" />
         <item itemvalue="TestNG.allTests.userSwipesTutorialScreen" />
-        <item itemvalue="TestNG.allTests.displayTutorialScreen" />
         <item itemvalue="TestNG.allTests" />
-        <item itemvalue="TestNG.allTests.skipTutorialScreen" />
-        <item itemvalue="TestNG.allTests.SignUp" />
       </list>
     </recent_temporary>
   </component>
@@ -279,7 +277,28 @@
       <option name="project" value="LOCAL" />
       <updated>1699651630515</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Implemented Swipe">
+      <created>1699943342743</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1699943342743</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Removed Debugging code">
+      <created>1699943459389</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1699943459390</updated>
+    </task>
+    <task id="LOCAL-00020" summary="New implementations">
+      <created>1699943515413</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1699943515414</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -299,7 +318,11 @@
     <MESSAGE value="Cleanup" />
     <MESSAGE value="Added 3rd TC" />
     <MESSAGE value="Switched simulator for iOS" />
-    <option name="LAST_COMMIT_MESSAGE" value="Switched simulator for iOS" />
+    <MESSAGE value="Implemented Swipe" />
+    <MESSAGE value="Removed Testing code" />
+    <MESSAGE value="Removed Debugging code" />
+    <MESSAGE value="New implementations" />
+    <option name="LAST_COMMIT_MESSAGE" value="New implementations" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

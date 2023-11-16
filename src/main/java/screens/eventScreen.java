@@ -1,0 +1,75 @@
+package screens;
+
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import org.openqa.selenium.*;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
+import utils.interactions;
+
+import static java.lang.Thread.sleep;
+
+
+public class eventScreen {
+
+    private final AppiumDriver driver;
+    interactions jsScripts = new interactions();
+
+    public eventScreen(AppiumDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(new AppiumFieldDecorator(this.driver), this);
+    }
+
+    @FindBy(xpath = "//page-session-detail/ion-header/ion-toolbar/ion-buttons[2]/ion-button[1]")
+    private WebElement starButton;
+
+
+    public void isEventNameDisplayed(String name)throws InterruptedException{
+        boolean isEvent = jsScripts.isElementVisibleInView(driver.findElement(By.xpath(String.format("//h1[text()='%s']", name))), driver);
+        Assert.assertTrue(isEvent, name+ " is not visible.");
+        sleep(1000);
+    }
+    public void isStarButtonDisplayed()throws InterruptedException{
+        boolean isEvent = jsScripts.isElementVisibleInView(starButton, driver);
+        Assert.assertTrue(isEvent,  " is not visible.");
+        sleep(1000);
+    }
+    public void clickStarButton(int times)throws InterruptedException{
+        for (int i = 0; i < times; i++) {
+            starButton.click();
+            sleep(1000);
+        }
+    }
+
+
+    public void verifyStarButtonColorWhite()throws InterruptedException{
+        String initialColor = starButton.getCssValue("color");
+        Assert.assertNotEquals(initialColor, "rgb(255, 255, 255)"); // Assuming that white is rgb(0, 0, 0)(255, 255, 255)
+        sleep(500);
+    }
+    public void verifyStarButtonColorBlack()throws InterruptedException{
+
+        // Check the initial color of the star button
+        String initialColor = starButton.getCssValue("color");
+        Assert.assertNotEquals(initialColor, "rgb(0, 0, 0)"); // Assuming that black is rgb(0, 0, 0)
+        sleep(500);
+    }
+    public void verifyStarButtonLocation()throws InterruptedException{
+        Dimension size = driver.manage().window().getSize(); // Get Screen size of the device
+
+        int quarterX = size.width / 4;
+        int quarterY = size.height / 4;
+
+       // Check the position of the star button
+        Point position = starButton.getLocation();
+
+        // Verify that the star button is in the top right quarter of the screen
+        // The X coordinate should be greater than three times the quarter width (meaning it's in the rightmost quarter)
+        // The Y coordinate should be less than the quarter height (meaning it's in the topmost quarter)
+        Assert.assertTrue(position.getX() > 3 * quarterX && position.getY() < quarterY);
+        sleep(500);
+    }
+
+
+}

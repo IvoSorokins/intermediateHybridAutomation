@@ -42,7 +42,6 @@ public class testSetup {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         return driver;
 
-
     }
 
 }

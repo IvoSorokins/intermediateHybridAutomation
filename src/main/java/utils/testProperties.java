@@ -22,7 +22,6 @@ public class testProperties {
     // Create a DesiredCapabilities object to hold the desired capabilities for Appium
     private static final DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
 
-
     private static void loadProperties() {
         // Use try-with-resources to automatically close the input stream
         try ( InputStream input = new FileInputStream(propsPath)){
@@ -71,6 +70,7 @@ public class testProperties {
         // Return the DesiredCapabilities object
         return desiredCapabilities;
     }
+
     public static String getProperty(String name){
         // Throw an exception if the name parameter is null
         if (name == null) {
