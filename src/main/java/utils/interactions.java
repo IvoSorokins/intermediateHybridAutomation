@@ -3,12 +3,19 @@ package utils;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.PerformsTouchActions;
 import io.appium.java_client.TouchAction;
+import io.appium.java_client.touch.WaitOptions;
+import io.appium.java_client.touch.offset.ElementOption;
 import io.appium.java_client.touch.offset.PointOption;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 
+import java.time.Duration;
+
+import static java.lang.Thread.sleep;
 import static utils.context.*;
+
 
 
 public class interactions {
@@ -51,13 +58,62 @@ public class interactions {
                     .release()
                     .perform();
         }
-        Thread.sleep(4000);  // Wait for 4 second
         switchToWebView(driver, webviewContext);
+        sleep(2000);  // Wait for 2 second
     }
 
-    public static WebElement findElementInShadowRoot(WebElement shadowHost, String cssSelector, AppiumDriver driver) {
-        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
-        WebElement shadowRoot = (WebElement) jsExecutor.executeScript("return arguments[0].shadowRoot", shadowHost);
-        return (WebElement) jsExecutor.executeScript("return arguments[0].querySelector(arguments[1])", shadowRoot, cssSelector);
+    public static void navigateBack(AppiumDriver driver)throws InterruptedException{
+        String webviewContext = getCurrentContextName(driver); // Get Webview context
+        switchToNative(driver);
+        driver.navigate().back();
+        switchToWebView(driver, webviewContext);
+        sleep(1000);
     }
+    public static void swipeElement(String eventName,String direction,String platform, AppiumDriver driver) throws InterruptedException {
+        String webviewContext = getCurrentContextName(driver); // Get Webview context
+        switchToNative(driver);
+
+        WebElement event;
+        if (platform.equalsIgnoreCase("iOS")) {
+            // Replace 'iOSXPath' with the actual XPath for iOS
+            System.out.print(String.format("//XCUIElementTypeStaticText[@name=\"%s\"]",eventName));
+            event = driver.findElement(By.xpath(String.format("//XCUIElementTypeStaticText[@name=\"%s\"]",eventName)));
+        } else { // Androide
+            System.out.print(String.format("//android.view.View[@text='%s']",eventName));
+            event = driver.findElement(By.xpath(String.format("//android.view.View[@text='%s']",eventName)));
+        }
+
+
+
+        // Get the X and Y coordinates of the element
+        int leftX = event.getLocation().getX();
+        int rightX = leftX + event.getSize().getWidth();
+        int Y = event.getLocation().getY();
+
+
+        // Create a new TouchAction
+        TouchAction touchAction = new TouchAction((PerformsTouchActions) driver);
+//        switchToNative(driver);
+
+        // Perform the swipe action based on the direction
+        if (direction.equalsIgnoreCase("left")) {
+            touchAction.press(ElementOption.point(rightX, Y))
+                    .waitAction(WaitOptions.waitOptions(Duration.ofMillis(500))) // Add a wait time
+                    .moveTo(ElementOption.point(leftX, Y))
+                    .moveTo(ElementOption.point(leftX, Y))
+                    .release()
+                    .perform();
+            System.out.println("Swipe left x:"+rightX+" y: " +Y+" Move to:x"+leftX+"y: "+Y);
+        } else if (direction.equalsIgnoreCase("right")) {
+            touchAction.press(ElementOption.point(leftX, Y))
+                    .waitAction(WaitOptions.waitOptions(Duration.ofMillis(500)))
+                    .moveTo(ElementOption.point(rightX, Y))
+                    .release()
+                    .perform();
+            System.out.println("Swipe Right x:"+leftX+" y: " +Y+" Move to: x"+rightX+"y: "+Y);
+        }
+        switchToWebView(driver, webviewContext);
+        sleep(1000);
+    }
+
 }

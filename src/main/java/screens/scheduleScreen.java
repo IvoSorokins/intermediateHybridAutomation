@@ -9,7 +9,9 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import utils.interactions;
 
+
 import static java.lang.Thread.sleep;
+import static utils.interactions.swipeElement;
 
 
 public class scheduleScreen {
@@ -22,20 +24,38 @@ public class scheduleScreen {
     }
 
     // Locators to used find elements on screen
-    @FindBy(xpath = "//ion-header/ion-toolbar/ion-title[position()=1][text()='Schedule']")
+    @FindBy(xpath = "//ion-title[text()=\"Schedule\"]")
     private WebElement scheduleTitle;
+
+    @FindBy(xpath ="//ion-segment-button[text()=\" Favorites \"]")
+    private WebElement favouriteTab;
+
+    @FindBy(css="ion-item-sliding.md.hydrated.item-sliding-active-slide.item-sliding-active-options-end")
+    private WebElement removeButton;
+
+    @FindBy(xpath = "//h2[text()=\"Remove Favorite\"]")
+    private WebElement removePopUp;
+
+    @FindBy (xpath = "//span[text()=\"Remove\"]")
+    private WebElement removeButtonPopUp;
+
+    @FindBy(xpath = "//span[text()=\"Cancel\"]")
+    private WebElement cancelButtonPopUp;
+
+    @FindBy(xpath = "//ion-list-header[text()=\" No Sessions Found \"]")
+    private WebElement noEventsText;
 
 
     // Methods to interact with the elements
-    public void isDisplayed()throws InterruptedException{
-        boolean isScheduleTitle = jsScripts.isElementVisibleInView(scheduleTitle, driver);
-        Assert.assertTrue(isScheduleTitle, " is not visible.");
-        sleep(1000);
+    public void isScheduleDisplayed()throws InterruptedException{
+         boolean isSchedueleTitle = jsScripts.isElementVisibleInView(scheduleTitle,driver);
+         Assert.assertTrue(isSchedueleTitle,"Scheduele title is not visible");
+         sleep(1000);
     }
 
     public void isEventDisplayed(String name)throws InterruptedException{
         boolean isEvent = jsScripts.isElementVisibleInView(driver.findElement(By.xpath(String.format("//h3[text()=\"%s\"]", name))), driver);
-        Assert.assertTrue(isEvent, " is not visible.");
+        Assert.assertTrue(isEvent, "Event widget is not visible.");
         sleep(1000);
     }
 
@@ -45,16 +65,79 @@ public class scheduleScreen {
         event.click();
         sleep(1000);
     }
-    public void getSchedueleTitle(){
-        // get the driver instance WebDriver driver = …;
 
-        // get the shadow host element using the selector WebElement shadowHost = driver.findElement(By.cssSelector(“#main-content > ng-component > ion-tabs > div > ion-router-outlet > page-schedule > ion-header > ion-toolbar.in-toolbar.md.toolbar-title-default.hydrated > ion-title”));
+    public void isFavouriteTabDisplayed()throws InterruptedException{
+        boolean isFavouriteTab = jsScripts.isElementVisibleInView(favouriteTab,driver);
+        Assert.assertTrue(isFavouriteTab, "Favourite tab is not visible.");
+        sleep(1000);
+    }
 
-        // get the shadow root element using JavascriptExecutor WebElement shadowRoot = (WebElement) ((JavascriptExecutor) driver).executeScript(“return arguments[0].shadowRoot”, shadowHost);
+    public void clickFavouriteTab()throws InterruptedException{
+        favouriteTab.click();
+        sleep(1000);
+    }
 
-        // get the target element using the xpath WebElement targetElement = shadowRoot.findElement(By.xpath(“//div[text()=‘Schedule’]”));
 
-        // click on the target element targetElement.click();
+    public void clickRemoveButton()throws InterruptedException{
+        // Find the "Remove" button, when it becomes visible
+//        WebElement removeButton = driver.findElement(By.cssSelector("ion-item-sliding.md.hydrated.item-sliding-active-slide.item-sliding-active-options-end"));
+
+        boolean isRemoveButton = jsScripts.isElementVisibleInView(removeButton,driver);
+        Assert.assertTrue(isRemoveButton, "Remove button is not visible.");
+        sleep(1000);
+
+        // Click the "Remove" button
+        removeButton.click();
+
+        sleep(1000);
+    }
+
+    public void swipeEvent(String eventName,String platform)throws InterruptedException{
+        swipeElement(eventName,"left" ,platform, driver);
+        sleep(3000);
+    }
+
+    public void isRemovePopUpDisplayed()throws InterruptedException{
+        boolean isRemovePopUp= jsScripts.isElementVisibleInView(removePopUp,driver);
+        Assert.assertTrue(isRemovePopUp, "Remove Pop Up is not visible.");
+        sleep(1000);
+    }
+
+    public void isRemoveButtonOnPopUpDisplayed()throws InterruptedException{
+        boolean isRemoveButtonPopUp= jsScripts.isElementVisibleInView(removeButtonPopUp,driver);
+        Assert.assertTrue(isRemoveButtonPopUp, "Remove button Pop Up is not visible.");
+        sleep(1000);
+    }
+
+    public void clickRemoveButtonOnPopUp()throws InterruptedException{
+        removeButtonPopUp.click();
+        sleep(1000);
+    }
+
+    public void isCancelButtonOnPopUpDisplayed()throws InterruptedException{
+        boolean isCancelButtonPopUp= jsScripts.isElementVisibleInView(cancelButtonPopUp,driver);
+        Assert.assertTrue(isCancelButtonPopUp, "Cancel button Pop Up is not visible.");
+        sleep(1000);
+    }
+
+    public void clickCancelButtonOnPopUp()throws InterruptedException{
+        cancelButtonPopUp.click();
+        sleep(1000);
+    }
+
+    public void removeButtonIsNotDisplayed()throws InterruptedException{
+        boolean isRemoveButton = jsScripts.isElementVisibleInView(removeButton,driver);
+        Assert.assertFalse(isRemoveButton, "Remove button is visible.");
+        sleep(1000);
+    }
+    public void noEventsDisplayed(String name)throws InterruptedException{
+        boolean isEvent = jsScripts.isElementVisibleInView(driver.findElement(By.xpath(String.format("//h3[text()=\"%s\"]", name))), driver);
+        boolean isNoEventsText = jsScripts.isElementVisibleInView(noEventsText,driver);
+        Assert.assertFalse(isEvent, "Event widget is visible.");
+        Assert.assertTrue(isNoEventsText,"No events text is not visible");
+
+
+        sleep(1000);
     }
 
 }

@@ -12,8 +12,6 @@ public class eventNames {
                     {"University of Ionic"},
                     {"Migrating to Ionic"}
                     // Elements only visible in view as it was not mentioned to include all of them
-
-
                     // Add more events as needed
         };
     }

@@ -21,7 +21,7 @@ public class eventScreen {
         PageFactory.initElements(new AppiumFieldDecorator(this.driver), this);
     }
 
-    @FindBy(xpath = "//page-session-detail/ion-header/ion-toolbar/ion-buttons[2]/ion-button[1]")
+    @FindBy(css = "ion-button.toggle_favorite_btn")
     private WebElement starButton;
 
 
@@ -30,11 +30,13 @@ public class eventScreen {
         Assert.assertTrue(isEvent, name+ " is not visible.");
         sleep(1000);
     }
+
     public void isStarButtonDisplayed()throws InterruptedException{
         boolean isEvent = jsScripts.isElementVisibleInView(starButton, driver);
         Assert.assertTrue(isEvent,  " is not visible.");
         sleep(1000);
     }
+
     public void clickStarButton(int times)throws InterruptedException{
         for (int i = 0; i < times; i++) {
             starButton.click();
@@ -42,18 +44,18 @@ public class eventScreen {
         }
     }
 
-
     public void verifyStarButtonColorWhite()throws InterruptedException{
         String initialColor = starButton.getCssValue("color");
         Assert.assertNotEquals(initialColor, "rgb(255, 255, 255)"); // Assuming that white is rgb(0, 0, 0)(255, 255, 255)
-        sleep(500);
+        sleep(1000);
     }
+
     public void verifyStarButtonColorBlack()throws InterruptedException{
 
         // Check the initial color of the star button
         String initialColor = starButton.getCssValue("color");
         Assert.assertNotEquals(initialColor, "rgb(0, 0, 0)"); // Assuming that black is rgb(0, 0, 0)
-        sleep(500);
+        sleep(1000);
     }
     public void verifyStarButtonLocation()throws InterruptedException{
         Dimension size = driver.manage().window().getSize(); // Get Screen size of the device
@@ -68,7 +70,7 @@ public class eventScreen {
         // The X coordinate should be greater than three times the quarter width (meaning it's in the rightmost quarter)
         // The Y coordinate should be less than the quarter height (meaning it's in the topmost quarter)
         Assert.assertTrue(position.getX() > 3 * quarterX && position.getY() < quarterY);
-        sleep(500);
+        sleep(1000);
     }
 
 
