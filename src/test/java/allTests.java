@@ -151,7 +151,7 @@ public class allTests {
             priority = 0)
     public void checkEachSpeaker(speaker Speaker)throws InterruptedException{
         navigateToSpeakers();
-        SpeakersScreen.checkEachSpeakerDisplayed(Speaker.getIndex(),Speaker.getUserName());
+        SpeakersScreen.checkEachSpeakerDisplayed(Speaker.getIndex(),Speaker.getUserName(),Speaker.getProfession());
     }
 
     @Test(groups={"TC_13","About Speaker flow"},dataProvider = "speakersProvider",dataProviderClass = speakersData.class,

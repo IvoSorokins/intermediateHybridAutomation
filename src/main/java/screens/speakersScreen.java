@@ -30,23 +30,27 @@ public class speakersScreen {
         sleep(1000);
     }
 
-    public void checkEachSpeakerDisplayed(int index,String userName)throws InterruptedException{
+    public void checkEachSpeakerDisplayed(int index,String userName,String profession)throws InterruptedException{
         WebElement speakerElement = driver.findElement(By.xpath("//ion-col["+ index +"]//h2[text()='" + userName + "']"));
         WebElement speakerAboutElement = driver.findElement(By.xpath("//h3[text()='About " + userName + "']"));
+        WebElement speakerProfessionElement = driver.findElement(By.xpath("//ion-col["+ index +"]//p[text()='"+ profession +"']"));
 
         boolean isSpeakerDisplayed = jsScripts.isElementVisibleInView(speakerElement, driver);
         boolean isSpeakerAboutElementDisplayed = jsScripts.isElementVisibleInView(speakerAboutElement, driver);
+        boolean isSpeakerProfessionElementDisplayed = jsScripts.isElementVisibleInView(speakerProfessionElement, driver);
 
         if (isSpeakerDisplayed == false){
             interactions.swipeIntoView(speakerAboutElement,driver);
             sleep(5000);
             isSpeakerDisplayed = jsScripts.isElementVisibleInView(speakerElement, driver);
             isSpeakerAboutElementDisplayed = jsScripts.isElementVisibleInView(speakerAboutElement, driver);
+            isSpeakerProfessionElementDisplayed = jsScripts.isElementVisibleInView(speakerProfessionElement, driver);
 
         }
 
         Assert.assertTrue(isSpeakerDisplayed, "Speakers title is not visible.");
         Assert.assertTrue(isSpeakerAboutElementDisplayed, "Speakers About button is not visible.");
+        Assert.assertTrue(isSpeakerProfessionElementDisplayed, "Speakers profession is not visible.");
         sleep(1000);
     }
 
