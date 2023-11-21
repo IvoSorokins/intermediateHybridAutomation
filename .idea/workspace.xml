@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d9ee0eb-3b76-4b4e-97f8-52b8060c6c76" name="Changes" comment="Added swipeIntoView">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="6d9ee0eb-3b76-4b4e-97f8-52b8060c6c76" name="Changes" comment="Updated checkEachSpeaker">
+      <change afterPath="$PROJECT_DIR$/src/main/java/screens/speakerAboutScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/screens/speakersScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/speakersScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/allTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/allTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -323,7 +322,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700549361967</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Updated checkEachSpeaker">
+      <option name="closed" value="true" />
+      <created>1700550591479</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1700550591479</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -351,7 +358,8 @@
     <MESSAGE value="Added Speakers section code" />
     <MESSAGE value="Fixed Typo" />
     <MESSAGE value="Added swipeIntoView" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added swipeIntoView" />
+    <MESSAGE value="Updated checkEachSpeaker" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated checkEachSpeaker" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
