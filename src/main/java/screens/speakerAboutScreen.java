@@ -38,6 +38,9 @@ public class speakerAboutScreen {
     @FindBy(xpath = "//ion-back-button")
     private WebElement backButton;
 
+    @FindBy(css="div.speaker-background > h2")
+    private WebElement speakerName;
+
     public void verifyAllButtons()throws InterruptedException{
         boolean isTwitterButton = jsScripts.isElementVisibleInView(twitterButton, driver);
         boolean isGithubButton = jsScripts.isElementVisibleInView(githubButton, driver);
