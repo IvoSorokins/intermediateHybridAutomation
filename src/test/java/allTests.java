@@ -156,14 +156,25 @@ public class allTests {
     @Test(groups={"TC_13","About Speaker flow"},dataProvider = "speakersProvider",dataProviderClass = speakersData.class,
             enabled=true,
             priority = 0)
-    public void navToAboutSpeakerProfile(speaker Speaker)throws InterruptedException {
+    public void navToSpeakerProfile(speaker Speaker)throws InterruptedException {
         navigateToSpeakers();
         SpeakersScreen.clickSpeakerProfile(Speaker.getIndex(), Speaker.getUserName());
         SpeakerAboutScreen.verifyAllButtons();
         SpeakerAboutScreen.verifySpeakerAboutDisplayed(Speaker.getUserName(),Speaker.getDescription());
         SpeakerAboutScreen.clickOnPhoneButton();
         SpeakerAboutScreen.verifyContactInfo(Speaker.getEmail(),Speaker.getNumber());
+    }
 
+    @Test(groups={"TC_14","About Speaker flow"},dataProvider = "speakersProvider",dataProviderClass = speakersData.class,
+            enabled=true,
+            priority = 0)
+    public void aboutNavToSpeakerProfile(speaker Speaker)throws InterruptedException {
+        navigateToSpeakers();
+        SpeakersScreen.clickSpeakerAbout(Speaker.getUserName());
+        SpeakerAboutScreen.verifyAllButtons();
+        SpeakerAboutScreen.verifySpeakerAboutDisplayed(Speaker.getUserName(),Speaker.getDescription());
+        SpeakerAboutScreen.clickOnPhoneButton();
+        SpeakerAboutScreen.verifyContactInfo(Speaker.getEmail(),Speaker.getNumber());
     }
 }
 

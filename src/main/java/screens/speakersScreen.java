@@ -66,4 +66,19 @@ public class speakersScreen {
         speakerElement.click();
         sleep(1000);
     }
+
+    public void clickSpeakerAbout(String userName)throws InterruptedException{
+        WebElement speakerAboutElement = driver.findElement(By.xpath("//h3[text()='About " + userName + "']"));
+
+        boolean isSpeakerDisplayed = jsScripts.isElementVisibleInView(speakerAboutElement, driver);
+
+        if (isSpeakerDisplayed == false){
+            interactions.swipeIntoView(speakerAboutElement,driver);
+            sleep(5000);
+        }
+        speakerAboutElement.click();
+        sleep(1000);
+    }
+
+
 }

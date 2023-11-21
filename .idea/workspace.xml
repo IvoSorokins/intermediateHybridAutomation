@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d9ee0eb-3b76-4b4e-97f8-52b8060c6c76" name="Changes" comment="Created New Screen">
+    <list default="true" id="6d9ee0eb-3b76-4b4e-97f8-52b8060c6c76" name="Changes" comment="Added Speaker About screen verification">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/screens/speakerAboutScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/speakerAboutScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/screens/speakersScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/speakersScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/allTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/allTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,7 +65,19 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.allTests.checkEachSpeaker">
+  <component name="RunManager" selected="TestNG.allTests.aboutNavToSpeakerProfile">
+    <configuration name="allTests.aboutNavToSpeakerProfile" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="automation_Intermediate" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="allTests" />
+      <option name="METHOD_NAME" value="aboutNavToSpeakerProfile" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="allTests.checkEachSpeaker" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="automation_Intermediate" />
       <option name="PACKAGE_NAME" value="" />
@@ -76,11 +90,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="allTests.navigateToEvents" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="allTests.navToAboutSpeakerProfile" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="automation_Intermediate" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="allTests" />
-      <option name="METHOD_NAME" value="navigateToEvents" />
+      <option name="METHOD_NAME" value="navToAboutSpeakerProfile" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -112,25 +126,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="allTests.unFavouriteEventFavTab" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="automation_Intermediate" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="allTests" />
-      <option name="METHOD_NAME" value="unFavouriteEventFavTab" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.allTests.aboutNavToSpeakerProfile" />
+        <item itemvalue="TestNG.allTests.navToAboutSpeakerProfile" />
         <item itemvalue="TestNG.allTests.checkEachSpeaker" />
         <item itemvalue="TestNG.allTests.navigateToSpeakers" />
         <item itemvalue="TestNG.allTests.navigateToSpeaker" />
-        <item itemvalue="TestNG.allTests.unFavouriteEventFavTab" />
-        <item itemvalue="TestNG.allTests.navigateToEvents" />
       </list>
     </recent_temporary>
   </component>
@@ -338,11 +340,18 @@
       <option name="project" value="LOCAL" />
       <updated>1700555621851</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Added Speaker About screen verification">
+      <option name="closed" value="true" />
+      <created>1700562713114</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1700562713114</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Updating project name" />
     <MESSAGE value="Added properties" />
     <MESSAGE value="Added test properties" />
     <MESSAGE value="Cleaned up project" />
@@ -367,7 +376,8 @@
     <MESSAGE value="Added swipeIntoView" />
     <MESSAGE value="Updated checkEachSpeaker" />
     <MESSAGE value="Created New Screen" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created New Screen" />
+    <MESSAGE value="Added Speaker About screen verification" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Speaker About screen verification" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

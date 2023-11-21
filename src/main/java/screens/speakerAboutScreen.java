@@ -56,17 +56,20 @@ public class speakerAboutScreen {
         sleep(1000);
     }
     public void verifySpeakerAboutDisplayed(String userName,String about)throws InterruptedException{
-        WebElement speakerImg = driver.findElement(By.xpath("//img[@alt='"+ userName +"']"));
-        WebElement speakerDesc = driver.findElement(By.xpath("//p[text()='"+ about +"']"));
-        WebElement speakerUserName = driver.findElement(By.xpath("//h2[text()='"+ userName +"']"));
+        WebElement speakerImg = driver.findElement(By.xpath("//img[@alt=\""+ userName +"\"]"));
+        WebElement speakerDesc = driver.findElement(By.xpath("//p[text()=\""+ about +"\"]"));
 
         boolean isSpeakerImg = jsScripts.isElementVisibleInView(speakerImg, driver);
         boolean isSpeakerDesc = jsScripts.isElementVisibleInView(speakerDesc, driver);
-        boolean isSpeakerUserName = jsScripts.isElementVisibleInView(speakerUserName, driver);
+        boolean isSpeakerName = jsScripts.isElementVisibleInView(speakerName, driver);
 
         Assert.assertTrue(isSpeakerImg, "Speaker image is not visible.");
         Assert.assertTrue(isSpeakerDesc, "Speaker description is not visible.");
-        Assert.assertTrue(isSpeakerUserName, "Speaker username is not visible.");
+        Assert.assertTrue(isSpeakerName, "Speaker name is not visible.");
+
+        String speakerNameText = speakerName.getText();
+        Assert.assertEquals(speakerNameText, userName, "Speaker name is not correct.");
+
         sleep(1000);
     }
 
