@@ -3,10 +3,7 @@ import dataObjects.speaker;
 import dataProviders.eventNames;
 import dataProviders.speakersData;
 import org.testng.annotations.*;
-import screens.eventScreen;
-import screens.scheduleScreen;
-import screens.speakersScreen;
-import screens.welcomeScreen;
+import screens.*;
 import io.appium.java_client.AppiumDriver;
 import utils.interactions;
 
@@ -28,6 +25,7 @@ public class allTests {
     public eventScreen EventScreen;
     public bottomNavigationBar BottomNavigationBar;
     public speakersScreen SpeakersScreen;
+    public speakerAboutScreen SpeakerAboutScreen;
 
    @BeforeMethod(alwaysRun = true)
     public void setUp(){
@@ -37,6 +35,7 @@ public class allTests {
        EventScreen = new eventScreen(driver);
        BottomNavigationBar = new bottomNavigationBar(driver);
        SpeakersScreen = new speakersScreen(driver);
+       SpeakerAboutScreen = new speakerAboutScreen(driver);
     }
     @AfterMethod(alwaysRun = true)
     public void tearDown() {
@@ -160,6 +159,10 @@ public class allTests {
     public void navToAboutSpeakerProfile(speaker Speaker)throws InterruptedException {
         navigateToSpeakers();
         SpeakersScreen.clickSpeakerProfile(Speaker.getIndex(), Speaker.getUserName());
+        SpeakerAboutScreen.verifyAllButtons();
+        SpeakerAboutScreen.verifySpeakerAboutDisplayed(Speaker.getUserName(),Speaker.getDescription());
+        SpeakerAboutScreen.clickOnPhoneButton();
+        SpeakerAboutScreen.verifyContactInfo(Speaker.getEmail(),Speaker.getNumber());
 
     }
 }
