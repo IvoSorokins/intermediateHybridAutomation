@@ -1,5 +1,7 @@
 import components.bottomNavigationBar;
+import dataObjects.speaker;
 import dataProviders.eventNames;
+import dataProviders.speakersData;
 import org.testng.annotations.*;
 import screens.eventScreen;
 import screens.scheduleScreen;
@@ -33,6 +35,8 @@ public class allTests {
        WelcomeScreen = new welcomeScreen(driver);
        ScheduleScreen = new scheduleScreen(driver);
        EventScreen = new eventScreen(driver);
+       BottomNavigationBar = new bottomNavigationBar(driver);
+       SpeakersScreen = new speakersScreen(driver);
     }
     @AfterMethod(alwaysRun = true)
     public void tearDown() {
@@ -132,20 +136,32 @@ public class allTests {
         ScheduleScreen.clickRemoveButtonOnPopUp();
         ScheduleScreen.noEventsDisplayed(eventName); // Verifys both that event is not displayed and that "No events" message is displayed
     }
-    @Test(groups={"TC_11","About Speaker flow"},dataProvider = "eventProvider",dataProviderClass = eventNames.class,
+    @Test(groups={"TC_11","About Speaker flow"},
             enabled=true,
             priority = 0)
-    public void navigateToSpeaker(String eventName)throws InterruptedException{
+    public void navigateToSpeakers()throws InterruptedException{
        skipTutorialScreen();
        BottomNavigationBar.isSpeakersButtonDisplayed();
        BottomNavigationBar.clickSpeakersButton();
        SpeakersScreen.isSpeakersTitleDisplayed();
     }
 
+    @Test(groups={"TC_12","About Speaker flow"},dataProvider = "speakersProvider",dataProviderClass = speakersData.class,
+            enabled=true,
+            priority = 0)
+    public void checkEachSpeaker(speaker Speaker)throws InterruptedException{
+        navigateToSpeakers();
+        SpeakersScreen.checkEachSpeakerDisplayed(Speaker.getIndex(),Speaker.getUserName());
+    }
 
+    @Test(groups={"TC_13","About Speaker flow"},dataProvider = "speakersProvider",dataProviderClass = speakersData.class,
+            enabled=true,
+            priority = 0)
+    public void navToAboutSpeakerProfile(speaker Speaker)throws InterruptedException {
+        navigateToSpeakers();
+        SpeakersScreen.clickSpeakerProfile(Speaker.getIndex(), Speaker.getUserName());
 
-
-
+    }
 }
 
 

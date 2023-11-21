@@ -7,8 +7,10 @@ public class speaker {
         private String email;
         private String number;
         private String description;
+        private int index;
 
-        public speaker(String userName, String profession, String email,String number,String description){
+        public speaker(int index, String userName, String profession, String email,String number,String description){
+            this.index = index;
             this.userName = userName;
             this.profession = profession;
             this.email = email;
@@ -16,6 +18,9 @@ public class speaker {
             this.description = description;
         }
 
+        public int getIndex() {
+            return index;
+        }
         public String getUserName() {
             return userName;
         }
@@ -38,6 +43,7 @@ public class speaker {
         @Override
         public String toString() {
             return "speaker{" +
+                    "index='" + index + '\'' +
                     "userName='" + userName + '\'' +
                     ", profession='" + profession + '\'' +
                     ", email='" + email + '\'' +
