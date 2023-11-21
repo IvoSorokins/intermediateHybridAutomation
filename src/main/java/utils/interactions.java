@@ -115,5 +115,9 @@ public class interactions {
         switchToWebView(driver, webviewContext);
         sleep(1000);
     }
-
+    public static void swipeIntoView(WebElement element, AppiumDriver driver) {
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+        jsExecutor.executeScript("arguments[0].scrollIntoView(true);", element); // Scroll the top of the element into view
+        jsExecutor.executeScript("arguments[0].scrollIntoView(false);", element); // Scroll the bottom of the element into view
+    }
 }
