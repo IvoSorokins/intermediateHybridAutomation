@@ -23,7 +23,7 @@ public class bottomNavigationBar {
     @FindBy(xpath = "//ion-tab-button[@id=\"tab-button-schedule\"]")
     private WebElement scheduleButton;
 
-    @FindBy(xpath = "//ion-tab-button[@id=\"tab-button-speakersData\"]")
+    @FindBy(xpath = "//ion-tab-button[@id='tab-button-speakers']")
     private WebElement speakersButton;
 
     @FindBy(xpath = "//ion-tab-button[@id=\"tab-button-map\"]")
