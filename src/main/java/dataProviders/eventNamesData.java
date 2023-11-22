@@ -2,7 +2,7 @@ package dataProviders;
 
 import org.testng.annotations.DataProvider;
 
-public class eventNames {
+public class eventNamesData {
         @DataProvider(name = "eventProvider")
         public Object[][] provideData() {
             return new Object[][]{

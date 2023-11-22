@@ -1,6 +1,8 @@
 import components.bottomNavigationBar;
+import dataObjects.media;
 import dataObjects.speaker;
-import dataProviders.eventNames;
+import dataProviders.eventNamesData;
+import dataProviders.speakersAndMediaData;
 import dataProviders.speakersData;
 import org.testng.annotations.*;
 import screens.*;
@@ -73,7 +75,7 @@ public class allTests {
         WelcomeScreen.clickContinueButton(); // Clicks on continue button
         ScheduleScreen.isScheduleDisplayed(); // Checks that schedule screen is displayed
     }
-    @Test(groups ={"TC_5","Favorites user flow"},dataProvider = "eventProvider",dataProviderClass = eventNames.class,
+    @Test(groups ={"TC_5","Favorites user flow"},dataProvider = "eventProvider",dataProviderClass = eventNamesData.class,
             enabled=true,
             priority = 0)
     public void navigateToEvents(String eventName)throws InterruptedException{
@@ -83,7 +85,7 @@ public class allTests {
         EventScreen.isEventNameDisplayed(eventName); // Check that event name is displayed on Event Screen
     }
 
-    @Test(groups={"TC_6","Favorites user flow"},dataProvider = "eventProvider",dataProviderClass = eventNames.class,
+    @Test(groups={"TC_6","Favorites user flow"},dataProvider = "eventProvider",dataProviderClass = eventNamesData.class,
             enabled=true,
             priority = 0)
     public void favouriteEvent(String eventName)throws InterruptedException{
@@ -95,7 +97,7 @@ public class allTests {
         EventScreen.verifyStarButtonColorBlack();
         sleep(2000);
     }
-    @Test(groups={"TC_7","Favorites user flow"},dataProvider = "eventProvider",dataProviderClass = eventNames.class,
+    @Test(groups={"TC_7","Favorites user flow"},dataProvider = "eventProvider",dataProviderClass = eventNamesData.class,
             enabled=true,
             priority = 0)
     public void unFavouriteEvent(String eventName)throws InterruptedException{
@@ -103,7 +105,7 @@ public class allTests {
         EventScreen.clickStarButton(2); // Click on Favour (Star) button
         EventScreen.verifyStarButtonColorWhite();
     }
-    @Test(groups={"TC_8","Favorites user flow"},dataProvider = "eventProvider",dataProviderClass = eventNames.class,
+    @Test(groups={"TC_8","Favorites user flow"},dataProvider = "eventProvider",dataProviderClass = eventNamesData.class,
             enabled=true,
             priority = 0)
     public void unFavouriteEventFavTabPopUp(String eventName)throws InterruptedException{
@@ -118,7 +120,7 @@ public class allTests {
         ScheduleScreen.isRemoveButtonOnPopUpDisplayed();
         ScheduleScreen.isCancelButtonOnPopUpDisplayed();
     }
-    @Test(groups={"TC_9","Favorites user flow"},dataProvider = "eventProvider",dataProviderClass = eventNames.class,
+    @Test(groups={"TC_9","Favorites user flow"},dataProvider = "eventProvider",dataProviderClass = eventNamesData.class,
             enabled=true,
             priority = 0)
     public void cancelRemoveEventFromFavTab(String eventName)throws InterruptedException {
@@ -127,7 +129,7 @@ public class allTests {
         ScheduleScreen.isEventDisplayed(eventName);
         ScheduleScreen.removeButtonIsNotDisplayed();
     }
-    @Test(groups={"TC_10","Favorites user flow"},dataProvider = "eventProvider",dataProviderClass = eventNames.class,
+    @Test(groups={"TC_10","Favorites user flow"},dataProvider = "eventProvider",dataProviderClass = eventNamesData.class,
             enabled=true,
             priority = 0)
     public void removeEventFromFavTab(String eventName)throws InterruptedException {
@@ -175,6 +177,16 @@ public class allTests {
         SpeakerAboutScreen.verifySpeakerAboutDisplayed(Speaker.getUserName(),Speaker.getDescription());
         SpeakerAboutScreen.clickOnPhoneButton();
         SpeakerAboutScreen.verifyContactInfo(Speaker.getEmail(),Speaker.getNumber());
+    }
+    @Test(groups={"TC_15","About Speaker flow"},dataProvider = "combinedProvider",dataProviderClass = speakersAndMediaData.class,
+            enabled=true,
+            priority = 0)
+    public void navToMedia(speaker Speaker, String Media)throws InterruptedException{
+        navToSpeakerProfile(Speaker);
+        SpeakerAboutScreen.clickOnCancelButton(); // Here I want to input another dataProvider with mediaData name
+        SpeakerAboutScreen.clickOnMedia(String.valueOf(Media));
+        sleep(10000);
+
     }
 }
 

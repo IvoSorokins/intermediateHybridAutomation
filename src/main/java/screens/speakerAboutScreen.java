@@ -41,6 +41,9 @@ public class speakerAboutScreen {
     @FindBy(css="div.speaker-background > h2")
     private WebElement speakerName;
 
+    @FindBy(xpath="//span[text()=\"Cancel\"]")
+    private WebElement cancelButtonPopUp;
+
     public void verifyAllButtons()throws InterruptedException{
         boolean isTwitterButton = jsScripts.isElementVisibleInView(twitterButton, driver);
         boolean isGithubButton = jsScripts.isElementVisibleInView(githubButton, driver);
@@ -92,5 +95,34 @@ public class speakerAboutScreen {
         phoneButton.click();
         sleep(1000);
     }
+
+    public void clickOnCancelButton()throws InterruptedException{
+        cancelButtonPopUp.click();
+        sleep(1000);
+    }
+
+    public void validateMediaButtonColor(WebElement element,String expectedColor) {
+        String color = element.getCssValue("color");
+        Assert.assertEquals(color, expectedColor, "Media button color does not match");
+    }
+
+    public void clickOnMedia(String media)throws InterruptedException{
+        if (media=="Twitter") {
+            validateMediaButtonColor(twitterButton,"rgba(26, 142, 215, 1)");
+            twitterButton.click();
+            sleep(1000);
+        }
+        else if (media=="GitHub") {
+            validateMediaButtonColor(githubButton,"rgba(30, 32, 35, 1)");
+            githubButton.click();
+            sleep(1000);
+        }
+        else if (media=="Instagram") {
+            validateMediaButtonColor(instagramButton,"rgba(131, 48, 165, 1)");
+            instagramButton.click();
+            sleep(1000);
+        }
+    }
+
 
 }
