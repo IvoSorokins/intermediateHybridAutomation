@@ -11,7 +11,8 @@ In TestNG, annotations are used to define the behavior of test methods, setup me
 - '@BeforeMethod' annotation is used to mark a method that should run before each test method in a test class
 - '@AfterMethod' annotation is used to mark a method that should run after each test method in a test class
 - '@BeforeClass' annotation is used to mark a method that should run once before any of the test methods in the class
-- '@AfterClass' annotation is used to mark a method that should run once after all the test methods in the class have executed  
+- '@AfterClass' annotation is used to mark a method that should run once after all the test methods in the class have executed
+- '@dataProvider' annotation is used to mark a method as a data provider for a test method
 
 More information about annotations can be found here: https://www.browserstack.com/guide/testng-annotations-in-selenium#:~:text=of%20TestNG%20Annotations-,What%20are%20TestNG%20Annotations%3F,part%20of%20the%20test%20code  
 ## Appium
@@ -26,6 +27,7 @@ The framework includes the following components:
 - Test setup and properties management using utility classes.
 - A sample test suite to demonstrate how to set up and run tests for a hybrid mobile application.
 - pom.xml file contains information about the project and configuration details used by maven to build the project.
+- Data Providers for managing test data. These are used to supply data for TestNG tests. The data providers in this project are located in the dataProviders package and include `eventNamesData`, `speakersAndMediaData`(which contains both speakersData and mediaData), `mediaData` and `speakersData`  . They provide data for different test scenarios, making it easy to manage and update test data separately from test case
 
 # Setup
 
@@ -114,3 +116,8 @@ If you encounter any issues, please review the setup steps and ensure all prereq
 
 Feel free to customize the framework and tests as needed for your specific application. Happy testing!
 
+## Additional Information
+
+```WebDriver```  Can work with both Android and iOS devices for hybrid applications. The WebDriver is a more general interface that can interact with both native and web elements, which makes it suitable for hybrid applications that contain both types of elements.
+```MobileElement``` has been replaced with WebElement in v8
+**Xcode > Window > Devices and Simulators** can be used to get device or simulator UDID, create new simulator
