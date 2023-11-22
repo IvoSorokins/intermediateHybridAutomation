@@ -22,7 +22,7 @@ public class speakersData {
                 {new speaker(5,"Ellie Elephant","Software Engineer","ellie@example.com","+1-541-754-3010",
                         "Ellie is an Elephant. Ellie's interests include pocket watches, pool, hand fans, and ninjas. Say hello on social media!")},
 
-                {new speaker(6,"Gino Giraffe","Software Engineer","gino@example.com§","+1-541-754-3010",
+                {new speaker(6,"Gino Giraffe","Software Engineer","gino@example.com","+1-541-754-3010",
                         "Gino is a Giraffe. Gino's interests include candy-making, unicorns, and birdhouses. Say hello on social media!")},
 
                 {new speaker(7,"Isabella Iguana","Software Engineer","isabella@example.com","+1-541-754-3010",
