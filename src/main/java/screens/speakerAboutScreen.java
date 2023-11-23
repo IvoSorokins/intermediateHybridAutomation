@@ -110,18 +110,16 @@ public class speakerAboutScreen {
         if (media=="Twitter") {
             validateMediaButtonColor(twitterButton,"rgba(26, 142, 215, 1)");
             twitterButton.click();
-            sleep(1000);
         }
         else if (media=="GitHub") {
             validateMediaButtonColor(githubButton,"rgba(30, 32, 35, 1)");
             githubButton.click();
-            sleep(1000);
         }
         else if (media=="Instagram") {
             validateMediaButtonColor(instagramButton,"rgba(131, 48, 165, 1)");
             instagramButton.click();
-            sleep(1000);
         }
+        sleep(1000);
     }
 
 
