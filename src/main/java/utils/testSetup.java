@@ -6,7 +6,7 @@ import io.appium.java_client.ios.IOSDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 
 public class testSetup {
@@ -39,7 +39,7 @@ public class testSetup {
         }
 
         // Set the implicit wait timeout to 30 seconds
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         return driver;
 
     }

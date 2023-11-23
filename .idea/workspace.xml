@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d9ee0eb-3b76-4b4e-97f8-52b8060c6c76" name="Changes" comment="Added aboutNavToSpeakerProfile">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dataObjects/media.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dataProviders/mediaData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dataProviders/speakersAndMediaData.java" afterDir="false" />
+    <list default="true" id="6d9ee0eb-3b76-4b4e-97f8-52b8060c6c76" name="Changes" comment="Updated README.md">
+      <change afterPath="$PROJECT_DIR$/src/main/java/screens/ionicAccountScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataProviders/eventNames.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataProviders/eventNamesData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/screens/speakerAboutScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/speakerAboutScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/testSetup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/testSetup.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/allTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/allTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +66,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.allTests.navToMedia">
+  <component name="RunManager" selected="TestNG.allTests.skipTutorialScreen">
     <configuration name="allTests.aboutNavToSpeakerProfile" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="automation_Intermediate" />
       <option name="PACKAGE_NAME" value="" />
@@ -81,23 +79,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="allTests.checkEachSpeaker" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="allTests.displayTutorialScreen" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="automation_Intermediate" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="allTests" />
-      <option name="METHOD_NAME" value="checkEachSpeaker" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="allTests.navToAboutSpeakerProfile" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="automation_Intermediate" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="allTests" />
-      <option name="METHOD_NAME" value="navToAboutSpeakerProfile" />
+      <option name="METHOD_NAME" value="displayTutorialScreen" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -117,11 +103,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="allTests.navigateToSpeakers" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="allTests.skipTutorialScreen" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="automation_Intermediate" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="allTests" />
-      <option name="METHOD_NAME" value="navigateToSpeakers" />
+      <option name="METHOD_NAME" value="skipTutorialScreen" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="allTests.userSwipesTutorialScreen" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="automation_Intermediate" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="allTests" />
+      <option name="METHOD_NAME" value="userSwipesTutorialScreen" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -131,11 +129,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.allTests.skipTutorialScreen" />
+        <item itemvalue="TestNG.allTests.userSwipesTutorialScreen" />
+        <item itemvalue="TestNG.allTests.displayTutorialScreen" />
         <item itemvalue="TestNG.allTests.navToMedia" />
         <item itemvalue="TestNG.allTests.aboutNavToSpeakerProfile" />
-        <item itemvalue="TestNG.allTests.navToAboutSpeakerProfile" />
-        <item itemvalue="TestNG.allTests.checkEachSpeaker" />
-        <item itemvalue="TestNG.allTests.navigateToSpeakers" />
       </list>
     </recent_temporary>
   </component>
@@ -367,13 +365,34 @@
       <option name="project" value="LOCAL" />
       <updated>1700571928679</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Added TC_15">
+      <option name="closed" value="true" />
+      <created>1700637155283</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1700637155283</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Small Typo fix">
+      <option name="closed" value="true" />
+      <created>1700637478134</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1700637478134</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Updated README.md">
+      <option name="closed" value="true" />
+      <created>1700665490998</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1700665490998</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added test properties" />
-    <MESSAGE value="Cleaned up project" />
-    <MESSAGE value="Added new test properties" />
     <MESSAGE value="Adding test Case directorys, creating first file" />
     <MESSAGE value="Created set up for test suite" />
     <MESSAGE value="Inital commit" />
@@ -396,7 +415,10 @@
     <MESSAGE value="Created New Screen" />
     <MESSAGE value="Added Speaker About screen verification" />
     <MESSAGE value="Added aboutNavToSpeakerProfile" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added aboutNavToSpeakerProfile" />
+    <MESSAGE value="Added TC_15" />
+    <MESSAGE value="Small Typo fix" />
+    <MESSAGE value="Updated README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated README.md" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
