@@ -14,11 +14,12 @@ import static java.lang.Thread.sleep;
 public class eventScreen {
 
     private final AppiumDriver driver;
-    interactions jsScripts = new interactions();
+    public interactions Interactions;
 
     public eventScreen(AppiumDriver driver) {
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(this.driver), this);
+        Interactions = new interactions(driver);
     }
 
     @FindBy(css = "ion-button.toggle_favorite_btn")
@@ -26,13 +27,13 @@ public class eventScreen {
 
 
     public void isEventNameDisplayed(String name)throws InterruptedException{
-        boolean isEvent = jsScripts.isElementVisibleInView(driver.findElement(By.xpath(String.format("//h1[text()='%s']", name))), driver);
+        boolean isEvent = Interactions.isElementVisibleInView(driver.findElement(By.xpath(String.format("//h1[text()='%s']", name))));
         Assert.assertTrue(isEvent, name+ " is not visible.");
         sleep(1000);
     }
 
     public void isStarButtonDisplayed()throws InterruptedException{
-        boolean isEvent = jsScripts.isElementVisibleInView(starButton, driver);
+        boolean isEvent = Interactions.isElementVisibleInView(starButton);
         Assert.assertTrue(isEvent,  " is not visible.");
         sleep(1000);
     }
@@ -70,6 +71,11 @@ public class eventScreen {
         // The X coordinate should be greater than three times the quarter width (meaning it's in the rightmost quarter)
         // The Y coordinate should be less than the quarter height (meaning it's in the topmost quarter)
         Assert.assertTrue(position.getX() > 3 * quarterX && position.getY() < quarterY);
+        sleep(1000);
+    }
+
+    public void navigateBackToScheduleScreen()throws InterruptedException{
+        Interactions.navigateBack(); // Navigate back
         sleep(1000);
     }
 

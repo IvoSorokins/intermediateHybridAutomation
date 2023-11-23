@@ -29,6 +29,8 @@ The framework includes the following components:
 - pom.xml file contains information about the project and configuration details used by maven to build the project.
 - Data Providers for managing test data. These are used to supply data for TestNG tests. The data providers in this project are located in the dataProviders package and include `eventNamesData`, `speakersAndMediaData`(which contains both speakersData and mediaData), `mediaData` and `speakersData`  . They provide data for different test scenarios, making it easy to manage and update test data separately from test case
 
+The ```AppiumDriver``` instance is used to interact with the mobile application under test. It is typically created once at the beginning of the test suite and then passed around to the different classes and methods that need it. This is done to ensure that all interactions are performed on the same application instance.
+
 # Setup
 
 1.**Prerequisites**: Make sure you have the following installed:
@@ -79,6 +81,11 @@ The framework includes the following components:
 
 5.**Dependencies**: Build the Maven project to fetch the required dependencies. Run the following command in your project directory:
 mvn clean install
+
+# Driver instance across all methods
+
+Driver in the constructor is stored as a class member, this way, you don't have to pass the driver as an argument to each method. However, if different methods might use different driver instances, then it would be better to pass the driver as an argument to each method.
+The benefit of having separate screen objects that each contain their own driver is that it makes the code more organized and easier to understand. creating a new instance of a class in Java is generally not a very expensive operation, especially compared to the time it takes to interact with a mobile application through Appium
 
 ## Framework Setup
 To set up the framework and run your tests, follow these steps:

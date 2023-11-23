@@ -13,11 +13,12 @@ import static java.lang.Thread.sleep;
 public class bottomNavigationBar {
 
     private final AppiumDriver driver;
-    interactions jsScripts = new interactions();
+    public interactions Interactions;
 
     public bottomNavigationBar(AppiumDriver driver) {
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(this.driver), this);
+        Interactions = new interactions(driver);
     }
 
     @FindBy(xpath = "//ion-tab-button[@id=\"tab-button-schedule\"]")
@@ -33,7 +34,7 @@ public class bottomNavigationBar {
     private WebElement aboutButton;
 
     public void isScheduleButtonDisplayed()throws InterruptedException{
-        boolean isScheduleButton = jsScripts.isElementVisibleInView(scheduleButton, driver);
+        boolean isScheduleButton = Interactions.isElementVisibleInView(scheduleButton);
         Assert.assertTrue(isScheduleButton, "Schedule button is not visible.");
         sleep(1000);
     }
@@ -42,7 +43,7 @@ public class bottomNavigationBar {
         sleep(1000);
     }
     public void isSpeakersButtonDisplayed()throws InterruptedException{
-        boolean isSpeakersButton = jsScripts.isElementVisibleInView(speakersButton, driver);
+        boolean isSpeakersButton = Interactions.isElementVisibleInView(speakersButton);
         Assert.assertTrue(isSpeakersButton, "Speakers button is not visible.");
         sleep(1000);
     }

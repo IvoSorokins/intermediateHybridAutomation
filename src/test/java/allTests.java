@@ -1,76 +1,79 @@
-import components.bottomNavigationBar;
-import dataObjects.media;
+// TestNG, Appium imports
+import org.testng.annotations.*;
+import io.appium.java_client.AppiumDriver;
+
+// dataProviders imports
 import dataObjects.speaker;
 import dataProviders.eventNamesData;
 import dataProviders.speakersAndMediaData;
 import dataProviders.speakersData;
-import org.testng.annotations.*;
-import screens.*;
-import io.appium.java_client.AppiumDriver;
-import utils.interactions;
 
-
-
+// utils imports
 import static java.lang.Thread.sleep;
-import static utils.interactions.navigateBack;
 import static utils.testSetup.startServer;
+import screens.*;
 
 
 public class allTests {
-    public static String platform = ""; // Select platform iOS or else(Android caps)
+
+    // Platform selection: "iOS" or else("Android" caps)
+    public static String platform = "iOS";
+
+    // Appium driver instance
     private AppiumDriver driver;
 
-
-
+    // Screens objects
     public welcomeScreen WelcomeScreen;
     public scheduleScreen ScheduleScreen;
     public eventScreen EventScreen;
-    public bottomNavigationBar BottomNavigationBar;
     public speakersScreen SpeakersScreen;
     public speakerAboutScreen SpeakerAboutScreen;
+    public ionicAccountScreen IonicAccountScreen;
 
+    // Method to set up the environment before each test
    @BeforeMethod(alwaysRun = true)
     public void setUp(){
-       driver = startServer(platform);
+       driver = startServer(platform); // Starting Appium server based of platform(Android or iOS, caps are set in testSetup class)
+
+       // Screens objects initialization
        WelcomeScreen = new welcomeScreen(driver);
        ScheduleScreen = new scheduleScreen(driver);
        EventScreen = new eventScreen(driver);
-       BottomNavigationBar = new bottomNavigationBar(driver);
        SpeakersScreen = new speakersScreen(driver);
        SpeakerAboutScreen = new speakerAboutScreen(driver);
+       IonicAccountScreen = new ionicAccountScreen(driver);
     }
+
+    // Method to tear down after each test (Clean State)
     @AfterMethod(alwaysRun = true)
     public void tearDown() {
         driver.quit();
     }
 
     @Test(groups ={"TC_1","Tutorial flow"},
-            enabled=true,
-            priority = 0)
+            enabled=true)
     public void displayTutorialScreen()throws InterruptedException{
-        WelcomeScreen.tutorial1IsDisplayed(); // Checks that tutorial 1 is displayed
+        WelcomeScreen.isTutorial1IsDisplayed();
     }
     @Test(groups ={"TC_2","Tutorial flow"},
-            enabled=true,
             priority = 0)
     public void skipTutorialScreen()throws InterruptedException{
-        WelcomeScreen.tutorialSkip(); // Clicks on skip button
-        ScheduleScreen.isScheduleDisplayed(); // Checks that schedule screen is displayed
+        WelcomeScreen.skipTutorial();
+        ScheduleScreen.isScheduleDisplayed();
     }
     @Test(groups ={"TC_3","Tutorial flow"},
             enabled=true,
             priority = 0)
     public void userSwipesTutorialScreen()throws InterruptedException { // Note Done
         boolean isSwipeable = WelcomeScreen.isTutorial1DisplayedAfterSwipeLeft(); // Check if screen is even swipeable
-        WelcomeScreen.continueSwipingTutorial(isSwipeable);// Continue swiping if screen is swipeable or display message
-                                                           // about screen not being swipeable (most likely on iOS)
+        WelcomeScreen.continueSwipingTutorial(isSwipeable);// Continue swiping if screen is swipeable or display message// about screen not being swipeable (most likely on iOS)
     }
     @Test(groups ={"TC_4","Tutorial flow"},
             enabled=true,
             priority = 0)
     public void continueToSchedueleScreen()throws InterruptedException{
-        interactions.swipe("Left",2, driver);
-        WelcomeScreen.isSkipButtonVisible(); // Checks that skip button is not visible, expected result is false
+        WelcomeScreen.swipeThroughTutorial();
+        WelcomeScreen.isSkipButtonVisible(); // Checks that skip button is not visible, expected result is false !!! NEEDS FIX !!!
         WelcomeScreen.tutorial4IsDisplayed(); // Checks that tutorial 4 is displayed
         WelcomeScreen.clickContinueButton(); // Clicks on continue button
         ScheduleScreen.isScheduleDisplayed(); // Checks that schedule screen is displayed
@@ -110,7 +113,7 @@ public class allTests {
             priority = 0)
     public void unFavouriteEventFavTabPopUp(String eventName)throws InterruptedException{
         favouriteEvent(eventName); // Favourite events
-        navigateBack(driver); // Navigate back
+        EventScreen.navigateBackToScheduleScreen(); // Navigate back to schedule screen
         ScheduleScreen.isFavouriteTabDisplayed();
         ScheduleScreen.clickFavouriteTab();
         ScheduleScreen.isEventDisplayed(eventName);// Check that event with name from dataProvider is displayed
@@ -142,9 +145,9 @@ public class allTests {
             priority = 0)
     public void navigateToSpeakers()throws InterruptedException{
        skipTutorialScreen();
-       BottomNavigationBar.isSpeakersButtonDisplayed();
-       BottomNavigationBar.clickSpeakersButton();
-       SpeakersScreen.isSpeakersTitleDisplayed();
+        SpeakersScreen.isSpeakersButtonDisplayed();
+        SpeakersScreen.clickSpeakersButton();
+        SpeakersScreen.isSpeakersTitleDisplayed();
     }
 
     @Test(groups={"TC_12","About Speaker flow"},dataProvider = "speakersProvider",dataProviderClass = speakersData.class,
@@ -185,7 +188,7 @@ public class allTests {
         navToSpeakerProfile(Speaker);
         SpeakerAboutScreen.clickOnCancelButton(); // Here I want to input another dataProvider with mediaData name
         SpeakerAboutScreen.clickOnMedia(String.valueOf(Media));
-        sleep(10000);
+        IonicAccountScreen.verifyWebpageNotAvailableDisplayed();
 
     }
 }

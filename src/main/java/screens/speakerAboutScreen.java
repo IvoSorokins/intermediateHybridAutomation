@@ -13,11 +13,12 @@ import static java.lang.Thread.sleep;
 
 public class speakerAboutScreen {
     private final AppiumDriver driver;
-    interactions jsScripts = new interactions();
+    public interactions Interactions;
 
     public speakerAboutScreen(AppiumDriver driver) {
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(this.driver), this);
+        Interactions = new interactions(driver);
     }
 
     @FindBy(css="ion-chip.ion-color-twitter")
@@ -45,12 +46,12 @@ public class speakerAboutScreen {
     private WebElement cancelButtonPopUp;
 
     public void verifyAllButtons()throws InterruptedException{
-        boolean isTwitterButton = jsScripts.isElementVisibleInView(twitterButton, driver);
-        boolean isGithubButton = jsScripts.isElementVisibleInView(githubButton, driver);
-        boolean isInstagramButton = jsScripts.isElementVisibleInView(instagramButton, driver);
-        boolean isPhoneButton = jsScripts.isElementVisibleInView(phoneButton, driver);
-        boolean isShareButton = jsScripts.isElementVisibleInView(shareButton, driver);
-        boolean isBackButton = jsScripts.isElementVisibleInView(backButton, driver);
+        boolean isTwitterButton = Interactions.isElementVisibleInView(twitterButton);
+        boolean isGithubButton = Interactions.isElementVisibleInView(githubButton);
+        boolean isInstagramButton = Interactions.isElementVisibleInView(instagramButton);
+        boolean isPhoneButton = Interactions.isElementVisibleInView(phoneButton);
+        boolean isShareButton = Interactions.isElementVisibleInView(shareButton);
+        boolean isBackButton = Interactions.isElementVisibleInView(backButton);
 
 
         Assert.assertTrue(isTwitterButton, "Twitter button is not visible.");
@@ -65,9 +66,9 @@ public class speakerAboutScreen {
         WebElement speakerImg = driver.findElement(By.xpath("//img[@alt=\""+ userName +"\"]"));
         WebElement speakerDesc = driver.findElement(By.xpath("//p[text()=\""+ about +"\"]"));
 
-        boolean isSpeakerImg = jsScripts.isElementVisibleInView(speakerImg, driver);
-        boolean isSpeakerDesc = jsScripts.isElementVisibleInView(speakerDesc, driver);
-        boolean isSpeakerName = jsScripts.isElementVisibleInView(speakerName, driver);
+        boolean isSpeakerImg = Interactions.isElementVisibleInView(speakerImg);
+        boolean isSpeakerDesc = Interactions.isElementVisibleInView(speakerDesc);
+        boolean isSpeakerName = Interactions.isElementVisibleInView(speakerName);
 
         Assert.assertTrue(isSpeakerImg, "Speaker image is not visible.");
         Assert.assertTrue(isSpeakerDesc, "Speaker description is not visible.");
@@ -83,8 +84,8 @@ public class speakerAboutScreen {
         WebElement speakerEmail = driver.findElement(By.xpath("//span[text()=\"Email ( "+email+" )\"]"));
         WebElement speakerPhone = driver.findElement(By.xpath("//span[text()=\"Call ( "+phone+" )\"]"));
 
-        boolean isSpeakerEmail = jsScripts.isElementVisibleInView(speakerEmail, driver);
-        boolean isSpeakerPhone = jsScripts.isElementVisibleInView(speakerPhone, driver);
+        boolean isSpeakerEmail = Interactions.isElementVisibleInView(speakerEmail);
+        boolean isSpeakerPhone = Interactions.isElementVisibleInView(speakerPhone);
 
         Assert.assertTrue(isSpeakerEmail, "Speaker email is not visible.");
         Assert.assertTrue(isSpeakerPhone, "Speaker phone is not visible.");

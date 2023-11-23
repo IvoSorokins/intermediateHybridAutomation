@@ -1,15 +1,18 @@
 package utils;
 
+import dev.failsafe.Timeout;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.PerformsTouchActions;
 import io.appium.java_client.TouchAction;
+import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.ElementOption;
 import io.appium.java_client.touch.offset.PointOption;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import java.time.Duration;
 
@@ -20,8 +23,19 @@ import static utils.context.*;
 
 public class interactions {
 
+    private final AppiumDriver driver;
+
+    public context Context;
+
+
+    public interactions(AppiumDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(new AppiumFieldDecorator(this.driver), this);
+        Context = new context(driver);
+    }
+
     // Check if an element center is visible in the current view
-    public boolean isElementVisibleInView(WebElement element, AppiumDriver driver) {
+    public boolean isElementVisibleInView(WebElement element) {
         return (Boolean) ((JavascriptExecutor) driver).executeScript(
                 "var elem = arguments[0],                 " + // Retrieves the WebElement from the arguments passed to the JavaScript code
                         "  box = elem.getBoundingClientRect(),    " + // Calculates the position and dimensions of the element using
@@ -37,9 +51,9 @@ public class interactions {
                 , element); // Pass the WebElement as an argument to the JavaScript code
     }
 
-    public static void swipe(String direction, int times, AppiumDriver driver) throws InterruptedException {
-        String webviewContext = getCurrentContextName(driver); // Get Webview context
-        switchToNative(driver);
+    public void swipe(String direction, int times) throws InterruptedException {
+        String webviewContext = Context.getCurrentContextName(); // Get Webview context
+        Context.switchToNative();
 
         // Get the size of the screen
         Dimension size = driver.manage().window().getSize();
@@ -58,20 +72,20 @@ public class interactions {
                     .release()
                     .perform();
         }
-        switchToWebView(driver, webviewContext);
+        Context.switchToWebView(webviewContext);
         sleep(2000);  // Wait for 2 second
     }
 
-    public static void navigateBack(AppiumDriver driver)throws InterruptedException{
-        String webviewContext = getCurrentContextName(driver); // Get Webview context
-        switchToNative(driver);
+    public void navigateBack()throws InterruptedException{
+        String webviewContext = Context.getCurrentContextName(); // Get Webview context
+        Context.switchToNative();
         driver.navigate().back();
-        switchToWebView(driver, webviewContext);
+        Context.switchToWebView(webviewContext);
         sleep(1000);
     }
-    public static void swipeElement(String eventName,String direction,String platform, AppiumDriver driver) throws InterruptedException {
-        String webviewContext = getCurrentContextName(driver); // Get Webview context
-        switchToNative(driver);
+    public void swipeElement(String eventName,String direction,String platform) throws InterruptedException {
+        String webviewContext = Context.getCurrentContextName(); // Get Webview context
+        Context.switchToNative();
 
         WebElement event;
         if (platform.equalsIgnoreCase("iOS")) {
@@ -112,12 +126,65 @@ public class interactions {
                     .perform();
             System.out.println("Swipe Right x:"+leftX+" y: " +Y+" Move to: x"+rightX+"y: "+Y);
         }
-        switchToWebView(driver, webviewContext);
+        Context.switchToWebView(webviewContext);
         sleep(1000);
     }
-    public static void swipeIntoView(WebElement element, AppiumDriver driver) {
+    public void swipeIntoView(WebElement element, AppiumDriver driver) {
         JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
         jsExecutor.executeScript("arguments[0].scrollIntoView(true);", element); // Scroll the top of the element into view
         jsExecutor.executeScript("arguments[0].scrollIntoView(false);", element); // Scroll the bottom of the element into view
+    }
+
+
+    /**
+     * Asserts the visibility of a WebElement.
+     *
+     * @param element The WebElement to check.
+     * @param waitTimeInSeconds The maximum time to wait for the element to become visible.
+     * @param elementName The name of the element (used in the assertion failure message).
+     * @param shouldBeVisible Whether the element should be visible or not.
+     */
+    public void assertElementVisibility(WebElement element, long waitTimeInSeconds, String elementName, boolean shouldBeVisible){
+        // WebDriverWait timer for a specified number of seconds
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(waitTimeInSeconds));
+
+        // Boolean to check if the element is visible
+        boolean isElementVisible;
+
+        try {
+            // Wait until the element is found
+            wait.until(ExpectedConditions.visibilityOf(element));
+            // If the element was found , set isElementVisible to true
+            isElementVisible = true;
+        }catch (TimeoutException e){
+            // If a TimeoutException is thrown, the element is not found
+            // Set isElementVisible to false
+            isElementVisible = false;
+        }
+
+        // If the element should be visible but is not found, fail assertion
+        if(shouldBeVisible && !isElementVisible){
+            Assert.fail(elementName + " is not found");
+
+            // If the element should not be visible but is found, check if it's visible in the view
+        } else if(!shouldBeVisible && isElementVisible){
+            boolean isElementVisibleInView = isElementVisibleInView(element);
+            // If the element is visible in the view, fail assertion
+            if(isElementVisibleInView){
+                Assert.fail(elementName + " is visible in view");
+            }
+            // If the element should be visible and is found, check if it's visible in the view
+        } else if(shouldBeVisible && isElementVisible){
+            boolean isElementVisibleInView = isElementVisibleInView(element);
+            // If the element is not visible in the view, fail the assertion
+            if(!isElementVisibleInView){
+                Assert.fail(elementName + " is found, but not visible in view");
+            }
+        }
+    }
+
+    public void clickElementIfDisplayed(WebElement element, long waitTimeInSeconds, String message){
+        assertElementVisibility(element, waitTimeInSeconds, message, true);
+        element.click();
     }
 }
