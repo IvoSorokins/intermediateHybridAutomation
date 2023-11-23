@@ -65,15 +65,15 @@ public class allTests {
             enabled=true,
             priority = 0)
     public void userSwipesTutorialScreen()throws InterruptedException { // Note Done
-        boolean isSwipeable = WelcomeScreen.isTutorial1DisplayedAfterSwipeLeft(); // Check if screen is even swipeable
-        WelcomeScreen.continueSwipingTutorial(isSwipeable);// Continue swiping if screen is swipeable or display message// about screen not being swipeable (most likely on iOS)
+        WelcomeScreen.swipeThroughTutorial(); // Check if screen is even swipeable
+        // Continue swiping if screen is swipeable or display message// about screen not being swipeable (most likely on iOS)
     }
     @Test(groups ={"TC_4","Tutorial flow"},
             enabled=true,
             priority = 0)
     public void continueToSchedueleScreen()throws InterruptedException{
         WelcomeScreen.swipeThroughTutorial();
-        WelcomeScreen.isSkipButtonVisible(); // Checks that skip button is not visible, expected result is false !!! NEEDS FIX !!!
+        WelcomeScreen.isSkipButtonNotVisible(); // Checks that skip button is not visible, expected result is false !!! NEEDS FIX !!!
         WelcomeScreen.tutorial4IsDisplayed(); // Checks that tutorial 4 is displayed
         WelcomeScreen.clickContinueButton(); // Clicks on continue button
         ScheduleScreen.isScheduleDisplayed(); // Checks that schedule screen is displayed

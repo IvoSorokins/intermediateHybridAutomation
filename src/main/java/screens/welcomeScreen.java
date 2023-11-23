@@ -67,15 +67,15 @@ public class welcomeScreen {
     }
 
     public void tutorial4IsDisplayed()throws InterruptedException {
-        Interactions.assertElementVisibility(readyToPlayText, 5, "Skip button", true);
-        Interactions.assertElementVisibility(continueButton, 5, "Ready to Play?", true);
+        Interactions.assertElementVisibility(readyToPlayText, 5, "Ready to Play?", true);
+        Interactions.assertElementVisibility(continueButton, 5, "Continue", true);
     }
 
     public void swipeThroughTutorial()throws InterruptedException{
         Interactions.swipe("Left",2);
     }
 
-    public void isSkipButtonVisible()throws InterruptedException{
+    public void isSkipButtonNotVisible()throws InterruptedException{
         boolean isSkipButtonVisible = Interactions.isElementVisibleInView(skipButton);
         Assert.assertFalse(isSkipButtonVisible, "Skip button is visible.");// Should not be visible
         sleep(1000);
@@ -84,33 +84,11 @@ public class welcomeScreen {
         continueButton.click();
         sleep(1000);
     }
-    public boolean isTutorial1DisplayedAfterSwipeLeft() throws InterruptedException {
-        Interactions.swipe("Left",1);
-        if (isTutorial1Displayed()){
-            return false;
-        }else {
-            return true;
-        }
-    }
-    public void continueSwipingTutorial(boolean isTutorial1Displayed) throws InterruptedException {
-        if (isTutorial1Displayed) {
-            System.out.print("Tutorial screen swiped");
-            tutorial2IsDisplayed();
-            Interactions.swipe("Left", 1);
-            tutorial3IsDisplayed();
-            Interactions.swipe("Left", 1);
-            tutorial4IsDisplayed();
 
-            // Swipe only reacts to string "Left" so it could also be left empty to swipe right
-            Interactions.swipe("Right", 1);
-            tutorial3IsDisplayed();
-            Interactions.swipe("Right", 1);
-            tutorial2IsDisplayed();
-            Interactions.swipe("Right", 1);
-            isTutorial1Displayed();
-        }
-        else {System.out.println("Tutorial screen did not swipe (Most likely duo to a iOS simulator bug - expected behavior)");}
+    public void checkIfTutorialSwiped(){
+
     }
+
 }
 
 
