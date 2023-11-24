@@ -89,18 +89,12 @@ public class allTests {
 
         WelcomeScreen.swipeLeft3Times();
         WelcomeScreen.verifyTutorial4IsDisplayed();
-        WelcomeScreen.clickContinue(); // Clicks on continue button
-        ScheduleScreen.isScheduleDisplayed(); // Checks that schedule screen is displayed
+        WelcomeScreen.clickContinue();
+        ScheduleScreen.isScheduleDisplayed();
     }
+
     @Test(groups ={"TC_5","Favorites user flow"},dataProvider = "eventProvider",dataProviderClass = eventNamesData.class,
             priority = 5)
-    public void asdasd(){
-
-    }
-
-    @Test(groups ={"TC_6","Favorites user flow"},dataProvider = "eventProvider",dataProviderClass = eventNamesData.class,
-            enabled=true,
-            priority = 0)
     public void navigateToEvents(String eventName)throws InterruptedException{
         skipTutorialScreen(); // Skip tutorial
         ScheduleScreen.isEventDisplayed(eventName); // Check that event with name from dataProvider is displayed
