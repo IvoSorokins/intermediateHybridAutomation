@@ -26,10 +26,9 @@ public class eventScreen {
     private WebElement starButton;
 
 
-    public void isEventNameDisplayed(String name)throws InterruptedException{
-        boolean isEvent = Interactions.isElementVisibleInView(driver.findElement(By.xpath(String.format("//h1[text()='%s']", name))));
-        Assert.assertTrue(isEvent, name+ " is not visible.");
-        sleep(1000);
+    public void checkIfEventNameIsDisplayed(String eventName){
+        WebElement eventWidget = Interactions.findElementByTagNameAndText("h1",eventName);
+        Interactions.assertElementVisibility(eventWidget, "Event name", true);
     }
 
     public void isStarButtonDisplayed()throws InterruptedException{

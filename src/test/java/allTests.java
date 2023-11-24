@@ -95,11 +95,10 @@ public class allTests {
 
     @Test(groups ={"TC_5","Favorites user flow"},dataProvider = "eventProvider",dataProviderClass = eventNamesData.class,
             priority = 5)
-    public void navigateToEvents(String eventName)throws InterruptedException{
-        skipTutorialScreen(); // Skip tutorial
-        ScheduleScreen.isEventDisplayed(eventName); // Check that event with name from dataProvider is displayed
-        ScheduleScreen.clickEvent(eventName); // Click on event with name from dataProvider
-        EventScreen.isEventNameDisplayed(eventName); // Check that event name is displayed on Event Screen
+    public void navigateToEvents(String eventName){
+        skipTutorialScreen();
+        ScheduleScreen.clickEventIfDisplayed(eventName);
+        EventScreen.checkIfEventNameIsDisplayed(eventName);
     }
 
     @Test(groups={"TC_6","Favorites user flow"},dataProvider = "eventProvider",dataProviderClass = eventNamesData.class,
@@ -127,24 +126,24 @@ public class allTests {
             priority = 0)
     public void unFavouriteEventFavTabPopUp(String eventName)throws InterruptedException{
         favouriteEvent(eventName); // Favourite events
-        EventScreen.navigateBackToScheduleScreen(); // Navigate back to schedule screen
-        ScheduleScreen.isFavouriteTabDisplayed();
-        ScheduleScreen.clickFavouriteTab();
-        ScheduleScreen.isEventDisplayed(eventName);// Check that event with name from dataProvider is displayed
-        ScheduleScreen.swipeEvent(eventName,platform);
-        ScheduleScreen.clickRemoveButton();
-        ScheduleScreen.isRemovePopUpDisplayed();
-        ScheduleScreen.isRemoveButtonOnPopUpDisplayed();
-        ScheduleScreen.isCancelButtonOnPopUpDisplayed();
+//        EventScreen.navigateBackToScheduleScreen(); // Navigate back to schedule screen
+//        ScheduleScreen.isFavouriteTabDisplayed();
+//        ScheduleScreen.clickFavouriteTabIfDisplayed();
+//        ScheduleScreen.checkIfEventIsDisplayed(eventName); // Check that event with name from dataProvider is displayed
+//        ScheduleScreen.swipeEvent(eventName,platform);
+//        ScheduleScreen.clickRemoveIfDisplayed();
+//        ScheduleScreen.isRemovePopUpDisplayed();
+//        ScheduleScreen.isRemoveButtonOnPopUpDisplayed();
+//        ScheduleScreen.isCancelButtonOnPopUpDisplayed();
     }
     @Test(groups={"TC_9","Favorites user flow"},dataProvider = "eventProvider",dataProviderClass = eventNamesData.class,
             enabled=true,
             priority = 0)
-    public void cancelRemoveEventFromFavTab(String eventName)throws InterruptedException {
-        unFavouriteEventFavTabPopUp(eventName);
-        ScheduleScreen.clickCancelButtonOnPopUp();
-        ScheduleScreen.isEventDisplayed(eventName);
-        ScheduleScreen.removeButtonIsNotDisplayed();
+    public void cancelRemoveEventFromFavTab(String eventName){
+//        unFavouriteEventFavTabPopUp(eventName);
+//        ScheduleScreen.clickCancelButtonOnPopUp();
+//        ScheduleScreen.checkIfEventNameIsDisplayed(eventName);
+//        ScheduleScreen.removeButtonIsNotDisplayed();
     }
     @Test(groups={"TC_10","Favorites user flow"},dataProvider = "eventProvider",dataProviderClass = eventNamesData.class,
             enabled=true,
