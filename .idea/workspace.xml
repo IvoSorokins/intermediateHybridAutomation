@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d9ee0eb-3b76-4b4e-97f8-52b8060c6c76" name="Changes" comment="Test Case 2 fix">
+    <list default="true" id="6d9ee0eb-3b76-4b4e-97f8-52b8060c6c76" name="Changes" comment="Updated TC3 and TC4">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/screens/scheduleScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/scheduleScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/screens/welcomeScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/welcomeScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/allTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/allTests.java" afterDir="false" />
     </list>
@@ -29,9 +32,9 @@
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2XZu7VRTVtb22HLR2rqlMiQ04Wl" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -63,12 +66,12 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.allTests.userSwipesTutorialScreen">
-    <configuration name="allTests.aboutNavToSpeakerProfile" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.allTests.navigateToEvents">
+    <configuration name="allTests.continueToSchedueleScreen" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="automation_Intermediate" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="allTests" />
-      <option name="METHOD_NAME" value="aboutNavToSpeakerProfile" />
+      <option name="METHOD_NAME" value="continueToSchedueleScreen" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -88,11 +91,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="allTests.navToMedia" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="allTests.navigateToEvents" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="automation_Intermediate" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="allTests" />
-      <option name="METHOD_NAME" value="navToMedia" />
+      <option name="METHOD_NAME" value="navigateToEvents" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -126,11 +129,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.allTests.navigateToEvents" />
         <item itemvalue="TestNG.allTests.userSwipesTutorialScreen" />
+        <item itemvalue="TestNG.allTests.continueToSchedueleScreen" />
         <item itemvalue="TestNG.allTests.skipTutorialScreen" />
         <item itemvalue="TestNG.allTests.displayTutorialScreen" />
-        <item itemvalue="TestNG.allTests.navToMedia" />
-        <item itemvalue="TestNG.allTests.aboutNavToSpeakerProfile" />
       </list>
     </recent_temporary>
   </component>
@@ -450,11 +453,18 @@
       <option name="project" value="LOCAL" />
       <updated>1700821873529</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Updated TC3 and TC4">
+      <option name="closed" value="true" />
+      <created>1700822766355</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1700822766355</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Cleanup" />
     <MESSAGE value="Added 3rd TC" />
     <MESSAGE value="Switched simulator for iOS" />
     <MESSAGE value="Implemented Swipe" />
@@ -479,7 +489,8 @@
     <MESSAGE value="Added checkIfSwiped and isElementVisible" />
     <MESSAGE value="Fixed typos" />
     <MESSAGE value="Test Case 2 fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test Case 2 fix" />
+    <MESSAGE value="Updated TC3 and TC4" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated TC3 and TC4" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

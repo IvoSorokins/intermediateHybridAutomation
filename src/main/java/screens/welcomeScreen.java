@@ -8,6 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import org.testng.Assert;
+import org.testng.SkipException;
 import utils.interactions;
 
 import static utils.testProperties.platform;
@@ -86,9 +87,9 @@ public class welcomeScreen {
         boolean isWelcomeTextVisible = Interactions.isElementVisible(welcomeText);
         if (isWelcomeTextVisible && platform.equals("iOS")) {
             System.out.println("Screen did not swipe, expected for iOS!");
+            throw new SkipException("Skipping this test as screen did not swipe on iOS");
         } else if (isWelcomeTextVisible && platform == "Android") {
             Assert.fail("Screen did not swipe ,not expected on Android!");
-            // Not Adding isWelcomeTextVisible = false; because it will fail the test
         }
     }
 
