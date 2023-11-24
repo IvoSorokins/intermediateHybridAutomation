@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d9ee0eb-3b76-4b4e-97f8-52b8060c6c76" name="Changes" comment="Added All Event Names from Scheduele Screen">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/screens/speakersScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/speakersScreen.java" afterDir="false" />
-    </list>
+    <list default="true" id="6d9ee0eb-3b76-4b4e-97f8-52b8060c6c76" name="Changes" comment="Fixed checkEachSpeakerDisplayed" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -290,14 +287,6 @@
       <option name="project" value="LOCAL" />
       <updated>1700147847938</updated>
     </task>
-    <task id="LOCAL-00022" summary="Major Implementation">
-      <option name="closed" value="true" />
-      <created>1700488344194</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1700488344194</updated>
-    </task>
     <task id="LOCAL-00023" summary="Added Speakers section code">
       <option name="closed" value="true" />
       <created>1700549323275</created>
@@ -506,11 +495,26 @@
       <option name="project" value="LOCAL" />
       <updated>1700843960007</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Fixed checkEachSpeakerDisplayed">
+      <option name="closed" value="true" />
+      <created>1700845156673</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1700845156673</updated>
+    </task>
+    <task id="LOCAL-00050" summary="Fixed checkEachSpeakerDisplayed">
+      <option name="closed" value="true" />
+      <created>1700845180797</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1700845180800</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Major Implementation" />
     <MESSAGE value="Added Speakers section code" />
     <MESSAGE value="Fixed Typo" />
     <MESSAGE value="Added swipeIntoView" />
@@ -535,7 +539,8 @@
     <MESSAGE value="Created findElementByTagNameAndText" />
     <MESSAGE value="Fixed TC5" />
     <MESSAGE value="Added All Event Names from Scheduele Screen" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added All Event Names from Scheduele Screen" />
+    <MESSAGE value="Fixed checkEachSpeakerDisplayed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed checkEachSpeakerDisplayed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

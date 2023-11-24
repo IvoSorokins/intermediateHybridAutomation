@@ -54,8 +54,15 @@ public class scheduleScreen {
     }
 
     public void clickEventIfDisplayed(String eventName){
-        WebElement eventTitle = Interactions.findElementByTagNameAndText("h3",eventName);
-        Interactions.clickElementIfDisplayed(eventTitle, "Event title");
+            WebElement eventNameElement = Interactions.findElementByTagNameAndText("h3", eventName);
+
+            boolean isSpeakerDisplayed = Interactions.isElementVisibleInView(eventNameElement);
+
+            if (isSpeakerDisplayed == false) {
+                Interactions.swipeIntoView(eventNameElement, driver);
+            }
+            Interactions.clickElementIfDisplayed(eventNameElement, "Speaker name");
+
     }
 
     public void clickFavouriteTabIfDisplayed(){
