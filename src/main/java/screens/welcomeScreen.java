@@ -7,7 +7,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import org.testng.Assert;
 import utils.interactions;
+
+import static utils.testProperties.platform;
 
 
 public class welcomeScreen {
@@ -68,18 +71,30 @@ public class welcomeScreen {
         Interactions.assertElementVisibility(continueButton,  "Continue", true);
     }
 
-    public void swipeThroughTutorial(){
-        Interactions.swipe("Left",3);
+    public void swipeLeftOnce(){
+        Interactions.swipe("Left",1);
     }
 
     public void isSkipButtonNotVisible(){
         Interactions.assertElementVisibility(skipButton, "Skip button", false);
     }
 
-    public void clickContinueButton()throws InterruptedException{
+    public void clickContinueButton(){
         Interactions.clickElementIfDisplayed(continueButton,"Continue button");
     }
 
-}
+    public void checkIfSwiped(){
+        boolean isWelcomeTextVisible = Interactions.isElementVisible(welcomeText);
+        if(isWelcomeTextVisible && platform.equals("iOS")) {
+            System.out.println("Screen did not swipe, expected for iOS!");
+        }else if (isWelcomeTextVisible && platform == "Android") {
+            Assert.fail("Screen did not swipe ,not expected on Android!");
+        }else{
+            Interactions.assertElementVisibility(whatIsIonicText,"What is Ionic?",true);
+        }
+        }
+    }
+
+
 
 

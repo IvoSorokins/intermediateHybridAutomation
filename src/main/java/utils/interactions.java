@@ -184,4 +184,35 @@ public class interactions {
         assertElementVisibility(element, elementName, true);
         element.click();
     }
+    // Used for returning boolean value based of element visibility
+    public boolean isElementVisible(WebElement element){
+        // WebDriverWait timer for a specified number of seconds
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(waitTimeInSeconds));
+
+        // Boolean to check if the element is visible
+        boolean isElementVisible;
+
+        try {
+            // Wait until the element is found
+            wait.until(ExpectedConditions.visibilityOf(element));
+            // If the element was found , set isElementVisible to true
+            isElementVisible = true;
+        }catch (TimeoutException e){
+            // If a TimeoutException is thrown, the element is not found
+            // Set isElementVisible to false
+            isElementVisible = false;
+        }
+
+        // If the element is found, check if it's visible in the view
+        if(isElementVisible){
+            boolean isElementVisibleInView = isElementVisibleInView(element);
+            // If the element is not visible in the view, return false
+            if(!isElementVisibleInView){
+                return false;
+            }
+        }
+
+        // Return the visibility of the element
+        return isElementVisible;
+    }
 }

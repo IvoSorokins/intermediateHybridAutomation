@@ -10,14 +10,12 @@ import dataProviders.speakersData;
 
 // utils imports
 import static java.lang.Thread.sleep;
+import static utils.testProperties.platform;
 import static utils.testSetup.startServer;
 import screens.*;
 
 
 public class allTests {
-
-    // Platform selection: "iOS" or else("Android" caps)
-    public static String platform = "iO";
 
     // Appium driver instance
     private AppiumDriver driver;
@@ -65,14 +63,15 @@ public class allTests {
             enabled=true,
             priority = 0)
     public void userSwipesTutorialScreen()throws InterruptedException { // Note Done
-        WelcomeScreen.swipeThroughTutorial(); // Check if screen is even swipeable
-        // Continue swiping if screen is swipeable or display message// about screen not being swipeable (most likely on iOS)
+        WelcomeScreen.swipeLeftOnce(); //
+        WelcomeScreen.checkIfSwiped();
+        // Continue swiping if screen is swipeable or display message// about s
     }
     @Test(groups ={"TC_4","Tutorial flow"},
             enabled=true,
             priority = 0)
     public void continueToSchedueleScreen()throws InterruptedException{
-        WelcomeScreen.swipeThroughTutorial();
+//        WelcomeScreen.swipeThroughTutorial();
         WelcomeScreen.isSkipButtonNotVisible(); // Checks that skip button is not visible, expected result is false !!! NEEDS FIX !!!
         WelcomeScreen.tutorial4IsDisplayed(); // Checks that tutorial 4 is displayed
         WelcomeScreen.clickContinueButton(); // Clicks on continue button
