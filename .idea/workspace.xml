@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d9ee0eb-3b76-4b4e-97f8-52b8060c6c76" name="Changes" comment="Fixed Typos">
+    <list default="true" id="6d9ee0eb-3b76-4b4e-97f8-52b8060c6c76" name="Changes" comment="Fixed TC5">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/screens/eventScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/eventScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/screens/scheduleScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/scheduleScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/interactions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/interactions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/allTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/allTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dataProviders/eventNamesData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataProviders/eventNamesData.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -485,12 +482,26 @@
       <option name="project" value="LOCAL" />
       <updated>1700833153042</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Created findElementByTagNameAndText">
+      <option name="closed" value="true" />
+      <created>1700843476509</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1700843476510</updated>
+    </task>
+    <task id="LOCAL-00047" summary="Fixed TC5">
+      <option name="closed" value="true" />
+      <created>1700843513102</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1700843513102</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Removed Testing code" />
-    <MESSAGE value="Removed Debugging code" />
     <MESSAGE value="New implementations" />
     <MESSAGE value="Major Implementation" />
     <MESSAGE value="Added Speakers section code" />
@@ -514,7 +525,9 @@
     <MESSAGE value="Added SkipException" />
     <MESSAGE value="Updated TestNG Section" />
     <MESSAGE value="Fixed Typos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed Typos" />
+    <MESSAGE value="Created findElementByTagNameAndText" />
+    <MESSAGE value="Fixed TC5" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed TC5" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

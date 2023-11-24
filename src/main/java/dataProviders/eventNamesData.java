@@ -10,9 +10,22 @@ public class eventNamesData {
                     {"Getting Started with Ionic"},
                     {"Ionic Tooling"},
                     {"University of Ionic"},
-                    {"Migrating to Ionic"}
-                    // Elements only visible in view as it was not mentioned to include all of them
-                    // Add more events as needed
+                    {"Migrating to Ionic"},
+                    {"What's New in Angular"},
+                    {"The Evolution of Ionicons"},
+                    {"Ionic Pro"},
+                    {"Ionic Workshop"},
+                    {"Community Interaction"},
+                    {"Navigation in Ionic"},
+                    {"Lunch"},
+                    {"Ionic in the Enterprise"},
+                    {"Ionic Worldwide"},
+                    {"The Ionic Package"},
+                    {"Push Notifications in Ionic"},
+                    {"Ionic Documentation"},
+                    {"UX in Ionic"},
+                    {"Angular Directives in Ionic"},
+                    {"Mobile States"}
         };
     }
 }
