@@ -36,7 +36,7 @@ public class speakersScreen {
         sleep(1000);
     }
 
-    public void checkEachSpeakerDisplayed(int index,String userName,String profession)throws InterruptedException{
+    public void checkEachSpeakerDisplayed(int index,String userName,String profession){
 
         WebElement speakerName = Interactions.findElementByTagNameAndText("h2",userName);
         WebElement speakerAboutElement = Interactions.findElementByTagNameAndText("h3","About " + userName);
@@ -47,10 +47,10 @@ public class speakersScreen {
         if (isSpeakerDisplayed == false){
             Interactions.swipeIntoView(speakerAboutElement,driver);
         }
+
         Interactions.assertElementVisibility(speakerName,"Speaker name",true);
         Interactions.assertElementVisibility(speakerAboutElement,"Speaker about section",true);
         Interactions.assertElementVisibility(speakerProfessionElement,"Speaker profession",true);
-
     }
 
     public void clickSpeakerProfile(int index,String userName)throws InterruptedException{
