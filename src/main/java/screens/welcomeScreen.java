@@ -66,6 +66,7 @@ public class welcomeScreen {
     }
 
     public void verifyTutorial4IsDisplayed(){
+        Interactions.assertElementVisibility(skipButton, "Skip button", false);
         Interactions.assertElementVisibility(readyToPlayText, "Ready to Play?", true);
         Interactions.assertElementVisibility(continueButton, "Continue", true);
     }
@@ -75,10 +76,6 @@ public class welcomeScreen {
     }
     public void swipeRightOnce(){
         Interactions.swipe("Right", 1);
-    }
-
-    public void verifySkipButtonNotVisible(){
-        Interactions.assertElementVisibility(skipButton, "Skip button", false);
     }
 
     public void clickContinue(){
@@ -95,8 +92,8 @@ public class welcomeScreen {
         }
     }
 
-    public void swipeThroughTutorial() {
-        Interactions.swipe("Left", 4);
+    public void swipeLeft3Times() {
+        Interactions.swipe("Left", 3);
     }
 
 }

@@ -66,17 +66,28 @@ public class allTests {
     public void userSwipesTutorialScreen(){
         WelcomeScreen.swipeLeftOnce();
         WelcomeScreen.verifyTutorial1ScreenNotDisplayedAfterSwipe();
+
+        // Android only - verify swipeable Right
         WelcomeScreen.verifyTutorial2IsDisplayed();
         WelcomeScreen.swipeLeftOnce();
         WelcomeScreen.verifyTutorial3IsDisplayed();
+        WelcomeScreen.swipeLeftOnce();
+        WelcomeScreen.verifyTutorial4IsDisplayed();
+        // Android only - verify swipeable Left
+        WelcomeScreen.swipeRightOnce();
+        WelcomeScreen.verifyTutorial3IsDisplayed();
         WelcomeScreen.swipeRightOnce();
         WelcomeScreen.verifyTutorial2IsDisplayed();
+        WelcomeScreen.swipeRightOnce();
+        WelcomeScreen.verifyTutorial1IsDisplayed();
     }
     @Test(groups ={"TC_4","Tutorial flow"},
             priority = 4)
-    public void continueToSchedueleScreen(){ // Test Case will not work on iOS
-        WelcomeScreen.swipeThroughTutorial();
-        WelcomeScreen.verifySkipButtonNotVisible();
+    public void continueToSchedueleScreen(){ // Test Case will only  work on Android
+        WelcomeScreen.swipeLeftOnce();
+        WelcomeScreen.verifyTutorial1ScreenNotDisplayedAfterSwipe();
+
+        WelcomeScreen.swipeLeft3Times();
         WelcomeScreen.verifyTutorial4IsDisplayed();
         WelcomeScreen.clickContinue(); // Clicks on continue button
         ScheduleScreen.isScheduleDisplayed(); // Checks that schedule screen is displayed
