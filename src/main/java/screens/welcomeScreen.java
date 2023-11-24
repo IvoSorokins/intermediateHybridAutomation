@@ -7,10 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import org.testng.Assert;
 import utils.interactions;
-
-import static java.lang.Thread.sleep;
 
 
 public class welcomeScreen {
@@ -48,45 +45,39 @@ public class welcomeScreen {
     // Methods to interact with the elements
 
     public void isTutorial1IsDisplayed(){
-        Interactions.assertElementVisibility(skipButton, 5,"Skip button",true);
-        Interactions.assertElementVisibility(welcomeText,5, "Welcome to", true);
+        Interactions.assertElementVisibility(skipButton, "Skip button",true);
+        Interactions.assertElementVisibility(welcomeText, "Welcome to", true);
     }
 
     public void skipTutorial(){
-        Interactions.clickElementIfDisplayed(skipButton,5, "Skip button");
+        Interactions.clickElementIfDisplayed(skipButton, "Skip button");
     }
 
     public void tutorial2IsDisplayed(){
-        Interactions.assertElementVisibility(skipButton,5,"Skip button",true);
-        Interactions.assertElementVisibility(whatIsIonicText,5,"What is Ionic?",true);
+        Interactions.assertElementVisibility(skipButton,"Skip button",true);
+        Interactions.assertElementVisibility(whatIsIonicText,"What is Ionic?",true);
     }
 
-    public void tutorial3IsDisplayed()throws InterruptedException{
-        Interactions.assertElementVisibility(skipButton,5,"Skip button",true);
-        Interactions.assertElementVisibility(whatIsIonicAppFlowText,5,"What is Ionic Appflow?",true);
+    public void tutorial3IsDisplayed(){
+        Interactions.assertElementVisibility(skipButton,"Skip button",true);
+        Interactions.assertElementVisibility(whatIsIonicAppFlowText,"What is Ionic Appflow?",true);
     }
 
-    public void tutorial4IsDisplayed()throws InterruptedException {
-        Interactions.assertElementVisibility(readyToPlayText, 5, "Ready to Play?", true);
-        Interactions.assertElementVisibility(continueButton, 5, "Continue", true);
+    public void tutorial4IsDisplayed(){
+        Interactions.assertElementVisibility(readyToPlayText,  "Ready to Play?", true);
+        Interactions.assertElementVisibility(continueButton,  "Continue", true);
     }
 
-    public void swipeThroughTutorial()throws InterruptedException{
-        Interactions.swipe("Left",2);
+    public void swipeThroughTutorial(){
+        Interactions.swipe("Left",3);
     }
 
-    public void isSkipButtonNotVisible()throws InterruptedException{
-        boolean isSkipButtonVisible = Interactions.isElementVisibleInView(skipButton);
-        Assert.assertFalse(isSkipButtonVisible, "Skip button is visible.");// Should not be visible
-        sleep(1000);
+    public void isSkipButtonNotVisible(){
+        Interactions.assertElementVisibility(skipButton, "Skip button", false);
     }
+
     public void clickContinueButton()throws InterruptedException{
-        continueButton.click();
-        sleep(1000);
-    }
-
-    public void checkIfTutorialSwiped(){
-
+        Interactions.clickElementIfDisplayed(continueButton,"Continue button");
     }
 
 }

@@ -1,6 +1,6 @@
 package utils;
 
-import dev.failsafe.Timeout;
+
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.PerformsTouchActions;
 import io.appium.java_client.TouchAction;
@@ -17,8 +17,7 @@ import org.testng.Assert;
 import java.time.Duration;
 
 import static java.lang.Thread.sleep;
-import static utils.context.*;
-
+import static utils.testProperties.waitTimeInSeconds;
 
 
 public class interactions {
@@ -51,7 +50,7 @@ public class interactions {
                 , element); // Pass the WebElement as an argument to the JavaScript code
     }
 
-    public void swipe(String direction, int times) throws InterruptedException {
+    public void swipe(String direction, int times){
         String webviewContext = Context.getCurrentContextName(); // Get Webview context
         Context.switchToNative();
 
@@ -73,7 +72,6 @@ public class interactions {
                     .perform();
         }
         Context.switchToWebView(webviewContext);
-        sleep(2000);  // Wait for 2 second
     }
 
     public void navigateBack()throws InterruptedException{
@@ -140,11 +138,10 @@ public class interactions {
      * Asserts the visibility of a WebElement.
      *
      * @param element The WebElement to check.
-     * @param waitTimeInSeconds The maximum time to wait for the element to become visible.
      * @param elementName The name of the element (used in the assertion failure message).
      * @param shouldBeVisible Whether the element should be visible or not.
      */
-    public void assertElementVisibility(WebElement element, long waitTimeInSeconds, String elementName, boolean shouldBeVisible){
+    public void assertElementVisibility(WebElement element, String elementName, boolean shouldBeVisible){
         // WebDriverWait timer for a specified number of seconds
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(waitTimeInSeconds));
 
@@ -183,8 +180,8 @@ public class interactions {
         }
     }
 
-    public void clickElementIfDisplayed(WebElement element, long waitTimeInSeconds, String message){
-        assertElementVisibility(element, waitTimeInSeconds, message, true);
+    public void clickElementIfDisplayed(WebElement element,  String elementName){
+        assertElementVisibility(element, elementName, true);
         element.click();
     }
 }

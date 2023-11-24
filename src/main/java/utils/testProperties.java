@@ -13,11 +13,22 @@ import java.util.Properties;
  */
 public class testProperties {
 
-    // Create a Properties object to hold the loaded properties
-    private static final Properties props = new Properties();
+    /** Before running any tests, let's set testProperties */
+
+    //  wait until visibility of the element
+    public static final long waitTimeInSeconds = 5;
+
+    // Set the platform on which the tests will run
+    private static final String platform = "iOS";
 
     // Set the path to the config.properties file
     private static final String propsPath = "src/main/resources/config.properties";
+
+
+
+    // Create a Properties object to hold the loaded properties
+    private static final Properties props = new Properties();
+
 
     // Create a DesiredCapabilities object to hold the desired capabilities for Appium
     private static final DesiredCapabilities desiredCapabilities = new DesiredCapabilities();

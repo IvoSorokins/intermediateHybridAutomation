@@ -17,7 +17,7 @@ import screens.*;
 public class allTests {
 
     // Platform selection: "iOS" or else("Android" caps)
-    public static String platform = "iOS";
+    public static String platform = "iO";
 
     // Appium driver instance
     private AppiumDriver driver;
