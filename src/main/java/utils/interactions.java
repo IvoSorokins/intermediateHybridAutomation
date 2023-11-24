@@ -58,16 +58,23 @@ public class interactions {
         Dimension size = driver.manage().window().getSize();
 
         // Calculate start and end points for the swipe
-        int startX = (direction.equals("Left")) ? (int) (size.width * 0.8) : (int) (size.width * 0.2);
-        int endX = (direction.equals("Left")) ? (int) (size.width * 0.2) : (int) (size.width * 0.8);
-        int startY = size.height / 2;
+        int startX, endX, startY, endY;
+        if (direction.equals("Left") || direction.equals("Right")) {
+            startX = direction.equals("Left") ? (int) (size.width * 0.8) : (int) (size.width * 0.2);
+            endX = direction.equals("Left") ? (int) (size.width * 0.2) : (int) (size.width * 0.8);
+            startY = endY = size.height / 2;
+        } else { // Up or Down
+            startY = direction.equals("Up") ? (int) (size.height * 0.8) : (int) (size.height * 0.2);
+            endY = direction.equals("Up") ? (int) (size.height * 0.2) : (int) (size.height * 0.8);
+            startX = endX = size.width / 2;
+        }
 
         TouchAction touchAction = new TouchAction((PerformsTouchActions) driver);
 
         // Perform the swipe for the given number of times
         for (int i = 0; i < times; i++) {
             touchAction.press(PointOption.point(startX, startY))
-                    .moveTo(PointOption.point(endX, startY))
+                    .moveTo(PointOption.point(endX, endY))
                     .release()
                     .perform();
         }
