@@ -81,7 +81,9 @@ public class interactions {
         Context.switchToWebView(webviewContext);
         sleep(1000);
     }
-    public void swipeElement(String eventName,String direction,String platform) throws InterruptedException {
+
+
+    public void swipeElement(String eventName,String direction,String platform){
         String webviewContext = Context.getCurrentContextName(); // Get Webview context
         Context.switchToNative();
 
@@ -90,11 +92,10 @@ public class interactions {
             // Replace 'iOSXPath' with the actual XPath for iOS
             System.out.print(String.format("//XCUIElementTypeStaticText[@name=\"%s\"]",eventName));
             event = driver.findElement(By.xpath(String.format("//XCUIElementTypeStaticText[@name=\"%s\"]",eventName)));
-        } else { // Androide
+        } else { // Android
             System.out.print(String.format("//android.view.View[@text='%s']",eventName));
             event = driver.findElement(By.xpath(String.format("//android.view.View[@text='%s']",eventName)));
         }
-
 
 
         // Get the X and Y coordinates of the element
@@ -125,8 +126,8 @@ public class interactions {
             System.out.println("Swipe Right x:"+leftX+" y: " +Y+" Move to: x"+rightX+"y: "+Y);
         }
         Context.switchToWebView(webviewContext);
-        sleep(1000);
     }
+
     public void swipeIntoView(WebElement element, AppiumDriver driver) {
         JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
         jsExecutor.executeScript("arguments[0].scrollIntoView(true);", element); // Scroll the top of the element into view
@@ -214,5 +215,8 @@ public class interactions {
 
         // Return the visibility of the element
         return isElementVisible;
+    }
+    public WebElement findElementByTagNameAndText(String tagName, String text){
+        return driver.findElement(By.xpath(String.format("//%s[text()=\"%s\"]", tagName, text)));
     }
 }
