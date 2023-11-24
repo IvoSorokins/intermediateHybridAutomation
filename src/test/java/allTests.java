@@ -65,11 +65,16 @@ public class allTests {
             priority = 3)
     public void userSwipesTutorialScreen(){
         WelcomeScreen.swipeLeftOnce();
-        WelcomeScreen.checkIfSwiped();
+        WelcomeScreen.verifyTutorial1ScreenNotDisplayedAfterSwipe();
+        WelcomeScreen.verifyTutorial2IsDisplayed();
+        WelcomeScreen.swipeLeftOnce();
+        WelcomeScreen.verifyTutorial3IsDisplayed();
+        WelcomeScreen.swipeRightOnce();
+        WelcomeScreen.verifyTutorial2IsDisplayed();
     }
     @Test(groups ={"TC_4","Tutorial flow"},
             priority = 4)
-    public void continueToSchedueleScreen(){
+    public void continueToSchedueleScreen(){ // Test Case will not work on iOS
         WelcomeScreen.swipeThroughTutorial();
         WelcomeScreen.verifySkipButtonNotVisible();
         WelcomeScreen.verifyTutorial4IsDisplayed();

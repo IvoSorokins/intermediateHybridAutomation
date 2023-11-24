@@ -52,11 +52,6 @@ public class welcomeScreen {
         Interactions.assertElementVisibility(skipButton, "Skip button", true);
         Interactions.assertElementVisibility(welcomeText, "Welcome to", true);
     }
-
-    public void clickSkip(){
-        Interactions.clickElementIfDisplayed(skipButton, "Skip button");
-    }
-
     public void verifyTutorial2IsDisplayed(){
         Interactions.assertElementVisibility(skipButton, "Skip button", true);
         Interactions.assertElementVisibility(whatIsIonicText, "What is Ionic?", true);
@@ -65,6 +60,9 @@ public class welcomeScreen {
     public void verifyTutorial3IsDisplayed(){
         Interactions.assertElementVisibility(skipButton, "Skip button", true);
         Interactions.assertElementVisibility(whatIsIonicAppFlowText, "What is Ionic Appflow?", true);
+    }
+    public void clickSkip(){
+        Interactions.clickElementIfDisplayed(skipButton, "Skip button");
     }
 
     public void verifyTutorial4IsDisplayed(){
@@ -75,6 +73,9 @@ public class welcomeScreen {
     public void swipeLeftOnce(){
         Interactions.swipe("Left", 1);
     }
+    public void swipeRightOnce(){
+        Interactions.swipe("Right", 1);
+    }
 
     public void verifySkipButtonNotVisible(){
         Interactions.assertElementVisibility(skipButton, "Skip button", false);
@@ -84,33 +85,20 @@ public class welcomeScreen {
         Interactions.clickElementIfDisplayed(continueButton, "Continue button");
     }
 
-    public boolean checkIfSwiped(){
+    public void verifyTutorial1ScreenNotDisplayedAfterSwipe(){
         boolean isWelcomeTextVisible = Interactions.isElementVisible(welcomeText);
         if (isWelcomeTextVisible && platform.equals("iOS")) {
             System.out.println("Screen did not swipe, expected for iOS!");
         } else if (isWelcomeTextVisible && platform == "Android") {
             Assert.fail("Screen did not swipe ,not expected on Android!");
             // Not Adding isWelcomeTextVisible = false; because it will fail the test
-        } else {
-            Interactions.assertElementVisibility(whatIsIonicText, "What is Ionic?", true);
         }
-        return isWelcomeTextVisible;
     }
-
-
 
     public void swipeThroughTutorial() {
         Interactions.swipe("Left", 4);
     }
-    public void verifyAllTutorialScreensDisplayed(){
-        verifyTutorial1IsDisplayed();
-        Interactions.swipe("Left", 1);
-        verifyTutorial2IsDisplayed();
-        Interactions.swipe("Left", 1);
-        verifyTutorial3IsDisplayed();
-        Interactions.swipe("Left", 1);
-        verifyTutorial4IsDisplayed();
-    }
+
 }
 
 
