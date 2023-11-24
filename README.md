@@ -7,12 +7,15 @@ This is a test automation framework for hybrid mobile applications, designed for
 ## TestNG
 TestNG is a testing framework inspired by JUnit and NUnit but introduced some new functionalities that make it more powerful and easier to use. It supports parallel execution, test case prioritization, and various test configurations. In this project, TestNG is used for test management and execution.
 In TestNG, annotations are used to define the behavior of test methods, setup methods, and teardown methods. Annotations provide a way to control the flow and execution of test cases. Here are some commonly used annotations in TestNG and their purposes:  
-- '@Test' annotation is used to mark a method as a test method.
-- '@BeforeMethod' annotation is used to mark a method that should run before each test method in a test class
-- '@AfterMethod' annotation is used to mark a method that should run after each test method in a test class
-- '@BeforeClass' annotation is used to mark a method that should run once before any of the test methods in the class
-- '@AfterClass' annotation is used to mark a method that should run once after all the test methods in the class have executed
-- '@dataProvider' annotation is used to mark a method as a data provider for a test method
+- `@Test` annotation is used to mark a method as a test method.
+- `@BeforeMethod` annotation is used to mark a method that should run before each test method in a test class
+- `@AfterMethod` annotation is used to mark a method that should run after each test method in a test class
+- `@BeforeClass` annotation is used to mark a method that should run once before any of the test methods in the class
+- `@AfterClass` annotation is used to mark a method that should run once after all the test methods in the class have executed
+- `@dataProvider` annotation is used to mark a method as a data provider for a test method
+- `SkipException` is used to skip a test method
+- `Assert` is used to verify the expected result of a test method and assert different type of assertions like `assertTrue`, `assertFalse`
+- `Test Suites` TestNG allows you to define test suites in XML files. This allows for easy management of test cases and supports the execution of test cases in multiple threads, parallel or sequential execution of test cases
 
 More information about annotations can be found here: https://www.browserstack.com/guide/testng-annotations-in-selenium#:~:text=of%20TestNG%20Annotations-,What%20are%20TestNG%20Annotations%3F,part%20of%20the%20test%20code  
 ## Appium
