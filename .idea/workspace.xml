@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d9ee0eb-3b76-4b4e-97f8-52b8060c6c76" name="Changes" comment="Fully removed use of Thread.Sleep and implicityWait replaced with WebDriver. Wait">
+    <list default="true" id="6d9ee0eb-3b76-4b4e-97f8-52b8060c6c76" name="Changes" comment="Added checkIfSwiped and isElementVisible">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/screens/scheduleScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/scheduleScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/screens/welcomeScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/welcomeScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/interactions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/interactions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/testProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/testProperties.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/allTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/allTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -428,11 +428,18 @@
       <option name="project" value="LOCAL" />
       <updated>1700814544358</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Added checkIfSwiped and isElementVisible">
+      <option name="closed" value="true" />
+      <created>1700816336309</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1700816336310</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added more information about running the tests" />
     <MESSAGE value="Added schedueleScreen" />
     <MESSAGE value="Switched to iOS 16.1" />
     <MESSAGE value="Cleanup" />
@@ -457,7 +464,8 @@
     <MESSAGE value="Code Cleanup" />
     <MESSAGE value="Major Code Cleanup" />
     <MESSAGE value="Fully removed use of Thread.Sleep and implicityWait replaced with WebDriver. Wait" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fully removed use of Thread.Sleep and implicityWait replaced with WebDriver. Wait" />
+    <MESSAGE value="Added checkIfSwiped and isElementVisible" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added checkIfSwiped and isElementVisible" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

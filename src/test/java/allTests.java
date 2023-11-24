@@ -49,35 +49,40 @@ public class allTests {
     }
 
     @Test(groups ={"TC_1","Tutorial flow"},
-            enabled=true)
-    public void displayTutorialScreen()throws InterruptedException{
-        WelcomeScreen.isTutorial1IsDisplayed();
+            priority = 1)
+    public void displayTutorialScreen(){
+        WelcomeScreen.verifyTutorial1IsDisplayed();
     }
+
     @Test(groups ={"TC_2","Tutorial flow"},
-            priority = 0)
-    public void skipTutorialScreen()throws InterruptedException{
-        WelcomeScreen.skipTutorial();
+            priority = 2)
+    public void skipTutorialScreen(){
+        WelcomeScreen.clickSkip();
         ScheduleScreen.isScheduleDisplayed();
     }
+
     @Test(groups ={"TC_3","Tutorial flow"},
-            enabled=true,
-            priority = 0)
-    public void userSwipesTutorialScreen()throws InterruptedException { // Note Done
-        WelcomeScreen.swipeLeftOnce(); //
+            priority = 3)
+    public void userSwipesTutorialScreen(){
+        WelcomeScreen.swipeLeftOnce();
         WelcomeScreen.checkIfSwiped();
-        // Continue swiping if screen is swipeable or display message// about s
     }
     @Test(groups ={"TC_4","Tutorial flow"},
-            enabled=true,
-            priority = 0)
-    public void continueToSchedueleScreen()throws InterruptedException{
-//        WelcomeScreen.swipeThroughTutorial();
-        WelcomeScreen.isSkipButtonNotVisible(); // Checks that skip button is not visible, expected result is false !!! NEEDS FIX !!!
-        WelcomeScreen.tutorial4IsDisplayed(); // Checks that tutorial 4 is displayed
-        WelcomeScreen.clickContinueButton(); // Clicks on continue button
+            priority = 4)
+    public void continueToSchedueleScreen(){
+        WelcomeScreen.swipeThroughTutorial();
+        WelcomeScreen.verifySkipButtonNotVisible();
+        WelcomeScreen.verifyTutorial4IsDisplayed();
+        WelcomeScreen.clickContinue(); // Clicks on continue button
         ScheduleScreen.isScheduleDisplayed(); // Checks that schedule screen is displayed
     }
     @Test(groups ={"TC_5","Favorites user flow"},dataProvider = "eventProvider",dataProviderClass = eventNamesData.class,
+            priority = 5)
+    public void asdasd(){
+
+    }
+
+    @Test(groups ={"TC_6","Favorites user flow"},dataProvider = "eventProvider",dataProviderClass = eventNamesData.class,
             enabled=true,
             priority = 0)
     public void navigateToEvents(String eventName)throws InterruptedException{

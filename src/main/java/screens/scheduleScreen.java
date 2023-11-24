@@ -54,7 +54,7 @@ public class scheduleScreen {
 
 
     // Methods to interact with the elements
-    public void isScheduleDisplayed()throws InterruptedException{
+    public void isScheduleDisplayed(){
         Interactions.assertElementVisibility(scheduleTitle,"Schedule title",true);
     }
 
