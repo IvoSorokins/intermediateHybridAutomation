@@ -22,9 +22,9 @@ import static utils.testProperties.waitTimeInSeconds;
 
 public class interactions {
 
-    private final AppiumDriver driver;
+    private static AppiumDriver driver;
 
-    public context Context;
+    public static context Context;
 
 
     public interactions(AppiumDriver driver) {
@@ -50,7 +50,7 @@ public class interactions {
                 , element); // Pass the WebElement as an argument to the JavaScript code
     }
 
-    public void swipe(String direction, int times){
+    public static void swipe(String direction, int times){
         String webviewContext = Context.getCurrentContextName(); // Get Webview context
         Context.switchToNative();
 
@@ -135,13 +135,6 @@ public class interactions {
         Context.switchToWebView(webviewContext);
     }
 
-    public void swipeIntoView(WebElement element, AppiumDriver driver) {
-        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
-        jsExecutor.executeScript("arguments[0].scrollIntoView(true);", element); // Scroll the top of the element into view
-        jsExecutor.executeScript("arguments[0].scrollIntoView(false);", element); // Scroll the bottom of the element into view
-    }
-
-
     /**
      * Asserts the visibility of a WebElement.
      *
@@ -225,5 +218,19 @@ public class interactions {
     }
     public WebElement findElementByTagNameAndText(String tagName, String text){
         return driver.findElement(By.xpath(String.format("//%s[text()=\"%s\"]", tagName, text)));
+    }
+    public void swipeUntilElementVisible(WebElement element) {
+        boolean isElementVisible = isElementVisibleInView(element);
+        int swipeCount = 0;
+
+        while (!isElementVisible && swipeCount < 6) {
+            swipe("Up", 1);
+            isElementVisible = isElementVisibleInView(element);
+            swipeCount++;
+        }
+
+        if (!isElementVisible) {
+            Assert.fail("Element not found after " + 6 + " swipes.");
+        }
     }
 }
