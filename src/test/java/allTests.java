@@ -9,10 +9,10 @@ import dataProviders.speakersAndMediaData;
 import dataProviders.speakersData;
 
 // utils imports
-import static java.lang.Thread.sleep;
 import static utils.testProperties.platform;
 import static utils.testSetup.startServer;
 import screens.*;
+import utils.interactions;
 
 
 public class allTests {
@@ -97,6 +97,7 @@ public class allTests {
             priority = 5)
     public void navigateToEvents(String eventName){
         skipTutorialScreen();
+        ScheduleScreen.swipeDownUntilElementIsVisible(eventName);
         ScheduleScreen.clickEventIfDisplayed(eventName);
         EventScreen.checkIfEventNameIsDisplayed(eventName);
     }
@@ -111,7 +112,7 @@ public class allTests {
         EventScreen.verifyStarButtonColorWhite();
         EventScreen.clickStarButton(1); // Click on Favour (Star) button
         EventScreen.verifyStarButtonColorBlack();
-        sleep(2000);
+
     }
     @Test(groups={"TC_7","Favorites user flow"},dataProvider = "eventProvider",dataProviderClass = eventNamesData.class,
             enabled=true,
@@ -204,6 +205,7 @@ public class allTests {
         IonicAccountScreen.verifyWebpageNotAvailableDisplayed();
 
     }
+
 }
 
 
