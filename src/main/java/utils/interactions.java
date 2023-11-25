@@ -16,7 +16,6 @@ import org.testng.Assert;
 
 import java.time.Duration;
 
-import static java.lang.Thread.sleep;
 import static utils.testProperties.waitTimeInSeconds;
 
 
