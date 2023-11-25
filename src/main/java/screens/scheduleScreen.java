@@ -64,6 +64,10 @@ public class scheduleScreen {
             Interactions.clickElementIfDisplayed(getDataProvider(eventName), "Speaker name");
     }
 
+    public void checkIfEventIsDisplayed(String eventName){
+        Interactions.assertElementVisibility(getDataProvider(eventName), "Event widget", true);
+    }
+
     public void clickFavouriteTabIfDisplayed(){
         Interactions.clickElementIfDisplayed(favouriteTab, "Favourite tab");
     }
@@ -84,6 +88,12 @@ public class scheduleScreen {
         Interactions.clickElementIfDisplayed(removeButtonPopUp, "Remove button Pop Up");
     }
 
+    public void isRemoveButtonOnPopUpDisplayed(){
+        Interactions.assertElementVisibility(removeButtonPopUp,"Remove button Pop Up",true);
+    }
+    public void isCancelButtonOnPopUpDisplayed(){
+        Interactions.assertElementVisibility(cancelButtonPopUp,"Cancel button Pop Up",true);
+    }
     public void clickCancelButtonOnPopUp(){
         Interactions.clickElementIfDisplayed(cancelButtonPopUp, "Cancel button Pop Up");
     }
