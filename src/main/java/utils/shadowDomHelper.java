@@ -7,22 +7,16 @@ import org.openqa.selenium.WebElement;
 
 public class shadowDomHelper {
 
-
-    public WebElement getShadowHost(String cssSelector, AppiumDriver driver){
-        return driver.findElement(By.cssSelector(cssSelector));
+    private static AppiumDriver driver;
+    public WebElement expandRootElement(WebElement element) {
+        WebElement ele = (WebElement) ((JavascriptExecutor) driver)
+                .executeScript("return arguments[0].shadowRoot", element);
+        return ele;
     }
 
-    public WebElement getShadowRoot(WebElement shadowHost,AppiumDriver driver) {
-        return (WebElement) ((JavascriptExecutor) driver).executeScript("return arguments[0].shadowRoot", shadowHost);
+    public WebElement getShadowDomElement(WebElement shadowHost, String cssSelector) {
+        WebElement shadowRoot = expandRootElement(shadowHost);
+        return (WebElement) ((JavascriptExecutor) driver)
+                .executeScript("return arguments[0].querySelector('" + cssSelector + "')", shadowRoot);
     }
-
-    public WebElement getTargetElement(WebElement shadowRoot, String xpath, AppiumDriver driver) {
-        return (WebElement) ((JavascriptExecutor) driver).executeScript(
-                "return arguments[0].querySelector('" + xpath + "')", shadowRoot);
-    }
-
-    public void clickOnElement(WebElement element) {
-        element.click();
-    }
-
 }

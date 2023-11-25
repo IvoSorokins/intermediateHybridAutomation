@@ -10,6 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.SkipException;
 import utils.interactions;
+import utils.shadowDomHelper;
 
 import static utils.testProperties.platform;
 
@@ -18,6 +19,7 @@ public class welcomeScreen {
     private final AppiumDriver driver;
 
     public interactions Interactions;
+    public shadowDomHelper ShadowDomHelper;
 
     public welcomeScreen(AppiumDriver driver) {
         this.driver = driver;
@@ -26,6 +28,7 @@ public class welcomeScreen {
         // It's using AppiumFieldDecorator to support Appium's additional locator strategies.
 
         Interactions = new interactions(driver);
+        ShadowDomHelper = new shadowDomHelper();
     }
 
     // Locators for the elements
@@ -44,8 +47,14 @@ public class welcomeScreen {
     @FindBy(xpath = "//h2[text()='Ready to Play?']")
     private WebElement readyToPlayText;
 
-    @FindBy(xpath = "//ion-button[text()=\" Continue \"]")
+    @FindBy(xpath = "//div//ion-button")
     private WebElement continueButton;
+
+    public WebElement getContinueButton(){
+        WebElement shadowHost = ShadowDomHelper.expandRootElement(continueButton);
+        WebElement targetElement = ShadowDomHelper.getShadowDomElement( shadowHost, "button");
+        return targetElement;
+    }
 
     // Methods to interact with the elements
 
@@ -80,7 +89,7 @@ public class welcomeScreen {
     }
 
     public void clickContinue(){
-        Interactions.clickElementIfDisplayed(continueButton, "Continue button");
+        Interactions.clickElementIfDisplayed(getContinueButton(), "Continue button");
     }
 
     public void verifyTutorial1ScreenNotDisplayedAfterSwipe(){
