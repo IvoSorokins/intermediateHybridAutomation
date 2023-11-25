@@ -81,12 +81,12 @@ public class interactions {
         Context.switchToWebView(webviewContext);
     }
 
-    public void navigateBack()throws InterruptedException{
+    public void navigateBack(){
         String webviewContext = Context.getCurrentContextName(); // Get Webview context
         Context.switchToNative();
         driver.navigate().back();
         Context.switchToWebView(webviewContext);
-        sleep(1000);
+
     }
 
 
