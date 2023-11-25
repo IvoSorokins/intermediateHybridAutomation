@@ -93,8 +93,8 @@ public class welcomeScreen {
         }
     }
 
-    public void swipeLeft3Times() {
-        Interactions.swipe("Left", 3);
+    public void swipeLeft2Times() {
+        Interactions.swipe("Left", 2);
     }
 
 }

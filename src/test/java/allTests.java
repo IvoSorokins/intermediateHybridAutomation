@@ -87,7 +87,7 @@ public class allTests {
         WelcomeScreen.swipeLeftOnce();
         WelcomeScreen.verifyTutorial1ScreenNotDisplayedAfterSwipe();
 
-        WelcomeScreen.swipeLeft3Times();
+        WelcomeScreen.swipeLeft2Times();
         WelcomeScreen.verifyTutorial4IsDisplayed();
         WelcomeScreen.clickContinue();
         ScheduleScreen.isScheduleDisplayed();
