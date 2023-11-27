@@ -26,28 +26,26 @@ public class speakersScreen {
         BottomNavigationBar = new bottomNavigationBar(driver);
     }
 
-    @FindBy(xpath = "//ion-title[text()=\"Speakers\"][1]")
+    @FindBy(xpath = "//ion-title[text()=\"Speakers\"]")
     private WebElement speakersTitle;
 
-
-    public void isSpeakersTitleDisplayed()throws InterruptedException{
-        boolean isSpeakersTitle = Interactions.isElementVisibleInView(speakersTitle);
-        Assert.assertTrue(isSpeakersTitle, "Speakers title is not visible.");
-        sleep(1000);
+    public WebElement getDataProviderElement(String userName, String tagName){
+        WebElement userElement = Interactions.findElementByTagNameAndText(tagName, userName);
+        return userElement;
+    }
+    public void swipeDownUntilElementIsVisible(String eventName,String tagName){
+        Interactions.swipeUntilElementVisible(getDataProviderElement(eventName,tagName));
+    }
+    public void isSpeakersTitleDisplayed(){
+        Interactions.assertElementVisibility(speakersTitle,"Speakers title",true);
     }
 
     public void checkEachSpeakerDisplayed(int index,String userName,String profession){
+        swipeDownUntilElementIsVisible(userName, "h2");
 
-        WebElement speakerName = Interactions.findElementByTagNameAndText("h2",userName);
-        WebElement speakerAboutElement = Interactions.findElementByTagNameAndText("h3","About " + userName);
-        WebElement speakerProfessionElement = Interactions.findElementByTagNameAndText("ion-col["+ index +"]//p",profession);
-
-        boolean isSpeakerDisplayed = Interactions.isElementVisibleInView(speakerName);
-
-        while (isSpeakerDisplayed == false){
-            Interactions.swipe("Up",1);
-            isSpeakerDisplayed = Interactions.isElementVisibleInView(speakerName);
-        }
+        WebElement speakerName = getDataProviderElement(userName,"h2");
+        WebElement speakerAboutElement = getDataProviderElement("About " + userName,"h3");
+        WebElement speakerProfessionElement = getDataProviderElement(profession,"ion-col["+ index +"]//p");
 
         Interactions.assertElementVisibility(speakerName,"Speaker name",true);
         Interactions.assertElementVisibility(speakerAboutElement,"Speaker about section",true);
@@ -55,35 +53,21 @@ public class speakersScreen {
     }
 
     public void clickSpeakerProfile(int index,String userName){
-        WebElement speakerElement = driver.findElement(By.xpath("//ion-col["+ index +"]//h2[text()='" + userName + "']"));
-
-        boolean isSpeakerDisplayed = Interactions.isElementVisibleInView(speakerElement);
-
-        if (isSpeakerDisplayed == false){
-            Interactions.swipe("Up",1);
-            isSpeakerDisplayed = Interactions.isElementVisibleInView(speakerElement);
-        }
-        speakerElement.click();
+        WebElement speakerElement = getDataProviderElement(userName,"ion-col["+ index +"]//h2");
+        Interactions.swipeUntilElementVisible(speakerElement);
+        Interactions.clickElementIfDisplayed(speakerElement, "Speaker name");
     }
 
     public void clickSpeakerAbout(String userName){
-        WebElement speakerAboutElement = driver.findElement(By.xpath("//h3[text()='About " + userName + "']"));
+        WebElement speakerAboutElement = getDataProviderElement("About " + userName,"h3");
+        Interactions.swipeUntilElementVisible(speakerAboutElement);
 
-        boolean isSpeakerDisplayed = Interactions.isElementVisibleInView(speakerAboutElement);
-
-        if (isSpeakerDisplayed == false){
-            Interactions.swipe("Up",1);
-            isSpeakerDisplayed = Interactions.isElementVisibleInView(speakerAboutElement);
-        }
-        speakerAboutElement.click();
+        Interactions.clickElementIfDisplayed(speakerAboutElement, "Speaker about section");
 
     }
-    public void isSpeakersButtonDisplayed()throws InterruptedException{
-        BottomNavigationBar.isSpeakersButtonDisplayed();
-    }
 
-    public void clickSpeakersButton()throws InterruptedException{
-        BottomNavigationBar.clickSpeakersButton();
+    public void clickSpeakersButtonIfDisplayed(){
+        BottomNavigationBar.clickScheduleButtonIfDisplayed();
     }
 
 
