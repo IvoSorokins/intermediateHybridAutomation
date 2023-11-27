@@ -9,6 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import org.testng.Assert;
 import org.testng.SkipException;
+
 import utils.interactions;
 
 import static utils.testProperties.platform;
@@ -18,7 +19,6 @@ public class welcomeScreen {
 
     private final AppiumDriver driver;
     public interactions Interactions;
-
 
     public welcomeScreen(AppiumDriver driver) {
         this.driver = driver;

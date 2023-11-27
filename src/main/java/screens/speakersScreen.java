@@ -1,17 +1,16 @@
 package screens;
 
 import components.bottomNavigationBar;
+
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
-import org.openqa.selenium.By;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
+
 import utils.interactions;
 
-
-import static java.lang.Thread.sleep;
 
 public class speakersScreen {
     private final AppiumDriver driver;
@@ -67,7 +66,7 @@ public class speakersScreen {
     }
 
     public void clickSpeakersButtonIfDisplayed(){
-        BottomNavigationBar.clickScheduleButtonIfDisplayed();
+        BottomNavigationBar.clickSpeakersButtonIfDisplayed();
     }
 
 
