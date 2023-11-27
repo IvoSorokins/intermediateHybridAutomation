@@ -13,6 +13,7 @@ import utils.interactions;
 
 
 public class speakersScreen {
+
     private final AppiumDriver driver;
     public interactions Interactions;
     public bottomNavigationBar BottomNavigationBar;
@@ -29,8 +30,8 @@ public class speakersScreen {
     private WebElement speakersTitle;
 
     public WebElement getDataProviderElement(String userName, String tagName){
-        WebElement userElement = Interactions.findElementByTagNameAndText(tagName, userName);
-        return userElement;
+        WebElement speakerElement = Interactions.findElementByTagNameAndText(tagName, userName);
+        return speakerElement;
     }
     public void swipeDownUntilElementIsVisible(String eventName,String tagName){
         Interactions.swipeUntilElementVisible(getDataProviderElement(eventName,tagName));

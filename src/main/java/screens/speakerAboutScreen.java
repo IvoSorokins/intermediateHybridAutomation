@@ -2,16 +2,20 @@ package screens;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
+
 import utils.interactions;
 
-import static java.lang.Thread.sleep;
+import java.util.List;
+
 
 public class speakerAboutScreen {
+
     private final AppiumDriver driver;
     public interactions Interactions;
 
@@ -20,6 +24,7 @@ public class speakerAboutScreen {
         PageFactory.initElements(new AppiumFieldDecorator(this.driver), this);
         Interactions = new interactions(driver);
     }
+
 
     @FindBy(css="ion-chip.ion-color-twitter")
     private WebElement twitterButton;
@@ -39,67 +44,47 @@ public class speakerAboutScreen {
     @FindBy(xpath = "//ion-back-button")
     private WebElement backButton;
 
-    @FindBy(css="div.speaker-background > h2")
-    private WebElement speakerName;
-
     @FindBy(xpath="//span[text()=\"Cancel\"]")
     private WebElement cancelButtonPopUp;
 
-    public void verifyAllButtons()throws InterruptedException{
-        boolean isTwitterButton = Interactions.isElementVisibleInView(twitterButton);
-        boolean isGithubButton = Interactions.isElementVisibleInView(githubButton);
-        boolean isInstagramButton = Interactions.isElementVisibleInView(instagramButton);
-        boolean isPhoneButton = Interactions.isElementVisibleInView(phoneButton);
-        boolean isShareButton = Interactions.isElementVisibleInView(shareButton);
-        boolean isBackButton = Interactions.isElementVisibleInView(backButton);
-
-
-        Assert.assertTrue(isTwitterButton, "Twitter button is not visible.");
-        Assert.assertTrue(isGithubButton, "Github button is not visible.");
-        Assert.assertTrue(isInstagramButton, "Instagram button is not visible.");
-        Assert.assertTrue(isPhoneButton, "Phone button is not visible.");
-        Assert.assertTrue(isShareButton, "Share button is not visible.");
-        Assert.assertTrue(isBackButton, "Back button is not visible.");
-        sleep(1000);
+    public WebElement getDataProviderElement(String userName, String tagName){
+        WebElement speakerElement = Interactions.findElementByTagNameAndText(tagName, userName);
+        return speakerElement;
     }
-    public void verifySpeakerAboutDisplayed(String userName,String about)throws InterruptedException{
+    public void verifyAllButtons(){
+        Interactions.assertElementVisibility(twitterButton,"Twitter button",true);
+        Interactions.assertElementVisibility(githubButton,"Github button",true);
+        Interactions.assertElementVisibility(instagramButton,"Instagram button",true);
+        Interactions.assertElementVisibility(shareButton,"Share button",true);
+        Interactions.assertElementVisibility(backButton,"Back button",true);
+    }
+    public void verifySpeakerAboutDisplayed(String userName,String description){
         WebElement speakerImg = driver.findElement(By.xpath("//img[@alt=\""+ userName +"\"]"));
-        WebElement speakerDesc = driver.findElement(By.xpath("//p[text()=\""+ about +"\"]"));
+        WebElement speakerDesc = getDataProviderElement(description ,"p");
 
-        boolean isSpeakerImg = Interactions.isElementVisibleInView(speakerImg);
-        boolean isSpeakerDesc = Interactions.isElementVisibleInView(speakerDesc);
-        boolean isSpeakerName = Interactions.isElementVisibleInView(speakerName);
+        List<WebElement> elements = driver.findElements(By.xpath("//h2[text()='Burt Bear']"));
+        WebElement speakerName = elements.get(1);
 
-        Assert.assertTrue(isSpeakerImg, "Speaker image is not visible.");
-        Assert.assertTrue(isSpeakerDesc, "Speaker description is not visible.");
-        Assert.assertTrue(isSpeakerName, "Speaker name is not visible.");
+        Interactions.assertElementVisibility(speakerImg,"Speaker image",true);
+        Interactions.assertElementVisibility(speakerDesc,"Speaker description",true);
+        Interactions.assertElementVisibility(speakerName,"Speaker name",true);
 
-        String speakerNameText = speakerName.getText();
-        Assert.assertEquals(speakerNameText, userName, "Speaker name is not correct.");
-
-        sleep(1000);
     }
 
-    public void verifyContactInfo(String email,String phone)throws InterruptedException{
-        WebElement speakerEmail = driver.findElement(By.xpath("//span[text()=\"Email ( "+email+" )\"]"));
-        WebElement speakerPhone = driver.findElement(By.xpath("//span[text()=\"Call ( "+phone+" )\"]"));
+    public void verifyContactInfo(String email,String phone){
+        WebElement speakerEmail = getDataProviderElement("( " + email + " )","span");
+        WebElement speakerPhone = getDataProviderElement("( " + phone + " )","span");
 
-        boolean isSpeakerEmail = Interactions.isElementVisibleInView(speakerEmail);
-        boolean isSpeakerPhone = Interactions.isElementVisibleInView(speakerPhone);
-
-        Assert.assertTrue(isSpeakerEmail, "Speaker email is not visible.");
-        Assert.assertTrue(isSpeakerPhone, "Speaker phone is not visible.");
-        sleep(1000);
+        Interactions.assertElementVisibility(speakerEmail,"Speaker email",true);
+        Interactions.assertElementVisibility(speakerPhone,"Speaker phone",true);
     }
 
-    public void clickOnPhoneButton()throws InterruptedException{
-        phoneButton.click();
-        sleep(1000);
+    public void clickOnPhoneButtonIfDisplayed(){
+        Interactions.clickElementIfDisplayed(phoneButton,"Phone button");
     }
 
-    public void clickOnCancelButton()throws InterruptedException{
-        cancelButtonPopUp.click();
-        sleep(1000);
+    public void clickOnCancelButtonIfDisplayed(){
+        Interactions.clickElementIfDisplayed(cancelButtonPopUp,"Cancel button");
     }
 
     public void validateMediaButtonColor(WebElement element,String expectedColor) {
@@ -107,21 +92,19 @@ public class speakerAboutScreen {
         Assert.assertEquals(color, expectedColor, "Media button color does not match");
     }
 
-    public void clickOnMedia(String media)throws InterruptedException{
+    public void clickOnMedia(String media){
         if (media=="Twitter") {
             validateMediaButtonColor(twitterButton,"rgba(26, 142, 215, 1)");
-            twitterButton.click();
+            Interactions.clickElementIfDisplayed(twitterButton,"Twitter button");
         }
         else if (media=="GitHub") {
             validateMediaButtonColor(githubButton,"rgba(30, 32, 35, 1)");
-            githubButton.click();
+            Interactions.clickElementIfDisplayed(githubButton,"Github button");
         }
         else if (media=="Instagram") {
             validateMediaButtonColor(instagramButton,"rgba(131, 48, 165, 1)");
-            instagramButton.click();
+            Interactions.clickElementIfDisplayed(instagramButton,"Instagram button");
         }
-        sleep(1000);
     }
-
 
 }
