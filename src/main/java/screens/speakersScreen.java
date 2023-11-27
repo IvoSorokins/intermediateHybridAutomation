@@ -44,8 +44,9 @@ public class speakersScreen {
 
         boolean isSpeakerDisplayed = Interactions.isElementVisibleInView(speakerName);
 
-        if (isSpeakerDisplayed == false){
-            Interactions.swipeIntoView(speakerAboutElement,driver);
+        while (isSpeakerDisplayed == false){
+            Interactions.swipe("Up",1);
+            isSpeakerDisplayed = Interactions.isElementVisibleInView(speakerName);
         }
 
         Interactions.assertElementVisibility(speakerName,"Speaker name",true);
@@ -53,30 +54,29 @@ public class speakersScreen {
         Interactions.assertElementVisibility(speakerProfessionElement,"Speaker profession",true);
     }
 
-    public void clickSpeakerProfile(int index,String userName)throws InterruptedException{
+    public void clickSpeakerProfile(int index,String userName){
         WebElement speakerElement = driver.findElement(By.xpath("//ion-col["+ index +"]//h2[text()='" + userName + "']"));
 
         boolean isSpeakerDisplayed = Interactions.isElementVisibleInView(speakerElement);
 
         if (isSpeakerDisplayed == false){
-            Interactions.swipeIntoView(speakerElement,driver);
-            sleep(5000);
+            Interactions.swipe("Up",1);
+            isSpeakerDisplayed = Interactions.isElementVisibleInView(speakerElement);
         }
         speakerElement.click();
-        sleep(1000);
     }
 
-    public void clickSpeakerAbout(String userName)throws InterruptedException{
+    public void clickSpeakerAbout(String userName){
         WebElement speakerAboutElement = driver.findElement(By.xpath("//h3[text()='About " + userName + "']"));
 
         boolean isSpeakerDisplayed = Interactions.isElementVisibleInView(speakerAboutElement);
 
         if (isSpeakerDisplayed == false){
-            Interactions.swipeIntoView(speakerAboutElement,driver);
-            sleep(5000);
+            Interactions.swipe("Up",1);
+            isSpeakerDisplayed = Interactions.isElementVisibleInView(speakerAboutElement);
         }
         speakerAboutElement.click();
-        sleep(1000);
+
     }
     public void isSpeakersButtonDisplayed()throws InterruptedException{
         BottomNavigationBar.isSpeakersButtonDisplayed();

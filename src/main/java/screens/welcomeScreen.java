@@ -10,16 +10,15 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.SkipException;
 import utils.interactions;
-import utils.shadowDomHelper;
 
 import static utils.testProperties.platform;
 
 
 public class welcomeScreen {
-    private final AppiumDriver driver;
 
+    private final AppiumDriver driver;
     public interactions Interactions;
-    public shadowDomHelper ShadowDomHelper;
+
 
     public welcomeScreen(AppiumDriver driver) {
         this.driver = driver;
@@ -28,7 +27,6 @@ public class welcomeScreen {
         // It's using AppiumFieldDecorator to support Appium's additional locator strategies.
 
         Interactions = new interactions(driver);
-        ShadowDomHelper = new shadowDomHelper();
     }
 
     // Locators for the elements
@@ -47,17 +45,11 @@ public class welcomeScreen {
     @FindBy(xpath = "//h2[text()='Ready to Play?']")
     private WebElement readyToPlayText;
 
-    @FindBy(xpath = "//div//ion-button")
+    @FindBy (xpath = "//ion-button[text()=\" Continue \"]")
     private WebElement continueButton;
 
-    public WebElement getContinueButton(){
-        WebElement shadowHost = ShadowDomHelper.expandRootElement(continueButton);
-        WebElement targetElement = ShadowDomHelper.getShadowDomElement( shadowHost, "button");
-        return targetElement;
-    }
 
     // Methods to interact with the elements
-
     public void verifyTutorial1IsDisplayed(){
         Interactions.assertElementVisibility(skipButton, "Skip button", true);
         Interactions.assertElementVisibility(welcomeText, "Welcome to", true);
@@ -89,7 +81,7 @@ public class welcomeScreen {
     }
 
     public void clickContinue(){
-        Interactions.clickElementIfDisplayed(getContinueButton(), "Continue button");
+        Interactions.clickElementIfDisplayed(continueButton, "Continue button");
     }
 
     public void verifyTutorial1ScreenNotDisplayedAfterSwipe(){

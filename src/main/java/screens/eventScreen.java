@@ -8,8 +8,6 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import utils.interactions;
 
-import static java.lang.Thread.sleep;
-
 
 public class eventScreen {
 
@@ -31,33 +29,24 @@ public class eventScreen {
         Interactions.assertElementVisibility(eventWidget, "Event name", true);
     }
 
-    public void isStarButtonDisplayed()throws InterruptedException{
-        boolean isEvent = Interactions.isElementVisibleInView(starButton);
-        Assert.assertTrue(isEvent,  " is not visible.");
-        sleep(1000);
-    }
-
-    public void clickStarButton(int times)throws InterruptedException{
+    public void clickStarButtonIfDisplayed(int times){
         for (int i = 0; i < times; i++) {
-            starButton.click();
-            sleep(1000);
+            Interactions.clickElementIfDisplayed(starButton, "Star button");
         }
     }
 
-    public void verifyStarButtonColorWhite()throws InterruptedException{
+    public void verifyStarButtonColorWhite(){
         String initialColor = starButton.getCssValue("color");
-        Assert.assertNotEquals(initialColor, "rgb(255, 255, 255)"); // Assuming that white is rgb(0, 0, 0)(255, 255, 255)
-        sleep(1000);
+        Assert.assertEquals(initialColor, "rgb(255, 255, 255)"); // Assuming that white is rgb(0, 0, 0)(255, 255, 255)
     }
 
-    public void verifyStarButtonColorBlack()throws InterruptedException{
-
+    public void verifyStarButtonColorBlack(){
         // Check the initial color of the star button
         String initialColor = starButton.getCssValue("color");
-        Assert.assertNotEquals(initialColor, "rgb(0, 0, 0)"); // Assuming that black is rgb(0, 0, 0)
-        sleep(1000);
+        System.out.println("Verify star button color is black: " + initialColor);
+        Assert.assertEquals(initialColor, "rgb(0, 0, 0)"); // Assuming that black is rgb(0, 0, 0)
     }
-    public void verifyStarButtonLocation()throws InterruptedException{
+    public void verifyStarButtonLocation(){
         Dimension size = driver.manage().window().getSize(); // Get Screen size of the device
 
         int quarterX = size.width / 4;
@@ -70,13 +59,10 @@ public class eventScreen {
         // The X coordinate should be greater than three times the quarter width (meaning it's in the rightmost quarter)
         // The Y coordinate should be less than the quarter height (meaning it's in the topmost quarter)
         Assert.assertTrue(position.getX() > 3 * quarterX && position.getY() < quarterY);
-        sleep(1000);
     }
 
-    public void navigateBackToScheduleScreen()throws InterruptedException{
+    public void navigateBackToScheduleScreen(){
         Interactions.navigateBack(); // Navigate back
-        sleep(1000);
     }
-
 
 }

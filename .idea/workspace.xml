@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d9ee0eb-3b76-4b4e-97f8-52b8060c6c76" name="Changes" comment="Fixed checkEachSpeakerDisplayed" />
+    <list default="true" id="6d9ee0eb-3b76-4b4e-97f8-52b8060c6c76" name="Changes" comment="Changed shadow Element location methods">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/screens/eventScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/eventScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/screens/scheduleScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/scheduleScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/screens/speakersScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/speakersScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/screens/welcomeScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/welcomeScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/shadowDomHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/shadowDomHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/testProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/testProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/allTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/allTests.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,7 +70,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.allTests.navigateToEvents">
+  <component name="RunManager" selected="TestNG.allTests.favouriteEvent">
     <configuration name="allTests.continueToSchedueleScreen" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="automation_Intermediate" />
       <option name="PACKAGE_NAME" value="" />
@@ -78,6 +88,18 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="allTests" />
       <option name="METHOD_NAME" value="displayTutorialScreen" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="allTests.favouriteEvent" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="automation_Intermediate" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="allTests" />
+      <option name="METHOD_NAME" value="favouriteEvent" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -109,22 +131,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="allTests.userSwipesTutorialScreen" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="automation_Intermediate" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="allTests" />
-      <option name="METHOD_NAME" value="userSwipesTutorialScreen" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.allTests.favouriteEvent" />
         <item itemvalue="TestNG.allTests.navigateToEvents" />
-        <item itemvalue="TestNG.allTests.userSwipesTutorialScreen" />
         <item itemvalue="TestNG.allTests.continueToSchedueleScreen" />
         <item itemvalue="TestNG.allTests.skipTutorialScreen" />
         <item itemvalue="TestNG.allTests.displayTutorialScreen" />
@@ -287,86 +297,6 @@
       <option name="project" value="LOCAL" />
       <updated>1700147847938</updated>
     </task>
-    <task id="LOCAL-00023" summary="Added Speakers section code">
-      <option name="closed" value="true" />
-      <created>1700549323275</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1700549323275</updated>
-    </task>
-    <task id="LOCAL-00024" summary="Fixed Typo">
-      <option name="closed" value="true" />
-      <created>1700549338717</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1700549338717</updated>
-    </task>
-    <task id="LOCAL-00025" summary="Added swipeIntoView">
-      <option name="closed" value="true" />
-      <created>1700549361967</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1700549361967</updated>
-    </task>
-    <task id="LOCAL-00026" summary="Updated checkEachSpeaker">
-      <option name="closed" value="true" />
-      <created>1700550591479</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1700550591479</updated>
-    </task>
-    <task id="LOCAL-00027" summary="Created New Screen">
-      <option name="closed" value="true" />
-      <created>1700555621851</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1700555621851</updated>
-    </task>
-    <task id="LOCAL-00028" summary="Added Speaker About screen verification">
-      <option name="closed" value="true" />
-      <created>1700562713114</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1700562713114</updated>
-    </task>
-    <task id="LOCAL-00029" summary="Added aboutNavToSpeakerProfile">
-      <option name="closed" value="true" />
-      <created>1700571911390</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1700571911390</updated>
-    </task>
-    <task id="LOCAL-00030" summary="Added aboutNavToSpeakerProfile">
-      <option name="closed" value="true" />
-      <created>1700571928679</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1700571928679</updated>
-    </task>
-    <task id="LOCAL-00031" summary="Added TC_15">
-      <option name="closed" value="true" />
-      <created>1700637155283</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1700637155283</updated>
-    </task>
-    <task id="LOCAL-00032" summary="Small Typo fix">
-      <option name="closed" value="true" />
-      <created>1700637478134</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1700637478134</updated>
-    </task>
     <task id="LOCAL-00033" summary="Updated README.md">
       <option name="closed" value="true" />
       <created>1700665490998</created>
@@ -511,19 +441,90 @@
       <option name="project" value="LOCAL" />
       <updated>1700845180800</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Updated clickEventIfDisplayed">
+      <option name="closed" value="true" />
+      <created>1700845780697</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1700845780697</updated>
+    </task>
+    <task id="LOCAL-00052" summary="Added swipe up and down">
+      <option name="closed" value="true" />
+      <created>1700847660737</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1700847660737</updated>
+    </task>
+    <task id="LOCAL-00053" summary="Replaced swipeIntoView with swipeUntilElementVisible">
+      <option name="closed" value="true" />
+      <created>1700909397301</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1700909397301</updated>
+    </task>
+    <task id="LOCAL-00054" summary="Implemented getDataProvider, updated code">
+      <option name="closed" value="true" />
+      <created>1700909486251</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1700909486251</updated>
+    </task>
+    <task id="LOCAL-00055" summary="Implemented getDataProvider, updated code">
+      <option name="closed" value="true" />
+      <created>1700909564315</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1700909564316</updated>
+    </task>
+    <task id="LOCAL-00056" summary="Changed swipeLeft3Times to swipeLeft2Times">
+      <option name="closed" value="true" />
+      <created>1700909827177</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1700909827177</updated>
+    </task>
+    <task id="LOCAL-00057" summary="Removed sleep from navigateBack">
+      <option name="closed" value="true" />
+      <created>1700910778598</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1700910778598</updated>
+    </task>
+    <task id="LOCAL-00058" summary="Added Necessary functions">
+      <option name="closed" value="true" />
+      <created>1700913776992</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1700913776995</updated>
+    </task>
+    <task id="LOCAL-00059" summary="Remove Thread.sleep import">
+      <option name="closed" value="true" />
+      <created>1700913844255</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1700913844258</updated>
+    </task>
+    <task id="LOCAL-00060" summary="Changed shadow Element location methods">
+      <option name="closed" value="true" />
+      <created>1700916963579</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1700916963579</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added Speakers section code" />
-    <MESSAGE value="Fixed Typo" />
-    <MESSAGE value="Added swipeIntoView" />
-    <MESSAGE value="Updated checkEachSpeaker" />
-    <MESSAGE value="Created New Screen" />
-    <MESSAGE value="Added Speaker About screen verification" />
-    <MESSAGE value="Added aboutNavToSpeakerProfile" />
-    <MESSAGE value="Added TC_15" />
-    <MESSAGE value="Small Typo fix" />
     <MESSAGE value="Updated README.md" />
     <MESSAGE value="switched from java.time.Duration to java.util.concurrent.TimeUnit" />
     <MESSAGE value="Code Cleanup" />
@@ -540,7 +541,16 @@
     <MESSAGE value="Fixed TC5" />
     <MESSAGE value="Added All Event Names from Scheduele Screen" />
     <MESSAGE value="Fixed checkEachSpeakerDisplayed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed checkEachSpeakerDisplayed" />
+    <MESSAGE value="Updated clickEventIfDisplayed" />
+    <MESSAGE value="Added swipe up and down" />
+    <MESSAGE value="Replaced swipeIntoView with swipeUntilElementVisible" />
+    <MESSAGE value="Implemented getDataProvider, updated code" />
+    <MESSAGE value="Changed swipeLeft3Times to swipeLeft2Times" />
+    <MESSAGE value="Removed sleep from navigateBack" />
+    <MESSAGE value="Added Necessary functions" />
+    <MESSAGE value="Remove Thread.sleep import" />
+    <MESSAGE value="Changed shadow Element location methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed shadow Element location methods" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
