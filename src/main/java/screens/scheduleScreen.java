@@ -11,6 +11,7 @@ import utils.interactions;
 
 
 public class scheduleScreen {
+
     private final AppiumDriver driver;
     public interactions Interactions;
 
