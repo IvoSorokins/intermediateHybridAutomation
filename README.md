@@ -125,6 +125,11 @@ To run the sample test case, execute the `allTests` class located in the `test` 
 If you encounter any issues, please review the setup steps and ensure all prerequisites are met. Check the Appium server logs for further details on any errors.
 
 Feel free to customize the framework and tests as needed for your specific application. Happy testing!
+### `Original error: socket hang up`
+Error appears when trying to execute `querySelector`- shadow DOM element scripts
+**Solution:** Stop the appium server and execute this:  
+`adb uninstall io.appium.uiautomator2.server`  
+`adb uninstall io.appium.uiautomator2.server.test`
 
 ## Additional Information
 
