@@ -5,10 +5,8 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
 import utils.interactions;
 
-import static java.lang.Thread.sleep;
 
 public class bottomNavigationBar {
 
@@ -33,22 +31,11 @@ public class bottomNavigationBar {
     @FindBy(xpath = "//ion-tab-button[@id=\"tab-button-about\"]")
     private WebElement aboutButton;
 
-    public void isScheduleButtonDisplayed()throws InterruptedException{
-        boolean isScheduleButton = Interactions.isElementVisibleInView(scheduleButton);
-        Assert.assertTrue(isScheduleButton, "Schedule button is not visible.");
-        sleep(1000);
+    public void clickScheduleButtonIfDisplayed(){
+        Interactions.clickElementIfDisplayed(scheduleButton, "Schedule button");
     }
-    public void clickScheduleButton()throws InterruptedException{
-        scheduleButton.click();
-        sleep(1000);
-    }
-    public void isSpeakersButtonDisplayed()throws InterruptedException{
-        boolean isSpeakersButton = Interactions.isElementVisibleInView(speakersButton);
-        Assert.assertTrue(isSpeakersButton, "Speakers button is not visible.");
-        sleep(1000);
-    }
-    public void clickSpeakersButton()throws InterruptedException{
-        speakersButton.click();
-        sleep(1000);
+
+    public void clickSpeakersButtonIfDisplayed(){
+        Interactions.clickElementIfDisplayed(speakersButton, "Speakers button");
     }
 }

@@ -4,16 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d9ee0eb-3b76-4b4e-97f8-52b8060c6c76" name="Changes" comment="Changed shadow Element location methods">
+    <list default="true" id="6d9ee0eb-3b76-4b4e-97f8-52b8060c6c76" name="Changes" comment="Update shadowDomHelper to accept multiple shadow DOM's">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/screens/eventScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/eventScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/components/bottomNavigationBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/components/bottomNavigationBar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/screens/scheduleScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/scheduleScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/screens/speakersScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/speakersScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/screens/welcomeScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/welcomeScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utils/shadowDomHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/shadowDomHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utils/testProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/testProperties.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/allTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/allTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -297,38 +293,6 @@
       <option name="project" value="LOCAL" />
       <updated>1700147847938</updated>
     </task>
-    <task id="LOCAL-00033" summary="Updated README.md">
-      <option name="closed" value="true" />
-      <created>1700665490998</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1700665490998</updated>
-    </task>
-    <task id="LOCAL-00034" summary="switched from java.time.Duration to java.util.concurrent.TimeUnit">
-      <option name="closed" value="true" />
-      <created>1700730229001</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1700730229001</updated>
-    </task>
-    <task id="LOCAL-00035" summary="Code Cleanup">
-      <option name="closed" value="true" />
-      <created>1700730264996</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1700730264996</updated>
-    </task>
-    <task id="LOCAL-00036" summary="Major Code Cleanup">
-      <option name="closed" value="true" />
-      <created>1700760631093</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1700760631093</updated>
-    </task>
     <task id="LOCAL-00037" summary="Major Code Cleanup">
       <option name="closed" value="true" />
       <created>1700760923772</created>
@@ -521,14 +485,42 @@
       <option name="project" value="LOCAL" />
       <updated>1700916963579</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="Fixed Scroll until element is visible">
+      <option name="closed" value="true" />
+      <created>1701074574361</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1701074574361</updated>
+    </task>
+    <task id="LOCAL-00062" summary="Updated README.md">
+      <option name="closed" value="true" />
+      <created>1701074628922</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1701074628922</updated>
+    </task>
+    <task id="LOCAL-00063" summary="Code Cleanup">
+      <option name="closed" value="true" />
+      <created>1701077985971</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1701077985971</updated>
+    </task>
+    <task id="LOCAL-00064" summary="Update shadowDomHelper to accept multiple shadow DOM's">
+      <option name="closed" value="true" />
+      <created>1701078041909</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1701078041909</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Updated README.md" />
-    <MESSAGE value="switched from java.time.Duration to java.util.concurrent.TimeUnit" />
-    <MESSAGE value="Code Cleanup" />
-    <MESSAGE value="Major Code Cleanup" />
     <MESSAGE value="Fully removed use of Thread.Sleep and implicityWait replaced with WebDriver. Wait" />
     <MESSAGE value="Added checkIfSwiped and isElementVisible" />
     <MESSAGE value="Fixed typos" />
@@ -550,7 +542,11 @@
     <MESSAGE value="Added Necessary functions" />
     <MESSAGE value="Remove Thread.sleep import" />
     <MESSAGE value="Changed shadow Element location methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed shadow Element location methods" />
+    <MESSAGE value="Fixed Scroll until element is visible" />
+    <MESSAGE value="Updated README.md" />
+    <MESSAGE value="Code Cleanup" />
+    <MESSAGE value="Update shadowDomHelper to accept multiple shadow DOM's" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update shadowDomHelper to accept multiple shadow DOM's" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

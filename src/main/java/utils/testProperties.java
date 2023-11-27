@@ -19,7 +19,7 @@ public class testProperties {
     public static final long waitTimeInSeconds = 5;
 
     // Set the platform on which the tests will run
-    public static final String platform = "iOS";
+    public static final String platform = "iO";
 
     // Set the path to the config.properties file
     private static final String propsPath = "src/main/resources/config.properties";
