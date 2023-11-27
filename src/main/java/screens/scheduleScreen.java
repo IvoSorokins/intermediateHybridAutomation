@@ -9,12 +9,11 @@ import org.openqa.selenium.support.PageFactory;
 
 import utils.interactions;
 
-import static java.lang.Thread.sleep;
-
 
 public class scheduleScreen {
     private final AppiumDriver driver;
     public interactions Interactions;
+
 
     public scheduleScreen(AppiumDriver driver) {
         this.driver = driver;
@@ -51,21 +50,21 @@ public class scheduleScreen {
         Interactions.assertElementVisibility(scheduleTitle,"Schedule title",true);
     }
 
-    public WebElement getDataProvider(String eventName){
+    public WebElement getDataProviderElement(String eventName){
         WebElement eventNameElement = Interactions.findElementByTagNameAndText("h3", eventName);
         return eventNameElement;
     }
 
     public void swipeDownUntilElementIsVisible(String eventName){
-        Interactions.swipeUntilElementVisible(getDataProvider(eventName));
+        Interactions.swipeUntilElementVisible(getDataProviderElement(eventName));
     }
 
     public void clickEventIfDisplayed(String eventName){
-            Interactions.clickElementIfDisplayed(getDataProvider(eventName), "Speaker name");
+            Interactions.clickElementIfDisplayed(getDataProviderElement(eventName), "Speaker name");
     }
 
     public void checkIfEventIsDisplayed(String eventName){
-        Interactions.assertElementVisibility(getDataProvider(eventName), "Event widget", true);
+        Interactions.assertElementVisibility(getDataProviderElement(eventName), "Event widget", true);
     }
 
     public void clickFavouriteTabIfDisplayed(){
@@ -103,7 +102,7 @@ public class scheduleScreen {
     }
 
     public void noEventsDisplayed(String eventName){
-        Interactions.assertElementVisibility(getDataProvider(eventName), "Event widget", false);
+        Interactions.assertElementVisibility(getDataProviderElement(eventName), "Event widget", false);
         Interactions.assertElementVisibility(noEventsText, "'No Sessions Found' text", true);
     }
 
