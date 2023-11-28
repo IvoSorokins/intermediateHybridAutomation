@@ -99,7 +99,7 @@ public class interactions {
             System.out.print(String.format("//XCUIElementTypeStaticText[@name=\"%s\"]",eventName));
             event = driver.findElement(By.xpath(String.format("//XCUIElementTypeStaticText[@name=\"%s\"]",eventName)));
         } else { // Android
-            System.out.print(String.format("//android.view.View[@text='%s']",eventName));
+            System.out.print(String.format("//android.view.View[@text=\"%s\"]",eventName));
             event = driver.findElement(By.xpath(String.format("//android.view.View[@text='%s']",eventName)));
         }
 
