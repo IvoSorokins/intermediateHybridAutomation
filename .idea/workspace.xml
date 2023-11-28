@@ -4,9 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d9ee0eb-3b76-4b4e-97f8-52b8060c6c76" name="Changes" comment="Small changes">
+    <list default="true" id="6d9ee0eb-3b76-4b4e-97f8-52b8060c6c76" name="Changes" comment="Fixed ionicAccountScreen">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dataObjects/media.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataObjects/media.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dataProviders/mediaData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataProviders/mediaData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/screens/scheduleScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/scheduleScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/screens/speakerAboutScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/speakerAboutScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/context.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/context.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utils/interactions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/interactions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/allTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/allTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +70,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.allTests.unFavouriteEventFavTabPopUp">
+  <component name="RunManager" selected="TestNG.allTests.navToMedia">
     <configuration name="allTests.displayTutorialScreen" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="automation_Intermediate" />
       <option name="PACKAGE_NAME" value="" />
@@ -76,11 +83,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="allTests.favouriteEvent" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="allTests.navToMedia" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="automation_Intermediate" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="allTests" />
-      <option name="METHOD_NAME" value="favouriteEvent" />
+      <option name="METHOD_NAME" value="navToMedia" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -126,11 +133,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.allTests.navToMedia" />
         <item itemvalue="TestNG.allTests.unFavouriteEventFavTabPopUp" />
+        <item itemvalue="TestNG.allTests.unFavouriteEvent" />
         <item itemvalue="TestNG.allTests.userSwipesTutorialScreen" />
         <item itemvalue="TestNG.allTests.displayTutorialScreen" />
-        <item itemvalue="TestNG.allTests.unFavouriteEvent" />
-        <item itemvalue="TestNG.allTests.favouriteEvent" />
       </list>
     </recent_temporary>
   </component>
@@ -289,22 +296,6 @@
       <option name="presentableId" value="LOCAL-00021" />
       <option name="project" value="LOCAL" />
       <updated>1700147847938</updated>
-    </task>
-    <task id="LOCAL-00051" summary="Updated clickEventIfDisplayed">
-      <option name="closed" value="true" />
-      <created>1700845780697</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1700845780697</updated>
-    </task>
-    <task id="LOCAL-00052" summary="Added swipe up and down">
-      <option name="closed" value="true" />
-      <created>1700847660737</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1700847660737</updated>
     </task>
     <task id="LOCAL-00053" summary="Replaced swipeIntoView with swipeUntilElementVisible">
       <option name="closed" value="true" />
@@ -514,12 +505,26 @@
       <option name="project" value="LOCAL" />
       <updated>1701184751505</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="Small typo">
+      <option name="closed" value="true" />
+      <created>1701186806349</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1701186806349</updated>
+    </task>
+    <task id="LOCAL-00080" summary="Fixed ionicAccountScreen">
+      <option name="closed" value="true" />
+      <created>1701194713759</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1701194713760</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed TC5" />
-    <MESSAGE value="Added All Event Names from Scheduele Screen" />
     <MESSAGE value="Fixed checkEachSpeakerDisplayed" />
     <MESSAGE value="Updated clickEventIfDisplayed" />
     <MESSAGE value="Added swipe up and down" />
@@ -543,7 +548,9 @@
     <MESSAGE value="Fixed small typo" />
     <MESSAGE value="Fixed small typos" />
     <MESSAGE value="Small changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Small changes" />
+    <MESSAGE value="Small typo" />
+    <MESSAGE value="Fixed ionicAccountScreen" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed ionicAccountScreen" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -60,10 +60,10 @@ public class speakerAboutScreen {
         Interactions.assertElementVisibility(backButton,"Back button",true);
     }
     public void verifySpeakerAboutDisplayed(String userName,String description){
-        WebElement speakerImg = driver.findElement(By.xpath("//img[@alt=\""+ userName +"\"]"));
+        WebElement speakerImg = driver.findElement(By.xpath(String.format("//img[@alt=\"%s\"]",userName)));
         WebElement speakerDesc = getDataProviderElement(description ,"p");
 
-        List<WebElement> elements = driver.findElements(By.xpath("//h2[text()='Burt Bear']"));
+        List<WebElement> elements = driver.findElements(By.xpath((String.format("//h2[text()=\"%s\"]",userName))));
         WebElement speakerName = elements.get(1);
 
         Interactions.assertElementVisibility(speakerImg,"Speaker image",true);

@@ -1,4 +1,5 @@
 // TestNG, Appium imports
+import dataObjects.media;
 import org.testng.annotations.*;
 import io.appium.java_client.AppiumDriver;
 
@@ -125,7 +126,7 @@ public class allTests {
             priority = 8)
     public void unFavouriteEventFavTabPopUp(String eventName) {
         favouriteEvent(eventName);
-        ScheduleScreen.swipeEvent(eventName,platform);
+        ScheduleScreen.swipeEvent(eventName);
         ScheduleScreen.clickRemoveIfDisplayed();
         ScheduleScreen.isRemovePopUpDisplayed();
         ScheduleScreen.isRemoveButtonOnPopUpDisplayed();
@@ -184,20 +185,11 @@ public class allTests {
     }
     @Test(groups={"TC_15","About Speaker flow"},dataProvider = "combinedProvider",dataProviderClass = speakersAndMediaData.class,
             priority = 15)
-    public void navToMedia(speaker Speaker, String Media){
+    public void navToMedia(speaker Speaker, media Media){
         navToSpeakerProfile(Speaker);
         SpeakerAboutScreen.clickOnCancelButtonOnPopUpIfDisplayed();
-        SpeakerAboutScreen.clickOnMedia(String.valueOf(Media));
-        IonicAccountScreen.verifyWebpageIsDisplayed();
-
+        SpeakerAboutScreen.clickOnMedia(Media.getMedia());
+        IonicAccountScreen.switchToNewWindow();
+        IonicAccountScreen.verifyUrl(Media.getButtonColor());
     }
-    @Test()
-    public void test(){
-
-
-    }
-
 }
-
-
-
