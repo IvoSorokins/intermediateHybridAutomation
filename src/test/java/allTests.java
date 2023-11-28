@@ -168,6 +168,7 @@ public class allTests {
         navigateToSpeakers();
         SpeakersScreen.clickSpeakerProfile(Speaker.getIndex(), Speaker.getUserName());
         SpeakerAboutScreen.verifyAllButtons();
+        SpeakerAboutScreen.verifyMediaButtonColorTheme();
         SpeakerAboutScreen.verifySpeakerAboutDisplayed(Speaker.getUserName(),Speaker.getDescription());
         SpeakerAboutScreen.clickOnPhoneButtonIfDisplayed();
         SpeakerAboutScreen.verifyContactInfo(Speaker.getEmail(),Speaker.getNumber());
