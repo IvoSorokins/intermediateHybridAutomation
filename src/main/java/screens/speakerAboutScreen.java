@@ -106,5 +106,13 @@ public class speakerAboutScreen {
             Interactions.clickElementIfDisplayed(instagramButton,"Instagram button");
         }
     }
+    public void verifyMediaButtonColorTheme(){
+        String twitterColor = twitterButton.getCssValue("background-color");
+        String githubColor = githubButton.getCssValue("background-color");
+        String instagramColor = instagramButton.getCssValue("background-color");
 
+        Assert.assertEquals(twitterColor, "rgba(29, 161, 244, 0.08)", "Twitter button color does not match");
+        Assert.assertEquals(githubColor, "rgba(34, 36, 40, 0.08)", "GitHub button color does not match");
+        Assert.assertEquals(instagramColor, "rgba(149, 55, 188, 0.08)", "Instagram button color does not match");
+    }
 }

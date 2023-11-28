@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d9ee0eb-3b76-4b4e-97f8-52b8060c6c76" name="Changes" comment="fixed minor issue">
+    <list default="true" id="6d9ee0eb-3b76-4b4e-97f8-52b8060c6c76" name="Changes" comment="added Links to the buttons of dataProvider">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataProviders/mediaData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataProviders/mediaData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/screens/scheduleScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/scheduleScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/screens/speakerAboutScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/speakerAboutScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/context.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/context.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utils/interactions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/interactions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/allTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/allTests.java" afterDir="false" />
     </list>
@@ -68,12 +65,12 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.allTests.navToMedia">
-    <configuration name="allTests.displayTutorialScreen" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.allTests.aboutNavToSpeakerProfile">
+    <configuration name="allTests.aboutNavToSpeakerProfile" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="automation_Intermediate" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="allTests" />
-      <option name="METHOD_NAME" value="displayTutorialScreen" />
+      <option name="METHOD_NAME" value="aboutNavToSpeakerProfile" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -131,11 +128,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.allTests.aboutNavToSpeakerProfile" />
         <item itemvalue="TestNG.allTests.navToMedia" />
         <item itemvalue="TestNG.allTests.unFavouriteEventFavTabPopUp" />
         <item itemvalue="TestNG.allTests.unFavouriteEvent" />
         <item itemvalue="TestNG.allTests.userSwipesTutorialScreen" />
-        <item itemvalue="TestNG.allTests.displayTutorialScreen" />
       </list>
     </recent_temporary>
   </component>
@@ -294,14 +291,6 @@
       <option name="presentableId" value="LOCAL-00021" />
       <option name="project" value="LOCAL" />
       <updated>1700147847938</updated>
-    </task>
-    <task id="LOCAL-00056" summary="Changed swipeLeft3Times to swipeLeft2Times">
-      <option name="closed" value="true" />
-      <created>1700909827177</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1700909827177</updated>
     </task>
     <task id="LOCAL-00057" summary="Removed sleep from navigateBack">
       <option name="closed" value="true" />
@@ -519,11 +508,18 @@
       <option name="project" value="LOCAL" />
       <updated>1701195780144</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="added Links to the buttons of dataProvider">
+      <option name="closed" value="true" />
+      <created>1701195878044</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1701195878044</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Replaced swipeIntoView with swipeUntilElementVisible" />
     <MESSAGE value="Implemented getDataProvider, updated code" />
     <MESSAGE value="Changed swipeLeft3Times to swipeLeft2Times" />
     <MESSAGE value="Removed sleep from navigateBack" />
@@ -548,7 +544,8 @@
     <MESSAGE value="fixed dataProvider constructor" />
     <MESSAGE value="Added some readME" />
     <MESSAGE value="fixed minor issue" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed minor issue" />
+    <MESSAGE value="added Links to the buttons of dataProvider" />
+    <option name="LAST_COMMIT_MESSAGE" value="added Links to the buttons of dataProvider" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
