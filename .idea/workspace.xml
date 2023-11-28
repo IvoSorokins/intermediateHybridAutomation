@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d9ee0eb-3b76-4b4e-97f8-52b8060c6c76" name="Changes" comment="Fixed ionicAccountScreen">
+    <list default="true" id="6d9ee0eb-3b76-4b4e-97f8-52b8060c6c76" name="Changes" comment="fixed minor issue">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataObjects/media.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataObjects/media.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dataProviders/mediaData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataProviders/mediaData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/screens/scheduleScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/scheduleScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/screens/speakerAboutScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/speakerAboutScreen.java" afterDir="false" />
@@ -297,30 +295,6 @@
       <option name="project" value="LOCAL" />
       <updated>1700147847938</updated>
     </task>
-    <task id="LOCAL-00053" summary="Replaced swipeIntoView with swipeUntilElementVisible">
-      <option name="closed" value="true" />
-      <created>1700909397301</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1700909397301</updated>
-    </task>
-    <task id="LOCAL-00054" summary="Implemented getDataProvider, updated code">
-      <option name="closed" value="true" />
-      <created>1700909486251</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1700909486251</updated>
-    </task>
-    <task id="LOCAL-00055" summary="Implemented getDataProvider, updated code">
-      <option name="closed" value="true" />
-      <created>1700909564315</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1700909564316</updated>
-    </task>
     <task id="LOCAL-00056" summary="Changed swipeLeft3Times to swipeLeft2Times">
       <option name="closed" value="true" />
       <created>1700909827177</created>
@@ -521,13 +495,34 @@
       <option name="project" value="LOCAL" />
       <updated>1701194713760</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="fixed dataProvider constructor">
+      <option name="closed" value="true" />
+      <created>1701195571953</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1701195571953</updated>
+    </task>
+    <task id="LOCAL-00082" summary="Added some readME">
+      <option name="closed" value="true" />
+      <created>1701195608010</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1701195608010</updated>
+    </task>
+    <task id="LOCAL-00083" summary="fixed minor issue">
+      <option name="closed" value="true" />
+      <created>1701195780142</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1701195780144</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed checkEachSpeakerDisplayed" />
-    <MESSAGE value="Updated clickEventIfDisplayed" />
-    <MESSAGE value="Added swipe up and down" />
     <MESSAGE value="Replaced swipeIntoView with swipeUntilElementVisible" />
     <MESSAGE value="Implemented getDataProvider, updated code" />
     <MESSAGE value="Changed swipeLeft3Times to swipeLeft2Times" />
@@ -550,7 +545,10 @@
     <MESSAGE value="Small changes" />
     <MESSAGE value="Small typo" />
     <MESSAGE value="Fixed ionicAccountScreen" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed ionicAccountScreen" />
+    <MESSAGE value="fixed dataProvider constructor" />
+    <MESSAGE value="Added some readME" />
+    <MESSAGE value="fixed minor issue" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed minor issue" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
