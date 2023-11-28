@@ -2,12 +2,12 @@ package dataObjects;
 
 public class media{
     private String media;
-    private String buttonColor;
+    private String mediaLink;
 
 
     public media(String media,String buttonColor){
         this.media = media;
-        this.buttonColor = buttonColor;
+        this.mediaLink = buttonColor;
     }
 
     public String getMedia() {
@@ -15,14 +15,14 @@ public class media{
     }
 
     public String getButtonColor() {
-        return buttonColor;
+        return mediaLink;
     }
 
     @Override
     public String toString() {
         return "speaker{" +
                 "mediaData='" + media + '\'' +
-                ", buttonColor='" + buttonColor + '\'' +
+                ", mediaLink='" + mediaLink + '\'' +
                 '}';
     }
 }
