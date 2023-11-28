@@ -72,8 +72,8 @@ public class speakerAboutScreen {
     }
 
     public void verifyContactInfo(String email,String phone){
-        WebElement speakerEmail = getDataProviderElement("( " + email + " )","span");
-        WebElement speakerPhone = getDataProviderElement("( " + phone + " )","span");
+        WebElement speakerEmail = getDataProviderElement("Email ( " + email + " )","span");
+        WebElement speakerPhone = getDataProviderElement("Call ( " + phone + " )","span");
 
         Interactions.assertElementVisibility(speakerEmail,"Speaker email",true);
         Interactions.assertElementVisibility(speakerPhone,"Speaker phone",true);
@@ -83,7 +83,7 @@ public class speakerAboutScreen {
         Interactions.clickElementIfDisplayed(phoneButton,"Phone button");
     }
 
-    public void clickOnCancelButtonIfDisplayed(){
+    public void clickOnCancelButtonOnPopUpIfDisplayed(){
         Interactions.clickElementIfDisplayed(cancelButtonPopUp,"Cancel button");
     }
 
@@ -91,17 +91,16 @@ public class speakerAboutScreen {
         String color = element.getCssValue("color");
         Assert.assertEquals(color, expectedColor, "Media button color does not match");
     }
-
     public void clickOnMedia(String media){
-        if (media=="Twitter") {
+        if (media.equals("Twitter")) {
             validateMediaButtonColor(twitterButton,"rgba(26, 142, 215, 1)");
             Interactions.clickElementIfDisplayed(twitterButton,"Twitter button");
         }
-        else if (media=="GitHub") {
+        else if (media.equals("GitHub")) {
             validateMediaButtonColor(githubButton,"rgba(30, 32, 35, 1)");
             Interactions.clickElementIfDisplayed(githubButton,"Github button");
         }
-        else if (media=="Instagram") {
+        else if (media.equals("Instagram")) {
             validateMediaButtonColor(instagramButton,"rgba(131, 48, 165, 1)");
             Interactions.clickElementIfDisplayed(instagramButton,"Instagram button");
         }
