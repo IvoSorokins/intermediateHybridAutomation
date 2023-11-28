@@ -12,7 +12,7 @@ import dataProviders.speakersData;
 import static utils.testProperties.platform;
 import static utils.testSetup.startServer;
 import screens.*;
-import utils.shadowDomHelper;
+
 
 
 public class allTests {
@@ -104,94 +104,96 @@ public class allTests {
 
     @Test(groups={"TC_6","Favorites user flow"},dataProvider = "eventProvider",dataProviderClass = eventNamesData.class,
             priority = 6)
-    public void favouriteEvent(String eventName) throws InterruptedException {
+    public void favouriteEvent(String eventName){
         navigateToEvents(eventName);
-        Thread.sleep(1000);
         EventScreen.verifyStarButtonLocation();
-        EventScreen.verifyStarButtonColorWhite();
         EventScreen.clickStarButtonIfDisplayed(1);
-        EventScreen.verifyStarButtonColorBlack();
-
+        EventScreen.navigateBackToScheduleScreen();
+        ScheduleScreen.clickFavouriteTabIfDisplayed();
+        ScheduleScreen.checkIfEventIsDisplayed(eventName);
     }
     @Test(groups={"TC_7","Favorites user flow"},dataProvider = "eventProvider",dataProviderClass = eventNamesData.class,
             priority = 7)
     public void unFavouriteEvent(String eventName){
         navigateToEvents(eventName);
         EventScreen.clickStarButtonIfDisplayed(2);
-        EventScreen.verifyStarButtonColorWhite();
+        EventScreen.navigateBackToScheduleScreen();
+        ScheduleScreen.clickFavouriteTabIfDisplayed();
+        ScheduleScreen.noEventsDisplayed(eventName);
     }
     @Test(groups={"TC_8","Favorites user flow"},dataProvider = "eventProvider",dataProviderClass = eventNamesData.class,
             priority = 8)
-    public void unFavouriteEventFavTabPopUp(String eventName){
-//        favouriteEvent(eventName);
-//        EventScreen.navigateBackToScheduleScreen();
-//        ScheduleScreen.clickFavouriteTabIfDisplayed();
-//        ScheduleScreen.checkIfEventIsDisplayed(eventName);
-//        ScheduleScreen.swipeEvent(eventName,platform);
-//        ScheduleScreen.clickRemoveIfDisplayed();
-//        ScheduleScreen.isRemovePopUpDisplayed();
-//        ScheduleScreen.isRemoveButtonOnPopUpDisplayed();
-//        ScheduleScreen.isCancelButtonOnPopUpDisplayed();
+    public void unFavouriteEventFavTabPopUp(String eventName) {
+        favouriteEvent(eventName);
+        ScheduleScreen.swipeEvent(eventName,platform);
+        ScheduleScreen.clickRemoveIfDisplayed();
+        ScheduleScreen.isRemovePopUpDisplayed();
+        ScheduleScreen.isRemoveButtonOnPopUpDisplayed();
+        ScheduleScreen.isCancelButtonOnPopUpDisplayed();
     }
     @Test(groups={"TC_9","Favorites user flow"},dataProvider = "eventProvider",dataProviderClass = eventNamesData.class,
             priority = 9)
     public void cancelRemoveEventFromFavTab(String eventName){
-//        unFavouriteEventFavTabPopUp(eventName);
-//        ScheduleScreen.clickCancelButtonOnPopUp();
-//        ScheduleScreen.checkIfEventNameIsDisplayed(eventName);
-//        ScheduleScreen.removeButtonIsNotDisplayed();
+        unFavouriteEventFavTabPopUp(eventName);
+        ScheduleScreen.clickCancelButtonOnPopUp();
+        ScheduleScreen.checkIfEventIsDisplayed(eventName);
+        ScheduleScreen.removeButtonIsNotDisplayed();
     }
     @Test(groups={"TC_10","Favorites user flow"},dataProvider = "eventProvider",dataProviderClass = eventNamesData.class,
             priority = 10)
     public void removeEventFromFavTab(String eventName){
         unFavouriteEventFavTabPopUp(eventName);
         ScheduleScreen.clickRemoveButtonOnPopUp();
-        ScheduleScreen.noEventsDisplayed(eventName); // Verifys both that event is not displayed and that "No events" message is displayed
+        ScheduleScreen.noEventsDisplayed(eventName);
     }
     @Test(groups={"TC_11","About Speaker flow"},
             priority = 11)
-    public void navigateToSpeakers()throws InterruptedException{
+    public void navigateToSpeakers(){
        skipTutorialScreen();
-        SpeakersScreen.isSpeakersButtonDisplayed();
-        SpeakersScreen.clickSpeakersButton();
-        SpeakersScreen.isSpeakersTitleDisplayed();
+       SpeakersScreen.clickSpeakersButtonIfDisplayed();
+       SpeakersScreen.isSpeakersTitleDisplayed();
     }
 
     @Test(groups={"TC_12","About Speaker flow"},dataProvider = "speakersProvider",dataProviderClass = speakersData.class,
             priority = 12)
-    public void checkEachSpeaker(speaker Speaker)throws InterruptedException{
+    public void checkEachSpeaker(speaker Speaker){
         navigateToSpeakers();
         SpeakersScreen.checkEachSpeakerDisplayed(Speaker.getIndex(),Speaker.getUserName(),Speaker.getProfession());
     }
 
     @Test(groups={"TC_13","About Speaker flow"},dataProvider = "speakersProvider",dataProviderClass = speakersData.class,
             priority = 13)
-    public void navToSpeakerProfile(speaker Speaker)throws InterruptedException {
+    public void navToSpeakerProfile(speaker Speaker){
         navigateToSpeakers();
         SpeakersScreen.clickSpeakerProfile(Speaker.getIndex(), Speaker.getUserName());
         SpeakerAboutScreen.verifyAllButtons();
         SpeakerAboutScreen.verifySpeakerAboutDisplayed(Speaker.getUserName(),Speaker.getDescription());
-        SpeakerAboutScreen.clickOnPhoneButton();
+        SpeakerAboutScreen.clickOnPhoneButtonIfDisplayed();
         SpeakerAboutScreen.verifyContactInfo(Speaker.getEmail(),Speaker.getNumber());
     }
 
     @Test(groups={"TC_14","About Speaker flow"},dataProvider = "speakersProvider",dataProviderClass = speakersData.class,
             priority = 14)
-    public void aboutNavToSpeakerProfile(speaker Speaker)throws InterruptedException {
+    public void aboutNavToSpeakerProfile(speaker Speaker){
         navigateToSpeakers();
         SpeakersScreen.clickSpeakerAbout(Speaker.getUserName());
         SpeakerAboutScreen.verifyAllButtons();
         SpeakerAboutScreen.verifySpeakerAboutDisplayed(Speaker.getUserName(),Speaker.getDescription());
-        SpeakerAboutScreen.clickOnPhoneButton();
+        SpeakerAboutScreen.clickOnPhoneButtonIfDisplayed();
         SpeakerAboutScreen.verifyContactInfo(Speaker.getEmail(),Speaker.getNumber());
     }
     @Test(groups={"TC_15","About Speaker flow"},dataProvider = "combinedProvider",dataProviderClass = speakersAndMediaData.class,
             priority = 15)
-    public void navToMedia(speaker Speaker, String Media)throws InterruptedException{
+    public void navToMedia(speaker Speaker, String Media){
         navToSpeakerProfile(Speaker);
-        SpeakerAboutScreen.clickOnCancelButton(); // Here I want to input another dataProvider with mediaData name
+        SpeakerAboutScreen.clickOnCancelButtonOnPopUpIfDisplayed();
         SpeakerAboutScreen.clickOnMedia(String.valueOf(Media));
-        IonicAccountScreen.verifyWebpageNotAvailableDisplayed();
+        IonicAccountScreen.verifyWebpageIsDisplayed();
+
+    }
+    @Test()
+    public void test(){
+
 
     }
 
