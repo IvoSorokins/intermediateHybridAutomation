@@ -119,7 +119,6 @@ public class interactions {
             touchAction.press(ElementOption.point(rightX, Y))
                     .waitAction(WaitOptions.waitOptions(Duration.ofMillis(500))) // Add a wait time
                     .moveTo(ElementOption.point(leftX, Y))
-                    .moveTo(ElementOption.point(leftX, Y))
                     .release()
                     .perform();
             System.out.println("Swipe left x:"+rightX+" y: " +Y+" Move to:x"+leftX+"y: "+Y);
