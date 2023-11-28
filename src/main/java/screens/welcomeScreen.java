@@ -89,7 +89,7 @@ public class welcomeScreen {
         if (isWelcomeTextVisible && platform.equals("iOS")) {
             System.out.println("Screen did not swipe, expected for iOS!");
             throw new SkipException("Skipping this test as screen did not swipe on iOS");
-        } else if (isWelcomeTextVisible && platform == "Android") {
+        } else if (isWelcomeTextVisible && platform != "iOS") {
             Assert.fail("Screen did not swipe ,not expected on Android!");
         }
     }
