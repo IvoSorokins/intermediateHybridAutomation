@@ -47,6 +47,7 @@ public class speakerAboutScreen {
     @FindBy(xpath="//span[text()=\"Cancel\"]")
     private WebElement cancelButtonPopUp;
 
+
     public WebElement getDataProviderElement(String userName, String tagName){
         WebElement speakerElement = Interactions.findElementByTagNameAndText(tagName, userName);
         return speakerElement;
