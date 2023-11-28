@@ -4,16 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d9ee0eb-3b76-4b4e-97f8-52b8060c6c76" name="Changes" comment="fixed Typo">
+    <list default="true" id="6d9ee0eb-3b76-4b4e-97f8-52b8060c6c76" name="Changes" comment="Small changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/screens/eventScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/eventScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/screens/ionicAccountScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/ionicAccountScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/screens/speakerAboutScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/speakerAboutScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/screens/welcomeScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/welcomeScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/context.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/context.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utils/interactions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/interactions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/shadowDomHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/shadowDomHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/allTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/allTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,35 +64,23 @@
     </key>
   </component>
   <component name="RunManager" selected="TestNG.allTests.unFavouriteEventFavTabPopUp">
+    <configuration name="allTests.displayTutorialScreen" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="automation_Intermediate" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="allTests" />
+      <option name="METHOD_NAME" value="displayTutorialScreen" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="allTests.favouriteEvent" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="automation_Intermediate" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="allTests" />
       <option name="METHOD_NAME" value="favouriteEvent" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="allTests.navigateToEvents" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="automation_Intermediate" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="allTests" />
-      <option name="METHOD_NAME" value="navigateToEvents" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="allTests.skipTutorialScreen" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="automation_Intermediate" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="allTests" />
-      <option name="METHOD_NAME" value="skipTutorialScreen" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -131,13 +112,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="allTests.userSwipesTutorialScreen" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="automation_Intermediate" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="allTests" />
+      <option name="METHOD_NAME" value="userSwipesTutorialScreen" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.allTests.unFavouriteEventFavTabPopUp" />
+        <item itemvalue="TestNG.allTests.userSwipesTutorialScreen" />
+        <item itemvalue="TestNG.allTests.displayTutorialScreen" />
         <item itemvalue="TestNG.allTests.unFavouriteEvent" />
         <item itemvalue="TestNG.allTests.favouriteEvent" />
-        <item itemvalue="TestNG.allTests.navigateToEvents" />
-        <item itemvalue="TestNG.allTests.skipTutorialScreen" />
       </list>
     </recent_temporary>
   </component>
@@ -296,70 +289,6 @@
       <option name="presentableId" value="LOCAL-00021" />
       <option name="project" value="LOCAL" />
       <updated>1700147847938</updated>
-    </task>
-    <task id="LOCAL-00043" summary="Added SkipException">
-      <option name="closed" value="true" />
-      <created>1700833076681</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1700833076681</updated>
-    </task>
-    <task id="LOCAL-00044" summary="Updated TestNG Section">
-      <option name="closed" value="true" />
-      <created>1700833133426</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1700833133426</updated>
-    </task>
-    <task id="LOCAL-00045" summary="Fixed Typos">
-      <option name="closed" value="true" />
-      <created>1700833153042</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1700833153042</updated>
-    </task>
-    <task id="LOCAL-00046" summary="Created findElementByTagNameAndText">
-      <option name="closed" value="true" />
-      <created>1700843476509</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1700843476510</updated>
-    </task>
-    <task id="LOCAL-00047" summary="Fixed TC5">
-      <option name="closed" value="true" />
-      <created>1700843513102</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1700843513102</updated>
-    </task>
-    <task id="LOCAL-00048" summary="Added All Event Names from Scheduele Screen">
-      <option name="closed" value="true" />
-      <created>1700843960007</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1700843960007</updated>
-    </task>
-    <task id="LOCAL-00049" summary="Fixed checkEachSpeakerDisplayed">
-      <option name="closed" value="true" />
-      <created>1700845156673</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1700845156673</updated>
-    </task>
-    <task id="LOCAL-00050" summary="Fixed checkEachSpeakerDisplayed">
-      <option name="closed" value="true" />
-      <created>1700845180797</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1700845180800</updated>
     </task>
     <task id="LOCAL-00051" summary="Updated clickEventIfDisplayed">
       <option name="closed" value="true" />
@@ -521,15 +450,74 @@
       <option name="project" value="LOCAL" />
       <updated>1701182684161</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="fixed Typo">
+      <option name="closed" value="true" />
+      <created>1701184285874</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1701184285874</updated>
+    </task>
+    <task id="LOCAL-00072" summary="fixed Typos">
+      <option name="closed" value="true" />
+      <created>1701184345386</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1701184345386</updated>
+    </task>
+    <task id="LOCAL-00073" summary="Small Changes">
+      <option name="closed" value="true" />
+      <created>1701184424511</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1701184424511</updated>
+    </task>
+    <task id="LOCAL-00074" summary="Fixed small typo">
+      <option name="closed" value="true" />
+      <created>1701184450118</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1701184450119</updated>
+    </task>
+    <task id="LOCAL-00075" summary="Fixed small typos">
+      <option name="closed" value="true" />
+      <created>1701184548153</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1701184548153</updated>
+    </task>
+    <task id="LOCAL-00076" summary="Fixed small typos">
+      <option name="closed" value="true" />
+      <created>1701184673707</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1701184673707</updated>
+    </task>
+    <task id="LOCAL-00077" summary="Small changes">
+      <option name="closed" value="true" />
+      <created>1701184738729</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1701184738729</updated>
+    </task>
+    <task id="LOCAL-00078" summary="Small changes">
+      <option name="closed" value="true" />
+      <created>1701184751505</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1701184751505</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Updated TC3 and TC4" />
-    <MESSAGE value="Added SkipException" />
-    <MESSAGE value="Updated TestNG Section" />
-    <MESSAGE value="Fixed Typos" />
-    <MESSAGE value="Created findElementByTagNameAndText" />
     <MESSAGE value="Fixed TC5" />
     <MESSAGE value="Added All Event Names from Scheduele Screen" />
     <MESSAGE value="Fixed checkEachSpeakerDisplayed" />
@@ -550,7 +538,12 @@
     <MESSAGE value="Code CleanUp" />
     <MESSAGE value="Small Typo fix" />
     <MESSAGE value="fixed Typo" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed Typo" />
+    <MESSAGE value="fixed Typos" />
+    <MESSAGE value="Small Changes" />
+    <MESSAGE value="Fixed small typo" />
+    <MESSAGE value="Fixed small typos" />
+    <MESSAGE value="Small changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Small changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
