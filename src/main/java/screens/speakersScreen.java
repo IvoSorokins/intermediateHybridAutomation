@@ -41,7 +41,7 @@ public class speakersScreen {
     }
 
     public void checkEachSpeakerDisplayed(int index,String userName,String profession){
-        swipeDownUntilElementIsVisible(userName, "h2");
+        swipeDownUntilElementIsVisible("About " +userName, "h3");
 
         WebElement speakerName = getDataProviderElement(userName,"h2");
         WebElement speakerAboutElement = getDataProviderElement("About " + userName,"h3");
