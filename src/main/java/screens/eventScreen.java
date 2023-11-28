@@ -22,8 +22,10 @@ public class eventScreen {
         Interactions = new interactions(driver);
     }
 
+
     @FindBy(css = "ion-button.toggle_favorite_btn")
     private WebElement starButton;
+
 
 
     public void checkIfEventNameIsDisplayed(String eventName){
@@ -37,17 +39,6 @@ public class eventScreen {
         }
     }
 
-    public void verifyStarButtonColorWhite(){
-        String initialColor = starButton.getCssValue("color");
-        Assert.assertEquals(initialColor, "rgb(255, 255, 255)"); // Assuming that white is rgb(0, 0, 0)(255, 255, 255)
-    }
-
-    public void verifyStarButtonColorBlack(){
-        // Check the initial color of the star button
-        String initialColor = starButton.getCssValue("color");
-        System.out.println("Verify star button color is black: " + initialColor);
-        Assert.assertEquals(initialColor, "rgb(0, 0, 0)"); // Assuming that black is rgb(0, 0, 0)
-    }
     public void verifyStarButtonLocation(){
         Dimension size = driver.manage().window().getSize(); // Get Screen size of the device
 
