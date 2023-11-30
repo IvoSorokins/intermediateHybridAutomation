@@ -187,9 +187,11 @@ public class interactions {
         }
     }
 
-    public void swipeElementHorizontally(WebElement element){
+    public void swipeElementHorizontally(String elementLocator){
         String webviewContext = Context.getCurrentContextName(); // Get Webview context
         Context.switchToNative();
+
+        WebElement element =  driver.findElement(By.xpath(elementLocator));
 
         Point location = element.getLocation();
         Dimension size = element.getSize();

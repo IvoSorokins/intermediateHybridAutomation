@@ -3,12 +3,14 @@ package screens;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
-import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import utils.interactions;
+import utils.shadowDomHelper;
+
 import static utils.testProperties.platform;
 
 
@@ -16,12 +18,13 @@ public class scheduleScreen {
 
     private final AppiumDriver driver;
     public interactions Interactions;
+    public shadowDomHelper ShadowDomHelper;
 
 
     public scheduleScreen(AppiumDriver driver) {
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(this.driver), this);
-
+        ShadowDomHelper = new shadowDomHelper(driver);
         Interactions = new interactions(driver);
     }
 
@@ -75,18 +78,21 @@ public class scheduleScreen {
     }
 
     public void clickRemoveIfDisplayed(){
-        Interactions.clickElementIfDisplayed(removeButton, "Remove button");
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+        String script = ShadowDomHelper.getMarkHelper("ion-item-group:nth-child(1) > ion-item-sliding > ion-item-options ion-item-option","button");
+        WebElement removeButton = (WebElement) jsExecutor.executeScript(script);
+        jsExecutor.executeScript("arguments[0].click();", removeButton);
     }
 
     public void swipeEventHorizontally(String eventName, String eventDescription){
-        WebElement element;
+        String elementLocator;
         if(platform.equals("iOS")){
-            element = driver.findElement(By.xpath("//XCUIElementTypeLink[@name=\""+ eventName +" " +eventDescription+ " chevron forward\"]"));
+            elementLocator = "//XCUIElementTypeLink[@name=\""+ eventName +" " +eventDescription+ " chevron forward\"]";
         }
         else{
-            element = driver.findElement(By.xpath("//android.view.View[@content-desc=\""+eventName+" " +eventDescription+ "\"]"));
+            elementLocator = "//android.view.View[@content-desc=\""+eventName+" " +eventDescription+ "\"]";
         }
-        Interactions.swipeElementHorizontally(element);
+        Interactions.swipeElementHorizontally(elementLocator);
     }
 
     public void isRemovePopUpDisplayed(){

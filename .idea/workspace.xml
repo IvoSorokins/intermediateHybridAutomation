@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d9ee0eb-3b76-4b4e-97f8-52b8060c6c76" name="Changes" comment="Renamed swipeElement to swipeElementHorizontally">
+    <list default="true" id="6d9ee0eb-3b76-4b4e-97f8-52b8060c6c76" name="Changes" comment="fixed ShadowDomHelper">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/screens/scheduleScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/scheduleScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/interactions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/interactions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utils/shadowDomHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/shadowDomHelper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -290,14 +292,6 @@
       <option name="project" value="LOCAL" />
       <updated>1700147847938</updated>
     </task>
-    <task id="LOCAL-00066" summary="Code CleanUp">
-      <option name="closed" value="true" />
-      <created>1701078165376</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1701078165376</updated>
-    </task>
     <task id="LOCAL-00067" summary="Small Typos">
       <option name="closed" value="true" />
       <created>1701078403133</created>
@@ -514,11 +508,18 @@
       <option name="project" value="LOCAL" />
       <updated>1701349471652</updated>
     </task>
-    <option name="localTasksCounter" value="94" />
+    <task id="LOCAL-00094" summary="fixed ShadowDomHelper">
+      <option name="closed" value="true" />
+      <created>1701356267994</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1701356267994</updated>
+    </task>
+    <option name="localTasksCounter" value="95" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update shadowDomHelper to accept multiple shadow DOM's" />
     <MESSAGE value="Small Typos" />
     <MESSAGE value="Code CleanUp" />
     <MESSAGE value="Small Typo fix" />
@@ -543,7 +544,8 @@
     <MESSAGE value="Added description to eventsData" />
     <MESSAGE value="Code Cleanup" />
     <MESSAGE value="Renamed swipeElement to swipeElementHorizontally" />
-    <option name="LAST_COMMIT_MESSAGE" value="Renamed swipeElement to swipeElementHorizontally" />
+    <MESSAGE value="fixed ShadowDomHelper" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed ShadowDomHelper" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

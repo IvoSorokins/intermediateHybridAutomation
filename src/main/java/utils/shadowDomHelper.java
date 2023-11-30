@@ -15,9 +15,9 @@ public class shadowDomHelper {
         PageFactory.initElements(new AppiumFieldDecorator(this.driver), this);
 
     }
-    private String getMarkHelper(String hostSelector,String childSelector){
+    public String getMarkHelper(String hostSelector, String childSelector){
         String mark = "return document.querySelector(\""+hostSelector+"\").shadowRoot.querySelector(\""+childSelector+"\")";
-                            //document.querySelector("ion-item-group:nth-child(1) > ion-item-sliding > ion-item-options ion-item-option").shadowRoot.querySelector("button");
+                            //document.querySelector("").shadowRoot.querySelector("button");
         return mark;
     }
 }
