@@ -5,8 +5,7 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.PerformsTouchActions;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
-import io.appium.java_client.touch.WaitOptions;
-import io.appium.java_client.touch.offset.ElementOption;
+
 import io.appium.java_client.touch.offset.PointOption;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.PageFactory;
@@ -14,8 +13,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-import java.time.Duration;
-
+import static java.time.Duration.ofSeconds;
+import static utils.testProperties.platform;
 import static utils.testProperties.waitTimeInSeconds;
 
 
@@ -89,50 +88,6 @@ public class interactions {
     }
 
 
-    public void swipeElement(String eventName,String direction,String platform){
-        String webviewContext = Context.getCurrentContextName(); // Get Webview context
-        Context.switchToNative();
-
-        WebElement event;
-        if (platform.equalsIgnoreCase("iOS")) {
-            // Replace 'iOSXPath' with the actual XPath for iOS
-            System.out.print(String.format("//XCUIElementTypeStaticText[@name=\"%s\"]",eventName));
-            event = driver.findElement(By.xpath(String.format("//XCUIElementTypeStaticText[@name=\"%s\"]",eventName)));
-        } else { // Android
-            System.out.print(String.format("//android.view.View[@text=\"%s\"]",eventName));
-            event = driver.findElement(By.xpath(String.format("//android.view.View[@text=\"%s\"]",eventName)));
-        }
-
-
-        // Get the X and Y coordinates of the element
-        int leftX = event.getLocation().getX();
-        int rightX = leftX + event.getSize().getWidth();
-        int Y = event.getLocation().getY();
-
-
-        // Create a new TouchAction
-        TouchAction touchAction = new TouchAction((PerformsTouchActions) driver);
-//        switchToNative(driver);
-
-        // Perform the swipe action based on the direction
-        if (direction.equalsIgnoreCase("left")) {
-            touchAction.press(ElementOption.point(rightX, Y))
-                    .waitAction(WaitOptions.waitOptions(Duration.ofMillis(500))) // Add a wait time
-                    .moveTo(ElementOption.point(leftX, Y))
-                    .release()
-                    .perform();
-            System.out.println("Swipe left x:"+rightX+" y: " +Y+" Move to:x"+leftX+"y: "+Y);
-        } else if (direction.equalsIgnoreCase("right")) {
-            touchAction.press(ElementOption.point(leftX, Y))
-                    .waitAction(WaitOptions.waitOptions(Duration.ofMillis(500)))
-                    .moveTo(ElementOption.point(rightX, Y))
-                    .release()
-                    .perform();
-            System.out.println("Swipe Right x:"+leftX+" y: " +Y+" Move to: x"+rightX+"y: "+Y);
-        }
-        Context.switchToWebView(webviewContext);
-    }
-
     /**
      * Asserts the visibility of a WebElement.
      *
@@ -142,7 +97,7 @@ public class interactions {
      */
     public void assertElementVisibility(WebElement element, String elementName, boolean shouldBeVisible){
         // WebDriverWait timer for a specified number of seconds
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(waitTimeInSeconds));
+        WebDriverWait wait = new WebDriverWait(driver, ofSeconds(waitTimeInSeconds));
 
         // Boolean to check if the element is visible
         boolean isElementVisible;
@@ -186,7 +141,7 @@ public class interactions {
     // Used for returning boolean value based of element visibility
     public boolean isElementVisible(WebElement element){
         // WebDriverWait timer for a specified number of seconds
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(waitTimeInSeconds));
+        WebDriverWait wait = new WebDriverWait(driver, ofSeconds(waitTimeInSeconds));
 
         // Boolean to check if the element is visible
         boolean isElementVisible;
@@ -221,7 +176,7 @@ public class interactions {
         boolean isElementVisible = isElementVisibleInView(element);
         int swipeCount = 0;
 
-        while (!isElementVisible && swipeCount < 6) {
+        while (!isElementVisible && swipeCount < 7) {
             swipe("Up", 1);
             isElementVisible = isElementVisibleInView(element);
             swipeCount++;
@@ -230,5 +185,34 @@ public class interactions {
         if (!isElementVisible) {
             Assert.fail("Element not found after " + 6 + " swipes.");
         }
+    }
+
+    public void swipeElement(String eventName){
+        String webviewContext = Context.getCurrentContextName(); // Get Webview context
+        Context.switchToNative();
+
+        WebElement element;
+        // Find the element using the event name in the native context
+        if(platform.equals("iOS")){
+            element = driver.findElement(By.xpath("//XCUIElementTypeLink[@name=\"Breakfast 8:00 am — 9:00 am: Dining Hall chevron forward\"]"));
+        }
+        else{
+            element = driver.findElement(By.xpath("//android.view.View[@content-desc=\"Breakfast 8:00 am — 9:00 am: Dining Hall\"]/android.view.View/android.view.View"));
+        }
+        Point location = element.getLocation();
+        Dimension size = element.getSize();
+        Dimension screenSize = driver.manage().window().getSize();
+
+        int centerY = location.y + size.height / 2;
+        int startX = location.x + size.width - 1; // Start from the right side of the element
+        int endX = location.x;
+
+        // Perform the swipe action
+        TouchAction action = new TouchAction((PerformsTouchActions) driver);
+        action.longPress(PointOption.point(startX, centerY))
+                .moveTo(PointOption.point(endX, centerY))
+                .release()
+                .perform();
+        Context.switchToWebView(webviewContext);
     }
 }

@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d9ee0eb-3b76-4b4e-97f8-52b8060c6c76" name="Changes" comment="added Links to the buttons of dataProvider">
+    <list default="true" id="6d9ee0eb-3b76-4b4e-97f8-52b8060c6c76" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/screens/speakerAboutScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/speakerAboutScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/screens/scheduleScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/scheduleScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utils/interactions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/interactions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/shadowDomHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/shadowDomHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/allTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/allTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,12 +67,12 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.allTests.aboutNavToSpeakerProfile">
-    <configuration name="allTests.aboutNavToSpeakerProfile" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.allTests.unFavouriteEventFavTabPopUp">
+    <configuration name="allTests.checkEachSpeaker" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="automation_Intermediate" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="allTests" />
-      <option name="METHOD_NAME" value="aboutNavToSpeakerProfile" />
+      <option name="METHOD_NAME" value="checkEachSpeaker" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -78,11 +80,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="allTests.navToMedia" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="allTests.navigateToEvents" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="automation_Intermediate" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="allTests" />
-      <option name="METHOD_NAME" value="navToMedia" />
+      <option name="METHOD_NAME" value="navigateToEvents" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="allTests.navigateToSpeakers" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="automation_Intermediate" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="allTests" />
+      <option name="METHOD_NAME" value="navigateToSpeakers" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -114,25 +128,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="allTests.userSwipesTutorialScreen" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="automation_Intermediate" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="allTests" />
-      <option name="METHOD_NAME" value="userSwipesTutorialScreen" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.allTests.aboutNavToSpeakerProfile" />
-        <item itemvalue="TestNG.allTests.navToMedia" />
         <item itemvalue="TestNG.allTests.unFavouriteEventFavTabPopUp" />
         <item itemvalue="TestNG.allTests.unFavouriteEvent" />
-        <item itemvalue="TestNG.allTests.userSwipesTutorialScreen" />
+        <item itemvalue="TestNG.allTests.navigateToEvents" />
+        <item itemvalue="TestNG.allTests.navigateToSpeakers" />
+        <item itemvalue="TestNG.allTests.checkEachSpeaker" />
       </list>
     </recent_temporary>
   </component>
@@ -291,30 +293,6 @@
       <option name="presentableId" value="LOCAL-00021" />
       <option name="project" value="LOCAL" />
       <updated>1700147847938</updated>
-    </task>
-    <task id="LOCAL-00057" summary="Removed sleep from navigateBack">
-      <option name="closed" value="true" />
-      <created>1700910778598</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1700910778598</updated>
-    </task>
-    <task id="LOCAL-00058" summary="Added Necessary functions">
-      <option name="closed" value="true" />
-      <created>1700913776992</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1700913776995</updated>
-    </task>
-    <task id="LOCAL-00059" summary="Remove Thread.sleep import">
-      <option name="closed" value="true" />
-      <created>1700913844255</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1700913844258</updated>
     </task>
     <task id="LOCAL-00060" summary="Changed shadow Element location methods">
       <option name="closed" value="true" />
@@ -516,13 +494,34 @@
       <option name="project" value="LOCAL" />
       <updated>1701195878044</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="added method to verifyMediaButtonColorTheme">
+      <option name="closed" value="true" />
+      <created>1701196719309</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1701196719309</updated>
+    </task>
+    <task id="LOCAL-00086" summary="Fixed Typo">
+      <option name="closed" value="true" />
+      <created>1701197620865</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1701197620865</updated>
+    </task>
+    <task id="LOCAL-00087" summary="Achieved Higher successrate">
+      <option name="closed" value="true" />
+      <created>1701197639621</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1701197639621</updated>
+    </task>
+    <option name="localTasksCounter" value="88" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Implemented getDataProvider, updated code" />
-    <MESSAGE value="Changed swipeLeft3Times to swipeLeft2Times" />
-    <MESSAGE value="Removed sleep from navigateBack" />
     <MESSAGE value="Added Necessary functions" />
     <MESSAGE value="Remove Thread.sleep import" />
     <MESSAGE value="Changed shadow Element location methods" />
@@ -545,7 +544,10 @@
     <MESSAGE value="Added some readME" />
     <MESSAGE value="fixed minor issue" />
     <MESSAGE value="added Links to the buttons of dataProvider" />
-    <option name="LAST_COMMIT_MESSAGE" value="added Links to the buttons of dataProvider" />
+    <MESSAGE value="added method to verifyMediaButtonColorTheme" />
+    <MESSAGE value="Fixed Typo" />
+    <MESSAGE value="Achieved Higher successrate" />
+    <option name="LAST_COMMIT_MESSAGE" value="Achieved Higher successrate" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -77,7 +77,7 @@ public class scheduleScreen {
     }
 
     public void swipeEvent(String eventName){
-        Interactions.swipeElement(eventName,"left");
+        Interactions.swipeElement(eventName);
     }
 
     public void isRemovePopUpDisplayed(){
