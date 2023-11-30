@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d9ee0eb-3b76-4b4e-97f8-52b8060c6c76" name="Changes" comment="">
+    <list default="true" id="6d9ee0eb-3b76-4b4e-97f8-52b8060c6c76" name="Changes" comment="fixed swipeElement">
       <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/screens/scheduleScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/scheduleScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/interactions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/interactions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dataObjects/event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dataProviders/eventNamesData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataProviders/eventsData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utils/shadowDomHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/shadowDomHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/allTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/allTests.java" afterDir="false" />
     </list>
@@ -294,14 +293,6 @@
       <option name="project" value="LOCAL" />
       <updated>1700147847938</updated>
     </task>
-    <task id="LOCAL-00060" summary="Changed shadow Element location methods">
-      <option name="closed" value="true" />
-      <created>1700916963579</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1700916963579</updated>
-    </task>
     <task id="LOCAL-00061" summary="Fixed Scroll until element is visible">
       <option name="closed" value="true" />
       <created>1701074574361</created>
@@ -518,11 +509,18 @@
       <option name="project" value="LOCAL" />
       <updated>1701197639621</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <task id="LOCAL-00088" summary="fixed swipeElement">
+      <option name="closed" value="true" />
+      <created>1701346220599</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1701346220600</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added Necessary functions" />
     <MESSAGE value="Remove Thread.sleep import" />
     <MESSAGE value="Changed shadow Element location methods" />
     <MESSAGE value="Fixed Scroll until element is visible" />
@@ -547,7 +545,8 @@
     <MESSAGE value="added method to verifyMediaButtonColorTheme" />
     <MESSAGE value="Fixed Typo" />
     <MESSAGE value="Achieved Higher successrate" />
-    <option name="LAST_COMMIT_MESSAGE" value="Achieved Higher successrate" />
+    <MESSAGE value="fixed swipeElement" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed swipeElement" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

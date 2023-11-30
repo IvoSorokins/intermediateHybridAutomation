@@ -5,7 +5,7 @@ import io.appium.java_client.AppiumDriver;
 
 // dataProviders imports
 import dataObjects.speaker;
-import dataProviders.eventNamesData;
+import dataProviders.eventsData;
 import dataProviders.speakersAndMediaData;
 import dataProviders.speakersData;
 
@@ -28,6 +28,7 @@ public class allTests {
     public speakersScreen SpeakersScreen;
     public speakerAboutScreen SpeakerAboutScreen;
     public ionicAccountScreen IonicAccountScreen;
+
 
     // Method to set up the environment before each test
    @BeforeMethod(alwaysRun = true)
@@ -94,7 +95,7 @@ public class allTests {
         ScheduleScreen.isScheduleDisplayed();
     }
 
-    @Test(groups ={"TC_5","Favorites user flow"},dataProvider = "eventProvider",dataProviderClass = eventNamesData.class,
+    @Test(groups ={"TC_5","Favorites user flow"},dataProvider = "eventProvider",dataProviderClass = eventsData.class,
             priority = 5)
     public void navigateToEvents(String eventName){
         skipTutorialScreen();
@@ -103,7 +104,7 @@ public class allTests {
         EventScreen.checkIfEventNameIsDisplayed(eventName);
     }
 
-    @Test(groups={"TC_6","Favorites user flow"},dataProvider = "eventProvider",dataProviderClass = eventNamesData.class,
+    @Test(groups={"TC_6","Favorites user flow"},dataProvider = "eventProvider",dataProviderClass = eventsData.class,
             priority = 6)
     public void favouriteEvent(String eventName){
         navigateToEvents(eventName);
@@ -113,7 +114,7 @@ public class allTests {
         ScheduleScreen.clickFavouriteTabIfDisplayed();
         ScheduleScreen.checkIfEventIsDisplayed(eventName);
     }
-    @Test(groups={"TC_7","Favorites user flow"},dataProvider = "eventProvider",dataProviderClass = eventNamesData.class,
+    @Test(groups={"TC_7","Favorites user flow"},dataProvider = "eventProvider",dataProviderClass = eventsData.class,
             priority = 7)
     public void unFavouriteEvent(String eventName){
         navigateToEvents(eventName);
@@ -122,9 +123,9 @@ public class allTests {
         ScheduleScreen.clickFavouriteTabIfDisplayed();
         ScheduleScreen.noEventsDisplayed(eventName);
     }
-    @Test(groups={"TC_8","Favorites user flow"},dataProvider = "eventProvider",dataProviderClass = eventNamesData.class,
+    @Test(groups={"TC_8","Favorites user flow"},dataProvider = "eventProvider",dataProviderClass = eventsData.class,
             priority = 8)
-    public void unFavouriteEventFavTabPopUp(String eventName) {
+    public void unFavouriteEventFavTabPopUp(String eventName){
         favouriteEvent(eventName);
         ScheduleScreen.swipeEvent(eventName);
         ScheduleScreen.clickRemoveIfDisplayed();
@@ -132,7 +133,7 @@ public class allTests {
         ScheduleScreen.isRemoveButtonOnPopUpDisplayed();
         ScheduleScreen.isCancelButtonOnPopUpDisplayed();
     }
-    @Test(groups={"TC_9","Favorites user flow"},dataProvider = "eventProvider",dataProviderClass = eventNamesData.class,
+    @Test(groups={"TC_9","Favorites user flow"},dataProvider = "eventProvider",dataProviderClass = eventsData.class,
             priority = 9)
     public void cancelRemoveEventFromFavTab(String eventName){
         unFavouriteEventFavTabPopUp(eventName);
@@ -140,7 +141,7 @@ public class allTests {
         ScheduleScreen.checkIfEventIsDisplayed(eventName);
         ScheduleScreen.removeButtonIsNotDisplayed();
     }
-    @Test(groups={"TC_10","Favorites user flow"},dataProvider = "eventProvider",dataProviderClass = eventNamesData.class,
+    @Test(groups={"TC_10","Favorites user flow"},dataProvider = "eventProvider",dataProviderClass = eventsData.class,
             priority = 10)
     public void removeEventFromFavTab(String eventName){
         unFavouriteEventFavTabPopUp(eventName);
