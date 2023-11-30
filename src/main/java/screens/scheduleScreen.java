@@ -3,11 +3,13 @@ package screens;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import utils.interactions;
+import static utils.testProperties.platform;
 
 
 public class scheduleScreen {
@@ -76,8 +78,15 @@ public class scheduleScreen {
         Interactions.clickElementIfDisplayed(removeButton, "Remove button");
     }
 
-    public void swipeEvent(String eventName){
-        Interactions.swipeElement(eventName);
+    public void swipeEventHorizontally(String eventName, String eventDescription){
+        WebElement element;
+        if(platform.equals("iOS")){
+            element = driver.findElement(By.xpath("//XCUIElementTypeLink[@name=\""+ eventName +" " +eventDescription+ " chevron forward\"]"));
+        }
+        else{
+            element = driver.findElement(By.xpath("//android.view.View[@content-desc=\""+eventName+" " +eventDescription+ "\"]"));
+        }
+        Interactions.swipeElementHorizontally(element);
     }
 
     public void isRemovePopUpDisplayed(){

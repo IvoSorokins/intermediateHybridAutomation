@@ -1,28 +1,28 @@
 package dataObjects;
 
 public class event {
-    private String mediaName;
-    private String mediaDescription;
+    private String eventName;
+    private String eventDescription;
 
 
     public event(String mediaName,String mediaDescription){
-        this.mediaName = mediaName;
-        this.mediaDescription = mediaDescription;
+        this.eventName = mediaName;
+        this.eventDescription = mediaDescription;
     }
 
-    public String getMediaName() {
-        return mediaName;
+    public String getEventName() {
+        return eventName;
     }
 
-    public String getMediaDescription() {
-        return mediaDescription;
+    public String getEventDescription() {
+        return eventDescription;
     }
 
     @Override
     public String toString() {
         return "event{" +
-                "mediaName='" + mediaName + '\'' +
-                ", mediaDescription='" + mediaDescription + '\'' +
+                "mediaName='" + eventName + '\'' +
+                ", mediaDescription='" + eventDescription + '\'' +
                 '}';
     }
 }

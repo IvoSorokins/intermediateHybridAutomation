@@ -1,4 +1,5 @@
 // TestNG, Appium imports
+import dataObjects.event;
 import dataObjects.media;
 import org.testng.annotations.*;
 import io.appium.java_client.AppiumDriver;
@@ -125,9 +126,9 @@ public class allTests {
     }
     @Test(groups={"TC_8","Favorites user flow"},dataProvider = "eventProvider",dataProviderClass = eventsData.class,
             priority = 8)
-    public void unFavouriteEventFavTabPopUp(String eventName){
-        favouriteEvent(eventName);
-        ScheduleScreen.swipeEvent(eventName);
+    public void unFavouriteEventFavTabPopUp(event Event){
+        favouriteEvent(Event.getEventName());
+        ScheduleScreen.swipeEventHorizontally(Event.getEventName(),Event.getEventDescription());
         ScheduleScreen.clickRemoveIfDisplayed();
         ScheduleScreen.isRemovePopUpDisplayed();
         ScheduleScreen.isRemoveButtonOnPopUpDisplayed();
@@ -135,18 +136,18 @@ public class allTests {
     }
     @Test(groups={"TC_9","Favorites user flow"},dataProvider = "eventProvider",dataProviderClass = eventsData.class,
             priority = 9)
-    public void cancelRemoveEventFromFavTab(String eventName){
-        unFavouriteEventFavTabPopUp(eventName);
+    public void cancelRemoveEventFromFavTab(event Event){
+        unFavouriteEventFavTabPopUp(Event);
         ScheduleScreen.clickCancelButtonOnPopUp();
-        ScheduleScreen.checkIfEventIsDisplayed(eventName);
+        ScheduleScreen.checkIfEventIsDisplayed(Event.getEventName());
         ScheduleScreen.removeButtonIsNotDisplayed();
     }
     @Test(groups={"TC_10","Favorites user flow"},dataProvider = "eventProvider",dataProviderClass = eventsData.class,
             priority = 10)
-    public void removeEventFromFavTab(String eventName){
-        unFavouriteEventFavTabPopUp(eventName);
+    public void removeEventFromFavTab(event Event){
+        unFavouriteEventFavTabPopUp(Event);
         ScheduleScreen.clickRemoveButtonOnPopUp();
-        ScheduleScreen.noEventsDisplayed(eventName);
+        ScheduleScreen.noEventsDisplayed(Event.getEventName());
     }
     @Test(groups={"TC_11","About Speaker flow"},
             priority = 11)

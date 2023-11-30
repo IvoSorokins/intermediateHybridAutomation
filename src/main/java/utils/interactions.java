@@ -14,7 +14,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import static java.time.Duration.ofSeconds;
-import static utils.testProperties.platform;
 import static utils.testProperties.waitTimeInSeconds;
 
 
@@ -172,6 +171,7 @@ public class interactions {
     public WebElement findElementByTagNameAndText(String tagName, String text){
         return driver.findElement(By.xpath(String.format("//%s[text()=\"%s\"]", tagName, text)));
     }
+    //TODO - Make this method more generic
     public void swipeUntilElementVisible(WebElement element) {
         boolean isElementVisible = isElementVisibleInView(element);
         int swipeCount = 0;
