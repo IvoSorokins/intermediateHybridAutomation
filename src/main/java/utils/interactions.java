@@ -187,21 +187,12 @@ public class interactions {
         }
     }
 
-    public void swipeElement(String eventName){
+    public void swipeElementHorizontally(WebElement element){
         String webviewContext = Context.getCurrentContextName(); // Get Webview context
         Context.switchToNative();
 
-        WebElement element;
-        // Find the element using the event name in the native context
-        if(platform.equals("iOS")){
-            element = driver.findElement(By.xpath("//XCUIElementTypeLink[@name=\"Breakfast 8:00 am — 9:00 am: Dining Hall chevron forward\"]"));
-        }
-        else{
-            element = driver.findElement(By.xpath("//android.view.View[@content-desc=\"Breakfast 8:00 am — 9:00 am: Dining Hall\"]/android.view.View/android.view.View"));
-        }
         Point location = element.getLocation();
         Dimension size = element.getSize();
-        Dimension screenSize = driver.manage().window().getSize();
 
         int centerY = location.y + size.height / 2;
         int startX = location.x + size.width - 1; // Start from the right side of the element
