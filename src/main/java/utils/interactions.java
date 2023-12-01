@@ -61,8 +61,8 @@ public class interactions {
             endX = direction.equals("Left") ? (int) (size.width * 0.2) : (int) (size.width * 0.8);
             startY = endY = size.height / 2;
         } else { // Up or Down
-            startY = direction.equals("Up") ? (int) (size.height * 0.8) : (int) (size.height * 0.2);
-            endY = direction.equals("Up") ? (int) (size.height * 0.2) : (int) (size.height * 0.8);
+            startY = direction.equals("Up") ? (int) (size.height * 0.8) : (int) (size.height * 0.3);
+            endY = direction.equals("Up") ? (int) (size.height * 0.3) : (int) (size.height * 0.8);
             startX = endX = size.width / 2;
         }
 
@@ -172,18 +172,18 @@ public class interactions {
         return driver.findElement(By.xpath(String.format("//%s[text()=\"%s\"]", tagName, text)));
     }
     //TODO - Make this method more generic
-    public void swipeUntilElementVisible(WebElement element) {
+    public void swipeUntilElementVisible(WebElement element,int MaxSwipeCount) {
         boolean isElementVisible = isElementVisibleInView(element);
         int swipeCount = 0;
 
-        while (!isElementVisible && swipeCount < 7) {
+        while (!isElementVisible && swipeCount < MaxSwipeCount) {
             swipe("Up", 1);
             isElementVisible = isElementVisibleInView(element);
             swipeCount++;
         }
 
         if (!isElementVisible) {
-            Assert.fail("Element not found after " + 6 + " swipes.");
+            Assert.fail("Element not found after " + MaxSwipeCount + " swipes.");
         }
     }
 
