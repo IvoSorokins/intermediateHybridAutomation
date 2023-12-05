@@ -3,7 +3,7 @@ package screens;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
-import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -35,9 +35,6 @@ public class scheduleScreen {
     @FindBy(xpath ="//ion-segment-button[text()=\" Favorites \"]")
     private WebElement favouriteTab;
 
-    @FindBy(css="ion-item-sliding.md.hydrated.item-sliding-active-slide.item-sliding-active-options-end")
-    private WebElement removeButton;
-
     @FindBy(xpath = "//h2[text()=\"Remove Favorite\"]")
     private WebElement removePopUp;
 
@@ -51,26 +48,36 @@ public class scheduleScreen {
     private WebElement noEventsText;
 
 
+    public WebElement getRemoveButton(){
+        WebElement RemoveButton;
+        if(platform.equals("iOS")){
+            RemoveButton = driver.findElement(By.xpath("//XCUIElementTypeButton[@name=\"Remove\"]"));
+        }
+        else{
+            RemoveButton = driver.findElement(By.xpath("//android.widget.Button[@text=\"REMOVE\"]"));
+        }
+        return RemoveButton;
+    }
     // Methods to interact with the elements
     public void isScheduleDisplayed(){
         Interactions.assertElementVisibility(scheduleTitle,"Schedule title",true);
     }
 
-    public WebElement getDataProviderElement(String eventName){
+    public WebElement getDataProviderEvent(String eventName){
         WebElement eventNameElement = Interactions.findElementByTagNameAndText("h3", eventName);
         return eventNameElement;
     }
 
     public void swipeDownUntilElementIsVisible(String eventName){
-        Interactions.swipeUntilElementVisible(getDataProviderElement(eventName));
+        Interactions.swipeUntilElementVisible(getDataProviderEvent(eventName), 4);
     }
 
     public void clickEventIfDisplayed(String eventName){
-            Interactions.clickElementIfDisplayed(getDataProviderElement(eventName), "Speaker name");
+            Interactions.clickElementIfDisplayed(getDataProviderEvent(eventName), "Speaker name");
     }
 
     public void checkIfEventIsDisplayed(String eventName){
-        Interactions.assertElementVisibility(getDataProviderElement(eventName), "Event widget", true);
+        Interactions.assertElementVisibility(getDataProviderEvent(eventName), "Event widget", true);
     }
 
     public void clickFavouriteTabIfDisplayed(){
@@ -78,10 +85,8 @@ public class scheduleScreen {
     }
 
     public void clickRemoveIfDisplayed(){
-        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
-        String script = ShadowDomHelper.getMarkHelper("ion-item-group:nth-child(1) > ion-item-sliding > ion-item-options ion-item-option","button");
-        WebElement removeButton = (WebElement) jsExecutor.executeScript(script);
-        jsExecutor.executeScript("arguments[0].click();", removeButton);
+        WebElement element = getRemoveButton();
+        Interactions.clickElementIfDisplayed(element, "Remove button");
     }
 
     public void swipeEventHorizontally(String eventName, String eventDescription){
@@ -114,11 +119,12 @@ public class scheduleScreen {
     }
 
     public void removeButtonIsNotDisplayed(){
-        Interactions.assertElementVisibility(removeButton,"Remove button",false);
+        Interactions.assertElementVisibility(getRemoveButton(),"Remove button Pop Up",false);
+
     }
 
     public void noEventsDisplayed(String eventName){
-        Interactions.assertElementVisibility(getDataProviderElement(eventName), "Event widget", false);
+        Interactions.assertElementVisibility(getDataProviderEvent(eventName), "Event widget", false);
         Interactions.assertElementVisibility(noEventsText, "'No Sessions Found' text", true);
     }
 

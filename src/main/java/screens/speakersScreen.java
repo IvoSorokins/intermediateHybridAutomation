@@ -34,7 +34,7 @@ public class speakersScreen {
         return speakerElement;
     }
     public void swipeDownUntilElementIsVisible(String eventName,String tagName){
-        Interactions.swipeUntilElementVisible(getDataProviderElement(eventName,tagName));
+        Interactions.swipeUntilElementVisible(getDataProviderElement(eventName,tagName),7);
     }
     public void isSpeakersTitleDisplayed(){
         Interactions.assertElementVisibility(speakersTitle,"Speakers title",true);
@@ -54,16 +54,15 @@ public class speakersScreen {
 
     public void clickSpeakerProfile(int index,String userName){
         WebElement speakerElement = getDataProviderElement(userName,"ion-col["+ index +"]//h2");
-        Interactions.swipeUntilElementVisible(speakerElement);
+        Interactions.swipeUntilElementVisible(speakerElement, 7);
         Interactions.clickElementIfDisplayed(speakerElement, "Speaker name");
     }
 
     public void clickSpeakerAbout(String userName){
         WebElement speakerAboutElement = getDataProviderElement("About " + userName,"h3");
-        Interactions.swipeUntilElementVisible(speakerAboutElement);
+        Interactions.swipeUntilElementVisible(speakerAboutElement,7);
 
         Interactions.clickElementIfDisplayed(speakerAboutElement, "Speaker about section");
-
     }
 
     public void clickSpeakersButtonIfDisplayed(){

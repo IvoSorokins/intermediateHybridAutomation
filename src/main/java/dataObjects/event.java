@@ -5,9 +5,11 @@ public class event {
     private String eventDescription;
 
 
+
     public event(String mediaName,String mediaDescription){
         this.eventName = mediaName;
         this.eventDescription = mediaDescription;
+
     }
 
     public String getEventName() {

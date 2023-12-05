@@ -98,36 +98,36 @@ public class allTests {
 
     @Test(groups ={"TC_5","Favorites user flow"},dataProvider = "eventProvider",dataProviderClass = eventsData.class,
             priority = 5)
-    public void navigateToEvents(String eventName){
+    public void navigateToEvents(event Event){
         skipTutorialScreen();
-        ScheduleScreen.swipeDownUntilElementIsVisible(eventName);
-        ScheduleScreen.clickEventIfDisplayed(eventName);
-        EventScreen.checkIfEventNameIsDisplayed(eventName);
+        ScheduleScreen.swipeDownUntilElementIsVisible(Event.getEventName());
+        ScheduleScreen.clickEventIfDisplayed(Event.getEventName());
+        EventScreen.checkIfEventNameIsDisplayed(Event.getEventName());
     }
 
     @Test(groups={"TC_6","Favorites user flow"},dataProvider = "eventProvider",dataProviderClass = eventsData.class,
             priority = 6)
-    public void favouriteEvent(String eventName){
-        navigateToEvents(eventName);
+    public void favouriteEvent(event Event){
+        navigateToEvents(Event);
         EventScreen.verifyStarButtonLocation();
         EventScreen.clickStarButtonIfDisplayed(1);
         EventScreen.navigateBackToScheduleScreen();
         ScheduleScreen.clickFavouriteTabIfDisplayed();
-        ScheduleScreen.checkIfEventIsDisplayed(eventName);
+        ScheduleScreen.checkIfEventIsDisplayed(Event.getEventName());
     }
     @Test(groups={"TC_7","Favorites user flow"},dataProvider = "eventProvider",dataProviderClass = eventsData.class,
             priority = 7)
-    public void unFavouriteEvent(String eventName){
-        navigateToEvents(eventName);
+    public void unFavouriteEvent(event Event){
+        navigateToEvents(Event);
         EventScreen.clickStarButtonIfDisplayed(2);
         EventScreen.navigateBackToScheduleScreen();
         ScheduleScreen.clickFavouriteTabIfDisplayed();
-        ScheduleScreen.noEventsDisplayed(eventName);
+        ScheduleScreen.noEventsDisplayed(Event.getEventName());
     }
     @Test(groups={"TC_8","Favorites user flow"},dataProvider = "eventProvider",dataProviderClass = eventsData.class,
             priority = 8)
     public void unFavouriteEventFavTabPopUp(event Event){
-        favouriteEvent(Event.getEventName());
+        favouriteEvent(Event);
         ScheduleScreen.swipeEventHorizontally(Event.getEventName(),Event.getEventDescription());
         ScheduleScreen.clickRemoveIfDisplayed();
         ScheduleScreen.isRemovePopUpDisplayed();
