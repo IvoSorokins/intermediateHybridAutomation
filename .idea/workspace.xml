@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d9ee0eb-3b76-4b4e-97f8-52b8060c6c76" name="Changes" comment="Implemented new changes to ShadowDomHelper">
+    <list default="true" id="6d9ee0eb-3b76-4b4e-97f8-52b8060c6c76" name="Changes" comment="Fixed Remove Button getter">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dataObjects/event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataObjects/event.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dataProviders/eventsData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataProviders/eventsData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/screens/eventScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/eventScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/screens/scheduleScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/scheduleScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/screens/speakersScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/speakersScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utils/interactions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/interactions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utils/shadowDomHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/shadowDomHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/allTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/allTests.java" afterDir="false" />
@@ -69,12 +69,24 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.allTests.unFavouriteEventFavTabPopUp">
-    <configuration name="allTests.navToSpeakerProfile" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.allTests.favouriteEvent">
+    <configuration name="allTests.cancelRemoveEventFromFavTab" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="automation_Intermediate" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="allTests" />
-      <option name="METHOD_NAME" value="navToSpeakerProfile" />
+      <option name="METHOD_NAME" value="cancelRemoveEventFromFavTab" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="allTests.favouriteEvent" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="automation_Intermediate" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="allTests" />
+      <option name="METHOD_NAME" value="favouriteEvent" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -87,18 +99,6 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="allTests" />
       <option name="METHOD_NAME" value="navigateToEvents" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="allTests.navigateToSpeakers" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="automation_Intermediate" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="allTests" />
-      <option name="METHOD_NAME" value="navigateToSpeakers" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -132,11 +132,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.allTests.unFavouriteEventFavTabPopUp" />
-        <item itemvalue="TestNG.allTests.navigateToEvents" />
-        <item itemvalue="TestNG.allTests.navToSpeakerProfile" />
+        <item itemvalue="TestNG.allTests.favouriteEvent" />
         <item itemvalue="TestNG.allTests.unFavouriteEvent" />
-        <item itemvalue="TestNG.allTests.navigateToSpeakers" />
+        <item itemvalue="TestNG.allTests.unFavouriteEventFavTabPopUp" />
+        <item itemvalue="TestNG.allTests.cancelRemoveEventFromFavTab" />
+        <item itemvalue="TestNG.allTests.navigateToEvents" />
       </list>
     </recent_temporary>
   </component>
@@ -295,22 +295,6 @@
       <option name="presentableId" value="LOCAL-00021" />
       <option name="project" value="LOCAL" />
       <updated>1700147847938</updated>
-    </task>
-    <task id="LOCAL-00068" summary="Code CleanUp">
-      <option name="closed" value="true" />
-      <created>1701080041802</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1701080041802</updated>
-    </task>
-    <task id="LOCAL-00069" summary="Small Typo fix">
-      <option name="closed" value="true" />
-      <created>1701085143292</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1701085143292</updated>
     </task>
     <task id="LOCAL-00070" summary="fixed Typo">
       <option name="closed" value="true" />
@@ -520,12 +504,26 @@
       <option name="project" value="LOCAL" />
       <updated>1701358822157</updated>
     </task>
-    <option name="localTasksCounter" value="96" />
+    <task id="LOCAL-00096" summary="Calibrated swipe">
+      <option name="closed" value="true" />
+      <created>1701447561094</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1701447561094</updated>
+    </task>
+    <task id="LOCAL-00097" summary="Fixed Remove Button getter">
+      <option name="closed" value="true" />
+      <created>1701783426085</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1701783426086</updated>
+    </task>
+    <option name="localTasksCounter" value="98" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Code CleanUp" />
-    <MESSAGE value="Small Typo fix" />
     <MESSAGE value="fixed Typo" />
     <MESSAGE value="fixed Typos" />
     <MESSAGE value="Small Changes" />
@@ -549,7 +547,9 @@
     <MESSAGE value="Renamed swipeElement to swipeElementHorizontally" />
     <MESSAGE value="fixed ShadowDomHelper" />
     <MESSAGE value="Implemented new changes to ShadowDomHelper" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented new changes to ShadowDomHelper" />
+    <MESSAGE value="Calibrated swipe" />
+    <MESSAGE value="Fixed Remove Button getter" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed Remove Button getter" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
