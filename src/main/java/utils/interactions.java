@@ -20,7 +20,6 @@ import static utils.testProperties.waitTimeInSeconds;
 public class interactions {
 
     private static AppiumDriver driver;
-
     public static context Context;
 
 
@@ -29,6 +28,7 @@ public class interactions {
         PageFactory.initElements(new AppiumFieldDecorator(this.driver), this);
         Context = new context(driver);
     }
+
 
     // Check if an element center is visible in the current view
     public boolean isElementVisibleInView(WebElement element) {
@@ -78,14 +78,20 @@ public class interactions {
         Context.switchToWebView(webviewContext);
     }
 
+    /** This method is used to navigate back in the application
+     *
+     * Note: As of the current version of the test suite, this method is not used in any test case
+     * However, it could be useful in future test cases that require navigating back in the application
+     *
+     * Usage:
+     * - Call this method whenever you need to navigate back in the application
+     */
     public void navigateBack(){
         String webviewContext = Context.getCurrentContextName(); // Get Webview context
         Context.switchToNative();
         driver.navigate().back();
         Context.switchToWebView(webviewContext);
-
     }
-
 
     /**
      * Asserts the visibility of a WebElement.
@@ -168,10 +174,11 @@ public class interactions {
         // Return the visibility of the element
         return isElementVisible;
     }
+
     public WebElement findElementByTagNameAndText(String tagName, String text){
         return driver.findElement(By.xpath(String.format("//%s[text()=\"%s\"]", tagName, text)));
     }
-    //TODO - Make this method more generic
+
     public void swipeUntilElementVisible(WebElement element,int MaxSwipeCount) {
         boolean isElementVisible = isElementVisibleInView(element);
         int swipeCount = 0;
