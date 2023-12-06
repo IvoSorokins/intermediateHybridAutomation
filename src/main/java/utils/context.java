@@ -14,6 +14,7 @@ public class context {
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(this.driver), this);
     }
+
     public String getCurrentContextName(){
         return ((SupportsContextSwitching) driver).getContext();
     }
@@ -22,6 +23,7 @@ public class context {
         ((SupportsContextSwitching) driver).context("NATIVE_APP");
 
     }
+
     public void switchToWebView(String contextName) {
         ((SupportsContextSwitching) driver).context(contextName);
     }

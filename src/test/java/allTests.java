@@ -129,6 +129,7 @@ public class allTests {
     public void unFavouriteEventFavTabPopUp(event Event){
         favouriteEvent(Event);
         ScheduleScreen.swipeEventHorizontally(Event.getEventName(),Event.getEventDescription());
+        ScheduleScreen.getRemoveButton(Event.getIndex());
         ScheduleScreen.clickRemoveIfDisplayed();
         ScheduleScreen.isRemovePopUpDisplayed();
         ScheduleScreen.isRemoveButtonOnPopUpDisplayed();
