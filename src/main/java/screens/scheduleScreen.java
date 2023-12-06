@@ -11,6 +11,8 @@ import org.openqa.selenium.support.PageFactory;
 import utils.interactions;
 import utils.shadowDomHelper;
 
+import java.util.List;
+
 import static utils.testProperties.platform;
 
 
@@ -47,17 +49,21 @@ public class scheduleScreen {
     @FindBy(xpath = "//ion-list-header[text()=\" No Sessions Found \"]")
     private WebElement noEventsText;
 
+    public WebElement removeButton;
 
-    public WebElement getRemoveButton(){
-        WebElement RemoveButton;
-        if(platform.equals("iOS")){
-            RemoveButton = driver.findElement(By.xpath("//XCUIElementTypeButton[@name=\"Remove\"]"));
+
+    public void getRemoveButton(int index) {
+        List<WebElement> elements = driver.findElements(By.xpath("//ion-item-option[@color='danger']"));
+
+        // Check if the index is valid
+        if (index >= 0 && index < elements.size()) {
+            removeButton = elements.get(index);
+
+        } else {
+            throw new IllegalArgumentException("Invalid index: " + index);
         }
-        else{
-            RemoveButton = driver.findElement(By.xpath("//android.widget.Button[@text=\"REMOVE\"]"));
-        }
-        return RemoveButton;
     }
+
     // Methods to interact with the elements
     public void isScheduleDisplayed(){
         Interactions.assertElementVisibility(scheduleTitle,"Schedule title",true);
@@ -85,8 +91,7 @@ public class scheduleScreen {
     }
 
     public void clickRemoveIfDisplayed(){
-        WebElement element = getRemoveButton();
-        Interactions.clickElementIfDisplayed(element, "Remove button");
+        Interactions.clickElementIfDisplayed(removeButton, "Remove button");
     }
 
     public void swipeEventHorizontally(String eventName, String eventDescription){
@@ -111,16 +116,17 @@ public class scheduleScreen {
     public void isRemoveButtonOnPopUpDisplayed(){
         Interactions.assertElementVisibility(removeButtonPopUp,"Remove button Pop Up",true);
     }
+
     public void isCancelButtonOnPopUpDisplayed(){
         Interactions.assertElementVisibility(cancelButtonPopUp,"Cancel button Pop Up",true);
     }
+
     public void clickCancelButtonOnPopUp(){
         Interactions.clickElementIfDisplayed(cancelButtonPopUp, "Cancel button Pop Up");
     }
 
     public void removeButtonIsNotDisplayed(){
-        Interactions.assertElementVisibility(getRemoveButton(),"Remove button Pop Up",false);
-
+        Interactions.assertElementVisibility(removeButton,"Remove button Pop Up",false);
     }
 
     public void noEventsDisplayed(String eventName){
