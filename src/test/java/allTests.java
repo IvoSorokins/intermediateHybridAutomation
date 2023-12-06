@@ -51,6 +51,7 @@ public class allTests {
         driver.quit();
     }
 
+    // Test Cases (Priority is set to run in order)
     @Test(groups ={"TC_1","Tutorial flow"},
             priority = 1)
     public void displayTutorialScreen(){
@@ -84,6 +85,7 @@ public class allTests {
         WelcomeScreen.swipeRightOnce();
         WelcomeScreen.verifyTutorial1IsDisplayed();
     }
+
     @Test(groups ={"TC_4","Tutorial flow"},
             priority = 4)
     public void continueToSchedueleScreen(){ // Test Case will only  work on Android
@@ -92,14 +94,15 @@ public class allTests {
 
         WelcomeScreen.swipeLeft2Times();
         WelcomeScreen.verifyTutorial4IsDisplayed();
-        WelcomeScreen.clickContinue();
+        WelcomeScreen.clickContinueIfDisplayed();
         ScheduleScreen.isScheduleDisplayed();
     }
 
     @Test(groups ={"TC_5","Favorites user flow"},dataProvider = "eventProvider",dataProviderClass = eventsData.class,
             priority = 5)
     public void navigateToEvents(event Event){
-        skipTutorialScreen();
+        skipTutorialScreen(); // Skip Tutorial Screen
+
         ScheduleScreen.swipeDownUntilElementIsVisible(Event.getEventName());
         ScheduleScreen.clickEventIfDisplayed(Event.getEventName());
         EventScreen.checkIfEventNameIsDisplayed(Event.getEventName());
@@ -108,26 +111,31 @@ public class allTests {
     @Test(groups={"TC_6","Favorites user flow"},dataProvider = "eventProvider",dataProviderClass = eventsData.class,
             priority = 6)
     public void favouriteEvent(event Event){
-        navigateToEvents(Event);
+        navigateToEvents(Event); // Navigate to each event screen
+
         EventScreen.verifyStarButtonLocation();
         EventScreen.clickStarButtonIfDisplayed(1);
         EventScreen.navigateBackToScheduleScreen();
         ScheduleScreen.clickFavouriteTabIfDisplayed();
         ScheduleScreen.checkIfEventIsDisplayed(Event.getEventName());
     }
+
     @Test(groups={"TC_7","Favorites user flow"},dataProvider = "eventProvider",dataProviderClass = eventsData.class,
             priority = 7)
     public void unFavouriteEvent(event Event){
-        navigateToEvents(Event);
+        navigateToEvents(Event); // Navigate to each event screen
+
         EventScreen.clickStarButtonIfDisplayed(2);
         EventScreen.navigateBackToScheduleScreen();
         ScheduleScreen.clickFavouriteTabIfDisplayed();
         ScheduleScreen.noEventsDisplayed(Event.getEventName());
     }
+
     @Test(groups={"TC_8","Favorites user flow"},dataProvider = "eventProvider",dataProviderClass = eventsData.class,
             priority = 8)
     public void unFavouriteEventFavTabPopUp(event Event){
-        favouriteEvent(Event);
+        favouriteEvent(Event); // Navigates to Favourite Tab after favouring event
+
         ScheduleScreen.swipeEventHorizontally(Event.getEventName(),Event.getEventDescription());
         ScheduleScreen.getRemoveButton(Event.getIndex());
         ScheduleScreen.clickRemoveIfDisplayed();
@@ -135,25 +143,31 @@ public class allTests {
         ScheduleScreen.isRemoveButtonOnPopUpDisplayed();
         ScheduleScreen.isCancelButtonOnPopUpDisplayed();
     }
+
     @Test(groups={"TC_9","Favorites user flow"},dataProvider = "eventProvider",dataProviderClass = eventsData.class,
             priority = 9)
     public void cancelRemoveEventFromFavTab(event Event){
-        unFavouriteEventFavTabPopUp(Event);
+        unFavouriteEventFavTabPopUp(Event); //
+
         ScheduleScreen.clickCancelButtonOnPopUp();
         ScheduleScreen.checkIfEventIsDisplayed(Event.getEventName());
         ScheduleScreen.removeButtonIsNotDisplayed();
     }
+
     @Test(groups={"TC_10","Favorites user flow"},dataProvider = "eventProvider",dataProviderClass = eventsData.class,
             priority = 10)
     public void removeEventFromFavTab(event Event){
         unFavouriteEventFavTabPopUp(Event);
+
         ScheduleScreen.clickRemoveButtonOnPopUp();
         ScheduleScreen.noEventsDisplayed(Event.getEventName());
     }
+
     @Test(groups={"TC_11","About Speaker flow"},
             priority = 11)
     public void navigateToSpeakers(){
        skipTutorialScreen();
+
        SpeakersScreen.clickSpeakersButtonIfDisplayed();
        SpeakersScreen.isSpeakersTitleDisplayed();
     }
@@ -162,6 +176,7 @@ public class allTests {
             priority = 12)
     public void checkEachSpeaker(speaker Speaker){
         navigateToSpeakers();
+
         SpeakersScreen.checkEachSpeakerDisplayed(Speaker.getIndex(),Speaker.getUserName(),Speaker.getProfession());
     }
 
@@ -169,6 +184,7 @@ public class allTests {
             priority = 13)
     public void navToSpeakerProfile(speaker Speaker){
         navigateToSpeakers();
+
         SpeakersScreen.clickSpeakerProfile(Speaker.getIndex(), Speaker.getUserName());
         SpeakerAboutScreen.verifyAllButtons();
         SpeakerAboutScreen.verifyMediaButtonColorTheme();
@@ -181,6 +197,7 @@ public class allTests {
             priority = 14)
     public void aboutNavToSpeakerProfile(speaker Speaker){
         navigateToSpeakers();
+
         SpeakersScreen.clickSpeakerAbout(Speaker.getUserName());
         SpeakerAboutScreen.verifyAllButtons();
         SpeakerAboutScreen.verifyMediaButtonColorTheme();
@@ -188,10 +205,12 @@ public class allTests {
         SpeakerAboutScreen.clickOnPhoneButtonIfDisplayed();
         SpeakerAboutScreen.verifyContactInfo(Speaker.getEmail(),Speaker.getNumber());
     }
+
     @Test(groups={"TC_15","About Speaker flow"},dataProvider = "combinedProvider",dataProviderClass = speakersAndMediaData.class,
             priority = 15)
     public void navToMedia(speaker Speaker, media Media){
         navToSpeakerProfile(Speaker);
+
         SpeakerAboutScreen.clickOnCancelButtonOnPopUpIfDisplayed();
         SpeakerAboutScreen.clickOnMedia(Media.getMedia());
         IonicAccountScreen.switchToNewWindow();

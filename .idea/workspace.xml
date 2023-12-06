@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d9ee0eb-3b76-4b4e-97f8-52b8060c6c76" name="Changes" comment="fixed &quot;Back&quot; button">
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataProviders/eventsData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataProviders/eventsData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/context.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/context.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/interactions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/interactions.java" afterDir="false" />
+    <list default="true" id="6d9ee0eb-3b76-4b4e-97f8-52b8060c6c76" name="Changes" comment="Code CleanUp">
+      <change beforePath="$PROJECT_DIR$/src/main/java/screens/welcomeScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/welcomeScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/allTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/allTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -292,30 +290,6 @@
       <option name="project" value="LOCAL" />
       <updated>1700147847938</updated>
     </task>
-    <task id="LOCAL-00073" summary="Small Changes">
-      <option name="closed" value="true" />
-      <created>1701184424511</created>
-      <option name="number" value="00073" />
-      <option name="presentableId" value="LOCAL-00073" />
-      <option name="project" value="LOCAL" />
-      <updated>1701184424511</updated>
-    </task>
-    <task id="LOCAL-00074" summary="Fixed small typo">
-      <option name="closed" value="true" />
-      <created>1701184450118</created>
-      <option name="number" value="00074" />
-      <option name="presentableId" value="LOCAL-00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1701184450119</updated>
-    </task>
-    <task id="LOCAL-00075" summary="Fixed small typos">
-      <option name="closed" value="true" />
-      <created>1701184548153</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1701184548153</updated>
-    </task>
     <task id="LOCAL-00076" summary="Fixed small typos">
       <option name="closed" value="true" />
       <created>1701184673707</created>
@@ -516,13 +490,34 @@
       <option name="project" value="LOCAL" />
       <updated>1701866266741</updated>
     </task>
-    <option name="localTasksCounter" value="101" />
+    <task id="LOCAL-00101" summary="code CleanUp">
+      <option name="closed" value="true" />
+      <created>1701866539678</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1701866539679</updated>
+    </task>
+    <task id="LOCAL-00102" summary="Added indexes back">
+      <option name="closed" value="true" />
+      <created>1701866558342</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1701866558343</updated>
+    </task>
+    <task id="LOCAL-00103" summary="Code CleanUp">
+      <option name="closed" value="true" />
+      <created>1701866577161</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1701866577162</updated>
+    </task>
+    <option name="localTasksCounter" value="104" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed small typo" />
-    <MESSAGE value="Fixed small typos" />
-    <MESSAGE value="Small changes" />
     <MESSAGE value="Small typo" />
     <MESSAGE value="Fixed ionicAccountScreen" />
     <MESSAGE value="fixed dataProvider constructor" />
@@ -545,7 +540,10 @@
     <MESSAGE value="shadowDomHelper update" />
     <MESSAGE value="fixed &quot;Remove&quot; button locator" />
     <MESSAGE value="fixed &quot;Back&quot; button" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed &quot;Back&quot; button" />
+    <MESSAGE value="code CleanUp" />
+    <MESSAGE value="Added indexes back" />
+    <MESSAGE value="Code CleanUp" />
+    <option name="LAST_COMMIT_MESSAGE" value="Code CleanUp" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

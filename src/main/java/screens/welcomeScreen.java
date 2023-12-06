@@ -80,7 +80,7 @@ public class welcomeScreen {
         Interactions.swipe("Right", 1);
     }
 
-    public void clickContinue(){
+    public void clickContinueIfDisplayed(){
         Interactions.clickElementIfDisplayed(continueButton, "Continue button");
     }
 
