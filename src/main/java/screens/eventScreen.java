@@ -26,6 +26,9 @@ public class eventScreen {
     @FindBy(css = "ion-button.toggle_favorite_btn")
     private WebElement starButton;
 
+    @FindBy(xpath = "//ion-buttons/ion-back-button")
+    private WebElement backButton;
+
 
 
     public void checkIfEventNameIsDisplayed(String eventName){
@@ -55,7 +58,6 @@ public class eventScreen {
     }
 
     public void navigateBackToScheduleScreen(){
-        Interactions.navigateBack(); // Navigate back
+        Interactions.clickElementIfDisplayed(backButton, "Back button");
     }
-
 }
