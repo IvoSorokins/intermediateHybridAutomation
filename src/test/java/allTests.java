@@ -16,7 +16,6 @@ import static utils.testSetup.startServer;
 import screens.*;
 
 
-
 public class allTests {
 
     // Appium driver instance
@@ -60,7 +59,7 @@ public class allTests {
 
     @Test(groups ={"TC_2","Tutorial flow"},
             priority = 2)
-    public void skipTutorialScreen(){
+    public void skipTutorialScreen()throws InterruptedException{
         WelcomeScreen.clickSkip();
         ScheduleScreen.isScheduleDisplayed();
     }
@@ -88,7 +87,7 @@ public class allTests {
 
     @Test(groups ={"TC_4","Tutorial flow"},
             priority = 4)
-    public void continueToSchedueleScreen(){ // Test Case will only  work on Android
+    public void continueToSchedueleScreen()throws InterruptedException{ // Test Case will only  work on Android
         WelcomeScreen.swipeLeftOnce();
         WelcomeScreen.verifyTutorial1ScreenNotDisplayedAfterSwipe();
 
@@ -100,7 +99,7 @@ public class allTests {
 
     @Test(groups ={"TC_5","Favorites user flow"},dataProvider = "eventProvider",dataProviderClass = eventsData.class,
             priority = 5)
-    public void navigateToEvents(event Event){
+    public void navigateToEvents(event Event)throws InterruptedException{
         skipTutorialScreen(); // Skip Tutorial Screen
 
         ScheduleScreen.swipeDownUntilElementIsVisible(Event.getEventName());
@@ -110,7 +109,7 @@ public class allTests {
 
     @Test(groups={"TC_6","Favorites user flow"},dataProvider = "eventProvider",dataProviderClass = eventsData.class,
             priority = 6)
-    public void favouriteEvent(event Event){
+    public void favouriteEvent(event Event)throws InterruptedException{
         navigateToEvents(Event); // Navigate to each event screen
 
         EventScreen.verifyStarButtonLocation();
@@ -122,7 +121,7 @@ public class allTests {
 
     @Test(groups={"TC_7","Favorites user flow"},dataProvider = "eventProvider",dataProviderClass = eventsData.class,
             priority = 7)
-    public void unFavouriteEvent(event Event){
+    public void unFavouriteEvent(event Event)throws InterruptedException{
         navigateToEvents(Event); // Navigate to each event screen
 
         EventScreen.clickStarButtonIfDisplayed(2);
@@ -133,10 +132,10 @@ public class allTests {
 
     @Test(groups={"TC_8","Favorites user flow"},dataProvider = "eventProvider",dataProviderClass = eventsData.class,
             priority = 8)
-    public void unFavouriteEventFavTabPopUp(event Event){
+    public void unFavouriteEventFavTabPopUp(event Event)throws InterruptedException{
         favouriteEvent(Event); // Navigates to Favourite Tab after favouring event
 
-        ScheduleScreen.swipeEventHorizontally(Event.getEventName(),Event.getEventDescription());
+        ScheduleScreen.swipeEventLeftHorizontally(Event.getEventName(),Event.getEventDescription());
         ScheduleScreen.getRemoveButton(Event.getIndex());
         ScheduleScreen.clickRemoveIfDisplayed();
         ScheduleScreen.isRemovePopUpDisplayed();
@@ -146,7 +145,7 @@ public class allTests {
 
     @Test(groups={"TC_9","Favorites user flow"},dataProvider = "eventProvider",dataProviderClass = eventsData.class,
             priority = 9)
-    public void cancelRemoveEventFromFavTab(event Event){
+    public void cancelRemoveEventFromFavTab(event Event)throws InterruptedException{
         unFavouriteEventFavTabPopUp(Event); //
 
         ScheduleScreen.clickCancelButtonOnPopUp();
@@ -156,7 +155,7 @@ public class allTests {
 
     @Test(groups={"TC_10","Favorites user flow"},dataProvider = "eventProvider",dataProviderClass = eventsData.class,
             priority = 10)
-    public void removeEventFromFavTab(event Event){
+    public void removeEventFromFavTab(event Event)throws InterruptedException{
         unFavouriteEventFavTabPopUp(Event);
 
         ScheduleScreen.clickRemoveButtonOnPopUp();
@@ -165,7 +164,7 @@ public class allTests {
 
     @Test(groups={"TC_11","About Speaker flow"},
             priority = 11)
-    public void navigateToSpeakers(){
+    public void navigateToSpeakers()throws InterruptedException {
        skipTutorialScreen();
 
        SpeakersScreen.clickSpeakersButtonIfDisplayed();
@@ -174,7 +173,7 @@ public class allTests {
 
     @Test(groups={"TC_12","About Speaker flow"},dataProvider = "speakersProvider",dataProviderClass = speakersData.class,
             priority = 12)
-    public void checkEachSpeaker(speaker Speaker){
+    public void checkEachSpeaker(speaker Speaker)throws InterruptedException{
         navigateToSpeakers();
 
         SpeakersScreen.checkEachSpeakerDisplayed(Speaker.getIndex(),Speaker.getUserName(),Speaker.getProfession());
@@ -182,33 +181,33 @@ public class allTests {
 
     @Test(groups={"TC_13","About Speaker flow"},dataProvider = "speakersProvider",dataProviderClass = speakersData.class,
             priority = 13)
-    public void navToSpeakerProfile(speaker Speaker){
+    public void navToSpeakerProfile(speaker Speaker)throws InterruptedException{
         navigateToSpeakers();
 
         SpeakersScreen.clickSpeakerProfile(Speaker.getIndex(), Speaker.getUserName());
         SpeakerAboutScreen.verifyAllButtons();
         SpeakerAboutScreen.verifyMediaButtonColorTheme();
         SpeakerAboutScreen.verifySpeakerAboutDisplayed(Speaker.getUserName(),Speaker.getDescription());
-        SpeakerAboutScreen.clickOnPhoneButtonIfDisplayed();
+        SpeakerAboutScreen.clickOnPhoneButton();
         SpeakerAboutScreen.verifyContactInfo(Speaker.getEmail(),Speaker.getNumber());
     }
 
     @Test(groups={"TC_14","About Speaker flow"},dataProvider = "speakersProvider",dataProviderClass = speakersData.class,
             priority = 14)
-    public void aboutNavToSpeakerProfile(speaker Speaker){
+    public void aboutNavToSpeakerProfile(speaker Speaker)throws InterruptedException{
         navigateToSpeakers();
 
         SpeakersScreen.clickSpeakerAbout(Speaker.getUserName());
         SpeakerAboutScreen.verifyAllButtons();
         SpeakerAboutScreen.verifyMediaButtonColorTheme();
         SpeakerAboutScreen.verifySpeakerAboutDisplayed(Speaker.getUserName(),Speaker.getDescription());
-        SpeakerAboutScreen.clickOnPhoneButtonIfDisplayed();
+        SpeakerAboutScreen.clickOnPhoneButton();
         SpeakerAboutScreen.verifyContactInfo(Speaker.getEmail(),Speaker.getNumber());
     }
 
     @Test(groups={"TC_15","About Speaker flow"},dataProvider = "combinedProvider",dataProviderClass = speakersAndMediaData.class,
             priority = 15)
-    public void navToMedia(speaker Speaker, media Media){
+    public void navToMedia(speaker Speaker, media Media)throws InterruptedException{
         navToSpeakerProfile(Speaker);
 
         SpeakerAboutScreen.clickOnCancelButtonOnPopUpIfDisplayed();
