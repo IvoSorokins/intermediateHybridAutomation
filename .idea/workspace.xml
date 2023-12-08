@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d9ee0eb-3b76-4b4e-97f8-52b8060c6c76" name="Changes" comment="Code Cleanup">
+    <list default="true" id="6d9ee0eb-3b76-4b4e-97f8-52b8060c6c76" name="Changes" comment="Added documentation">
+      <change afterPath="$PROJECT_DIR$/testSuites/all-tests.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataProviders/mediaData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataProviders/mediaData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataProviders/speakersAndMediaData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataProviders/speakersAndMediaData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataProviders/speakersData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataProviders/speakersData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/context.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/context.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/testSetup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/testSetup.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +56,7 @@
       <recent name="testCases" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/testSuites" />
       <recent name="$PROJECT_DIR$/src/main/java/app" />
       <recent name="$PROJECT_DIR$/src/main/java/app/conference-app-ios.app" />
       <recent name="$PROJECT_DIR$" />
@@ -295,14 +292,6 @@
       <option name="project" value="LOCAL" />
       <updated>1700147847938</updated>
     </task>
-    <task id="LOCAL-00092" summary="Code Cleanup">
-      <option name="closed" value="true" />
-      <created>1701349441700</created>
-      <option name="number" value="00092" />
-      <option name="presentableId" value="LOCAL-00092" />
-      <option name="project" value="LOCAL" />
-      <updated>1701349441700</updated>
-    </task>
     <task id="LOCAL-00093" summary="Renamed swipeElement to swipeElementHorizontally">
       <option name="closed" value="true" />
       <created>1701349471652</created>
@@ -519,7 +508,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702051500841</updated>
     </task>
-    <option name="localTasksCounter" value="120" />
+    <task id="LOCAL-00120" summary="Added documentation">
+      <option name="closed" value="true" />
+      <created>1702053340565</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1702053340566</updated>
+    </task>
+    <option name="localTasksCounter" value="121" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -546,9 +543,9 @@
     <MESSAGE value="Added a bit documentation" />
     <MESSAGE value="Added Small changed for iOS" />
     <MESSAGE value="Code CleanUp" />
-    <MESSAGE value="Added documentation" />
     <MESSAGE value="Code Cleanup" />
-    <option name="LAST_COMMIT_MESSAGE" value="Code Cleanup" />
+    <MESSAGE value="Added documentation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added documentation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
