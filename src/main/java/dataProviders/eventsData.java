@@ -1,6 +1,7 @@
 package dataProviders;
 
 import dataObjects.event;
+
 import org.testng.annotations.DataProvider;
 
 public class eventsData {

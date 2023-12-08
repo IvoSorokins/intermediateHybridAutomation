@@ -16,21 +16,22 @@ public class eventScreen {
     private final AppiumDriver driver;
     public interactions Interactions;
 
+
     public eventScreen(AppiumDriver driver) {
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(this.driver), this);
         Interactions = new interactions(driver);
     }
 
-
-    @FindBy(css = "ion-button.toggle_favorite_btn")
+    // Locators for the elements
+    @FindBy(css = ".toggle_favorite_btn")
     private WebElement starButton;
 
-    @FindBy(xpath = "//ion-buttons/ion-back-button")
+    @FindBy(xpath = "//ion-back-button")
     private WebElement backButton;
 
 
-
+    // Methods to interact with the elements
     public void checkIfEventNameIsDisplayed(String eventName){
         WebElement eventWidget = Interactions.findElementByTagNameAndText("h1",eventName);
         Interactions.assertElementVisibility(eventWidget, "Event name", true);

@@ -23,9 +23,7 @@ public class context {
         ((SupportsContextSwitching) driver).context("NATIVE_APP");
 
     }
-
     public void switchToWebView(String contextName) {
         ((SupportsContextSwitching) driver).context(contextName);
     }
-
 }
