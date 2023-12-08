@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import org.testng.SkipException;
 import utils.interactions;
 import utils.shadowDomHelper;
 
@@ -26,6 +27,7 @@ public class scheduleScreen {
     public scheduleScreen(AppiumDriver driver) {
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(this.driver), this);
+
         ShadowDomHelper = new shadowDomHelper(driver);
         Interactions = new interactions(driver);
     }
@@ -65,7 +67,11 @@ public class scheduleScreen {
     }
 
     // Methods to interact with the elements
-    public void isScheduleDisplayed(){
+    public void isScheduleDisplayed()throws InterruptedException{
+        if(platform.equals("iOS")){
+            Thread.sleep(5000); // Interestignly iOs
+        }
+
         Interactions.assertElementVisibility(scheduleTitle,"Schedule title",true);
     }
 
@@ -75,18 +81,26 @@ public class scheduleScreen {
     }
 
     public void swipeDownUntilElementIsVisible(String eventName){
-        Interactions.swipeUntilElementVisible(getDataProviderEvent(eventName), 4);
+        if(platform.equals("iOS")){
+            throw new SkipException("Skipping test case as longPress and press swipes do not function properly on iOS");
+        }
+        else{
+            Interactions.swipeUntilElementVisible(getDataProviderEvent(eventName), 4);// Swipe count matches how many swipes should be performed
+        }
+        Interactions.swipeUntilElementVisible(getDataProviderEvent(eventName), 4);//
     }
 
     public void clickEventIfDisplayed(String eventName){
             Interactions.clickElementIfDisplayed(getDataProviderEvent(eventName), "Speaker name");
     }
 
-    public void checkIfEventIsDisplayed(String eventName){
+    public void checkIfEventIsDisplayed(String eventName)throws InterruptedException{
+        Thread.sleep(1000);
         Interactions.assertElementVisibility(getDataProviderEvent(eventName), "Event widget", true);
     }
 
-    public void clickFavouriteTabIfDisplayed(){
+    public void clickFavouriteTabIfDisplayed() throws InterruptedException {
+        Thread.sleep(500); // Sadly we need to wait for the animation to finish else it is not going to work
         Interactions.clickElementIfDisplayed(favouriteTab, "Favourite tab");
     }
 
@@ -94,7 +108,7 @@ public class scheduleScreen {
         Interactions.clickElementIfDisplayed(removeButton, "Remove button");
     }
 
-    public void swipeEventHorizontally(String eventName, String eventDescription){
+    public void swipeEventLeftHorizontally(String eventName, String eventDescription){
         String elementLocator;
         if(platform.equals("iOS")){
             elementLocator = "//XCUIElementTypeLink[@name=\""+ eventName +" " +eventDescription+ " chevron forward\"]";
@@ -102,7 +116,7 @@ public class scheduleScreen {
         else{
             elementLocator = "//android.view.View[@content-desc=\""+eventName+" " +eventDescription+ "\"]";
         }
-        Interactions.swipeElementHorizontally(elementLocator);
+        Interactions.swipeElementHorizontally(elementLocator,"left");
     }
 
     public void isRemovePopUpDisplayed(){
@@ -133,5 +147,4 @@ public class scheduleScreen {
         Interactions.assertElementVisibility(getDataProviderEvent(eventName), "Event widget", false);
         Interactions.assertElementVisibility(noEventsText, "'No Sessions Found' text", true);
     }
-
 }
