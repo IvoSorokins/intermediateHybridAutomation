@@ -3,6 +3,9 @@ package dataProviders;
 import dataObjects.speaker;
 import org.testng.annotations.DataProvider;
 
+/**
+ * This dataProvider class is used to provide data for the speakers tests
+ */
 public class speakersData {
     @DataProvider(name = "speakersProvider")
     public Object[][] provideData() {

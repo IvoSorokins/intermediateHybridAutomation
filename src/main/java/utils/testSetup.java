@@ -10,7 +10,10 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 
+/**
+ * This class is use to start the Appium server with the desired defined in testProperties
 
+ */
 public class testSetup {
     private static AppiumDriver driver;
 
@@ -43,6 +46,5 @@ public class testSetup {
         // Set the implicit wait timeout to 30 seconds
 //        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         return driver;
-
     }
 }

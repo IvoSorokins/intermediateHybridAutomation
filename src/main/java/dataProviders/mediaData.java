@@ -4,6 +4,9 @@ import dataObjects.media;
 
 import org.testng.annotations.DataProvider;
 
+/**
+ * This dataProvider class is used to provide data for the media tests
+ */
 public class mediaData {
     @DataProvider(name = "mediaProvider")
     public Object[][] provideData() {

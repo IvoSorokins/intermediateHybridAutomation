@@ -4,17 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d9ee0eb-3b76-4b4e-97f8-52b8060c6c76" name="Changes" comment="Code CleanUp">
+    <list default="true" id="6d9ee0eb-3b76-4b4e-97f8-52b8060c6c76" name="Changes" comment="Code Cleanup">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/components/bottomNavigationBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/components/bottomNavigationBar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataObjects/event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataObjects/event.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataObjects/media.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataObjects/media.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataProviders/eventsData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataProviders/eventsData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/screens/eventScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/eventScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/screens/ionicAccountScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/ionicAccountScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dataProviders/mediaData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataProviders/mediaData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dataProviders/speakersAndMediaData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataProviders/speakersAndMediaData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dataProviders/speakersData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataProviders/speakersData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utils/context.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/context.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/interactions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/interactions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/allTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/allTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/testSetup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/testSetup.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -298,54 +295,6 @@
       <option name="project" value="LOCAL" />
       <updated>1700147847938</updated>
     </task>
-    <task id="LOCAL-00086" summary="Fixed Typo">
-      <option name="closed" value="true" />
-      <created>1701197620865</created>
-      <option name="number" value="00086" />
-      <option name="presentableId" value="LOCAL-00086" />
-      <option name="project" value="LOCAL" />
-      <updated>1701197620865</updated>
-    </task>
-    <task id="LOCAL-00087" summary="Achieved Higher successrate">
-      <option name="closed" value="true" />
-      <created>1701197639621</created>
-      <option name="number" value="00087" />
-      <option name="presentableId" value="LOCAL-00087" />
-      <option name="project" value="LOCAL" />
-      <updated>1701197639621</updated>
-    </task>
-    <task id="LOCAL-00088" summary="fixed swipeElement">
-      <option name="closed" value="true" />
-      <created>1701346220599</created>
-      <option name="number" value="00088" />
-      <option name="presentableId" value="LOCAL-00088" />
-      <option name="project" value="LOCAL" />
-      <updated>1701346220600</updated>
-    </task>
-    <task id="LOCAL-00089" summary="Created event data object">
-      <option name="closed" value="true" />
-      <created>1701346452549</created>
-      <option name="number" value="00089" />
-      <option name="presentableId" value="LOCAL-00089" />
-      <option name="project" value="LOCAL" />
-      <updated>1701346452549</updated>
-    </task>
-    <task id="LOCAL-00090" summary="Renamed eventNamesData to eventsData">
-      <option name="closed" value="true" />
-      <created>1701346492922</created>
-      <option name="number" value="00090" />
-      <option name="presentableId" value="LOCAL-00090" />
-      <option name="project" value="LOCAL" />
-      <updated>1701346492922</updated>
-    </task>
-    <task id="LOCAL-00091" summary="Added description to eventsData">
-      <option name="closed" value="true" />
-      <created>1701348013325</created>
-      <option name="number" value="00091" />
-      <option name="presentableId" value="LOCAL-00091" />
-      <option name="project" value="LOCAL" />
-      <updated>1701348013325</updated>
-    </task>
     <task id="LOCAL-00092" summary="Code Cleanup">
       <option name="closed" value="true" />
       <created>1701349441700</created>
@@ -522,11 +471,58 @@
       <option name="project" value="LOCAL" />
       <updated>1702050563780</updated>
     </task>
-    <option name="localTasksCounter" value="114" />
+    <task id="LOCAL-00114" summary="Code CleanUp">
+      <option name="closed" value="true" />
+      <created>1702051309390</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
+      <option name="project" value="LOCAL" />
+      <updated>1702051309391</updated>
+    </task>
+    <task id="LOCAL-00115" summary="Code CleanUp">
+      <option name="closed" value="true" />
+      <created>1702051367701</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1702051367701</updated>
+    </task>
+    <task id="LOCAL-00116" summary="Added documentation">
+      <option name="closed" value="true" />
+      <created>1702051403413</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1702051403414</updated>
+    </task>
+    <task id="LOCAL-00117" summary="Added documentation">
+      <option name="closed" value="true" />
+      <created>1702051429918</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1702051429918</updated>
+    </task>
+    <task id="LOCAL-00118" summary="Code Cleanup">
+      <option name="closed" value="true" />
+      <created>1702051492090</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1702051492090</updated>
+    </task>
+    <task id="LOCAL-00119" summary="Code Cleanup">
+      <option name="closed" value="true" />
+      <created>1702051500841</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1702051500841</updated>
+    </task>
+    <option name="localTasksCounter" value="120" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fixed dataProvider constructor" />
     <MESSAGE value="Added some readME" />
     <MESSAGE value="fixed minor issue" />
     <MESSAGE value="added Links to the buttons of dataProvider" />
@@ -537,7 +533,6 @@
     <MESSAGE value="Created event data object" />
     <MESSAGE value="Renamed eventNamesData to eventsData" />
     <MESSAGE value="Added description to eventsData" />
-    <MESSAGE value="Code Cleanup" />
     <MESSAGE value="Renamed swipeElement to swipeElementHorizontally" />
     <MESSAGE value="fixed ShadowDomHelper" />
     <MESSAGE value="Implemented new changes to ShadowDomHelper" />
@@ -551,7 +546,9 @@
     <MESSAGE value="Added a bit documentation" />
     <MESSAGE value="Added Small changed for iOS" />
     <MESSAGE value="Code CleanUp" />
-    <option name="LAST_COMMIT_MESSAGE" value="Code CleanUp" />
+    <MESSAGE value="Added documentation" />
+    <MESSAGE value="Code Cleanup" />
+    <option name="LAST_COMMIT_MESSAGE" value="Code Cleanup" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

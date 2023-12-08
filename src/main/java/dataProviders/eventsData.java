@@ -3,7 +3,9 @@ package dataProviders;
 import dataObjects.event;
 
 import org.testng.annotations.DataProvider;
-
+/**
+ * This dataProvider class is used to provide data for the events tests
+ */
 public class eventsData {
         @DataProvider(name = "eventProvider")
         public Object[][] provideData() {
