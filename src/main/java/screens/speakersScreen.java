@@ -22,20 +22,26 @@ public class speakersScreen {
     public speakersScreen(AppiumDriver driver) {
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(this.driver), this);
+
         Interactions = new interactions(driver);
         BottomNavigationBar = new bottomNavigationBar(driver);
     }
 
+    // Locators for the elements
     @FindBy(xpath = "//ion-title[text()=\"Speakers\"]")
     private WebElement speakersTitle;
 
+
+    // Methods to interact with the elements
     public WebElement getDataProviderElement(String userName, String tagName){
         WebElement speakerElement = Interactions.findElementByTagNameAndText(tagName, userName);
         return speakerElement;
     }
+
     public void swipeDownUntilElementIsVisible(String eventName,String tagName){
-        Interactions.swipeUntilElementVisible(getDataProviderElement(eventName,tagName),7);
+        Interactions.swipeUntilElementVisible(getDataProviderElement(eventName,tagName),9);
     }
+
     public void isSpeakersTitleDisplayed(){
         Interactions.assertElementVisibility(speakersTitle,"Speakers title",true);
     }
@@ -54,20 +60,17 @@ public class speakersScreen {
 
     public void clickSpeakerProfile(int index,String userName){
         WebElement speakerElement = getDataProviderElement(userName,"ion-col["+ index +"]//h2");
-        Interactions.swipeUntilElementVisible(speakerElement, 7);
+        Interactions.swipeUntilElementVisible(speakerElement, 9);
         Interactions.clickElementIfDisplayed(speakerElement, "Speaker name");
     }
 
     public void clickSpeakerAbout(String userName){
         WebElement speakerAboutElement = getDataProviderElement("About " + userName,"h3");
-        Interactions.swipeUntilElementVisible(speakerAboutElement,7);
-
+        Interactions.swipeUntilElementVisible(speakerAboutElement,9);
         Interactions.clickElementIfDisplayed(speakerAboutElement, "Speaker about section");
     }
 
     public void clickSpeakersButtonIfDisplayed(){
         BottomNavigationBar.clickSpeakersButtonIfDisplayed();
     }
-
-
 }

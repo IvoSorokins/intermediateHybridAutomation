@@ -45,7 +45,6 @@ public class speakersData {
 
                 {new speaker(13,"Ted Turtle","Software Engineer","ted@example.com","+1-541-754-3010",
                         "Ted is a Turtle. Ted's interests include butterflies, skiing, and cupcakes. Say hello on social media!")}
-
         };
     }
 }
