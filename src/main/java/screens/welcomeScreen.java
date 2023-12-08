@@ -20,11 +20,10 @@ public class welcomeScreen {
     private final AppiumDriver driver;
     public interactions Interactions;
 
+    // Constructor for the welcomeScreen class
     public welcomeScreen(AppiumDriver driver) {
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(this.driver), this);
-        // Using Selenium's PageFactory to initialize the elements of the welcomeScreen class.
-        // It's using AppiumFieldDecorator to support Appium's additional locator strategies.
 
         Interactions = new interactions(driver);
     }

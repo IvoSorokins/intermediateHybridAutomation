@@ -5,7 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d9ee0eb-3b76-4b4e-97f8-52b8060c6c76" name="Changes" comment="Code CleanUp">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/components/bottomNavigationBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/components/bottomNavigationBar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dataObjects/event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataObjects/event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dataObjects/media.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataObjects/media.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dataObjects/speaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataObjects/speaker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dataProviders/eventsData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataProviders/eventsData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dataProviders/mediaData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataProviders/mediaData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dataProviders/speakersData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataProviders/speakersData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/screens/eventScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/eventScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/screens/ionicAccountScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/ionicAccountScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/screens/scheduleScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/scheduleScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/screens/speakerAboutScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/speakerAboutScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/screens/speakersScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/speakersScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/screens/welcomeScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/welcomeScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/interactions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/interactions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/shadowDomHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/shadowDomHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/testProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/testProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/testSetup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/testSetup.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/allTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/allTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,24 +81,12 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.allTests.favouriteEvent">
-    <configuration name="allTests.cancelRemoveEventFromFavTab" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.allTests.unFavouriteEventFavTabPopUp">
+    <configuration name="allTests.continueToSchedueleScreen" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="automation_Intermediate" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="allTests" />
-      <option name="METHOD_NAME" value="cancelRemoveEventFromFavTab" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="allTests.favouriteEvent" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="automation_Intermediate" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="allTests" />
-      <option name="METHOD_NAME" value="favouriteEvent" />
+      <option name="METHOD_NAME" value="continueToSchedueleScreen" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -100,11 +106,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="allTests.unFavouriteEvent" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="allTests.navigateToSpeakers" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="automation_Intermediate" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="allTests" />
-      <option name="METHOD_NAME" value="unFavouriteEvent" />
+      <option name="METHOD_NAME" value="navigateToSpeakers" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -124,13 +130,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="allTests.userSwipesTutorialScreen" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="automation_Intermediate" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="allTests" />
+      <option name="METHOD_NAME" value="userSwipesTutorialScreen" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.allTests.favouriteEvent" />
-        <item itemvalue="TestNG.allTests.unFavouriteEvent" />
         <item itemvalue="TestNG.allTests.unFavouriteEventFavTabPopUp" />
-        <item itemvalue="TestNG.allTests.cancelRemoveEventFromFavTab" />
+        <item itemvalue="TestNG.allTests.navigateToSpeakers" />
         <item itemvalue="TestNG.allTests.navigateToEvents" />
+        <item itemvalue="TestNG.allTests.continueToSchedueleScreen" />
+        <item itemvalue="TestNG.allTests.userSwipesTutorialScreen" />
       </list>
     </recent_temporary>
   </component>
@@ -289,14 +307,6 @@
       <option name="presentableId" value="LOCAL-00021" />
       <option name="project" value="LOCAL" />
       <updated>1700147847938</updated>
-    </task>
-    <task id="LOCAL-00076" summary="Fixed small typos">
-      <option name="closed" value="true" />
-      <created>1701184673707</created>
-      <option name="number" value="00076" />
-      <option name="presentableId" value="LOCAL-00076" />
-      <option name="project" value="LOCAL" />
-      <updated>1701184673707</updated>
     </task>
     <task id="LOCAL-00077" summary="Small changes">
       <option name="closed" value="true" />
@@ -514,7 +524,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701866577162</updated>
     </task>
-    <option name="localTasksCounter" value="104" />
+    <task id="LOCAL-00104" summary="Code CleanUp">
+      <option name="closed" value="true" />
+      <created>1701867969005</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1701867969005</updated>
+    </task>
+    <option name="localTasksCounter" value="105" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
