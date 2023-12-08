@@ -1,6 +1,7 @@
 package utils;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -15,7 +16,7 @@ public class testProperties {
 
     /** Before running any tests, let's set testProperties */
 
-    //  wait until visibility of the element
+    //  Wait until visibility of the element
     public static final long waitTimeInSeconds = 5;
 
     // Set the platform on which the tests will run
@@ -33,6 +34,11 @@ public class testProperties {
     // Create a DesiredCapabilities object to hold the desired capabilities for Appium
     private static final DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
 
+    /**
+     * This method loads properties from a file located at the path specified by the 'propsPath' variable.
+     * The properties are loaded into the 'props' Properties object.
+     * If an IOException occurs during the operation, the stack trace is printed.
+     */
     private static void loadProperties() {
         // Use try-with-resources to automatically close the input stream
         try ( InputStream input = new FileInputStream(propsPath)){
@@ -44,6 +50,11 @@ public class testProperties {
         }
     }
 
+    /**
+     * This method sets the desired capabilities for Appium based on the platform and properties loaded from the config file.
+     * @param platform The platform for which to set the capabilities ("iOS" or "Android").
+     * @return The DesiredCapabilities object with the set capabilities.
+     */
     public static DesiredCapabilities setDesiredCapabilities(String platform) {
         // Load the properties from the config.properties file
         loadProperties();
@@ -76,12 +87,17 @@ public class testProperties {
             desiredCapabilities.setCapability("appium:newCommandTimeout", props.getProperty("newCommandTimeout"));
             desiredCapabilities.setCapability("appium:platformVersion", props.getProperty("AndroidPlatformVersion"));
             desiredCapabilities.setCapability("appium:ignoreUnimportantViews", props.getProperty("ignoreUnimportantViews"));
-
         }
         // Return the DesiredCapabilities object
         return desiredCapabilities;
     }
 
+    /**
+     * This method returns the value of the specified property.
+     * @param name The name of the property.
+     * @return The value of the property.
+     * @throws IllegalArgumentException If the name parameter is null.
+     */
     public static String getProperty(String name){
         // Throw an exception if the name parameter is null
         if (name == null) {
