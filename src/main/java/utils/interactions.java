@@ -30,7 +30,11 @@ public class interactions {
     }
 
 
-    // Check if an element center is visible in the current view
+    /**
+     * This method is used to scroll to an element in the application
+     * Note: This method is used in the test cases that require scrolling on app not elements
+     * @param element - WebElement to scroll to
+     */
     public boolean isElementVisibleInView(WebElement element) {
         return (Boolean) ((JavascriptExecutor) driver).executeScript(
                 "var elem = arguments[0],                 " + // Retrieves the WebElement from the arguments passed to the JavaScript code
@@ -47,6 +51,13 @@ public class interactions {
                 , element); // Pass the WebElement as an argument to the JavaScript code
     }
 
+    /**
+     * This method is used to swipe in the application Native context in all directions (Up, Down, Left, Right)
+     * Note: This method is used in the test cases that require swiping on app not elements
+     * @param direction - Direction of the swipe (Up, Down, Left, Right)
+     * @param times - Number of times to swipe
+     *
+     */
     public static void swipe(String direction, int times){
         String webviewContext = Context.getCurrentContextName(); // Get Webview context
         Context.switchToNative();
@@ -62,7 +73,7 @@ public class interactions {
             startY = endY = size.height / 2;
         } else { // Up or Down
             startY = direction.equals("Up") ? (int) (size.height * 0.8) : (int) (size.height * 0.3);
-            endY = direction.equals("Up") ? (int) (size.height * 0.3) : (int) (size.height * 0.8);
+            endY = direction.equals("Up") ? (int) (size.height * 0.31) : (int) (size.height * 0.8);
             startX = endX = size.width / 2;
         }
 
@@ -70,11 +81,12 @@ public class interactions {
 
         // Perform the swipe for the given number of times
         for (int i = 0; i < times; i++) {
-            touchAction.press(PointOption.point(startX, startY))
-                    .moveTo(PointOption.point(endX, endY))
-                    .release()
-                    .perform();
-        }
+                touchAction.press(PointOption.point(startX, startY))
+                        .moveTo(PointOption.point(endX, endY))
+                        .release()
+                        .perform();
+            }
+
         Context.switchToWebView(webviewContext);
     }
 
@@ -94,7 +106,8 @@ public class interactions {
     }
 
     /**
-     * Asserts the visibility of a WebElement.
+     * Asserts the visibility of a WebElement. Using isDisplayed() is not enough, as it only checks if the element is in the DOM
+     * so it might be present but not visible in the view.
      *
      * @param element The WebElement to check.
      * @param elementName The name of the element (used in the assertion failure message).
@@ -125,7 +138,7 @@ public class interactions {
             // If the element should not be visible but is found, check if it's visible in the view
         } else if(!shouldBeVisible && isElementVisible){
             boolean isElementVisibleInView = isElementVisibleInView(element);
-            // If the element is visible in the view, fail assertion
+            // If the element is visible in the view when it should not be, fail assertion
             if(isElementVisibleInView){
                 Assert.fail(elementName + " is visible in view");
             }
@@ -138,7 +151,13 @@ public class interactions {
             }
         }
     }
-
+    /**
+     * Clicks on a WebElement if it's displayed, better then additional isDisplayed() ad click() as it is combined in one method
+     * so user doesn't have to repeate the same code over and over again
+     * @param element The WebElement to click.
+     * @param elementName The name of the element (used in the assertion failure message).
+     * @param shouldBeVisible Whether the element should be visible or not is set to true automatically as it should be clicked if displayed
+     */
     public void clickElementIfDisplayed(WebElement element,  String elementName){
         assertElementVisibility(element, elementName, true);
         element.click();
@@ -175,10 +194,21 @@ public class interactions {
         return isElementVisible;
     }
 
+    /**
+     * Finds an element by tag name and text, mostly used together with dataProviders, or simple elements in xpath that have the same tag name
+     * @param tagName - tag name of the element
+     * @param text - text of the element
+     * @return - returns the element
+     */
     public WebElement findElementByTagNameAndText(String tagName, String text){
         return driver.findElement(By.xpath(String.format("//%s[text()=\"%s\"]", tagName, text)));
     }
 
+    /**
+     * Swipes until the element is visible in the view or until the max swipe count is reached
+     * @param element - WebElement to swipe to
+     * @param MaxSwipeCount - max swipe count
+     */
     public void swipeUntilElementVisible(WebElement element,int MaxSwipeCount) {
         boolean isElementVisible = isElementVisibleInView(element);
         int swipeCount = 0;
@@ -194,7 +224,13 @@ public class interactions {
         }
     }
 
-    public void swipeElementHorizontally(String elementLocator){
+    /**
+     * Used to swipe an element horizontally(in this automation case on events as it displays remove or favourite buttons)
+     * Works only
+     * @param elementLocator - xpath of the element
+     * @param direction - direction of the swipe
+     */
+    public void swipeElementHorizontally(String elementLocator,String direction){
         String webviewContext = Context.getCurrentContextName(); // Get Webview context
         Context.switchToNative();
 
@@ -204,8 +240,8 @@ public class interactions {
         Dimension size = element.getSize();
 
         int centerY = location.y + size.height / 2;
-        int startX = location.x + size.width - 1; // Start from the right side of the element
-        int endX = location.x;
+        int startX = direction.equals("left") ? location.x + size.width - 1 : location.x; // Start from the right side of the element if direction is left, else start from the left side
+        int endX = direction.equals("left") ? location.x : location.x + size.width - 1; // End at the left side of the element if direction is left, else end at the right side
 
         // Perform the swipe action
         TouchAction action = new TouchAction((PerformsTouchActions) driver);

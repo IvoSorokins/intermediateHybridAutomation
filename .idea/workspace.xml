@@ -5,25 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d9ee0eb-3b76-4b4e-97f8-52b8060c6c76" name="Changes" comment="Code CleanUp">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/components/bottomNavigationBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/components/bottomNavigationBar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dataObjects/event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataObjects/event.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dataObjects/media.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataObjects/media.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataObjects/speaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataObjects/speaker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dataProviders/eventsData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataProviders/eventsData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataProviders/mediaData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataProviders/mediaData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataProviders/speakersData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataProviders/speakersData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/screens/eventScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/eventScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/screens/ionicAccountScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/ionicAccountScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/screens/scheduleScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/scheduleScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/screens/speakerAboutScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/speakerAboutScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/screens/speakersScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/speakersScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/screens/welcomeScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/welcomeScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/context.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/context.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utils/interactions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/interactions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/shadowDomHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/shadowDomHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/testProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/testProperties.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/testSetup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/testSetup.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/allTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/allTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -308,78 +298,6 @@
       <option name="project" value="LOCAL" />
       <updated>1700147847938</updated>
     </task>
-    <task id="LOCAL-00077" summary="Small changes">
-      <option name="closed" value="true" />
-      <created>1701184738729</created>
-      <option name="number" value="00077" />
-      <option name="presentableId" value="LOCAL-00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1701184738729</updated>
-    </task>
-    <task id="LOCAL-00078" summary="Small changes">
-      <option name="closed" value="true" />
-      <created>1701184751505</created>
-      <option name="number" value="00078" />
-      <option name="presentableId" value="LOCAL-00078" />
-      <option name="project" value="LOCAL" />
-      <updated>1701184751505</updated>
-    </task>
-    <task id="LOCAL-00079" summary="Small typo">
-      <option name="closed" value="true" />
-      <created>1701186806349</created>
-      <option name="number" value="00079" />
-      <option name="presentableId" value="LOCAL-00079" />
-      <option name="project" value="LOCAL" />
-      <updated>1701186806349</updated>
-    </task>
-    <task id="LOCAL-00080" summary="Fixed ionicAccountScreen">
-      <option name="closed" value="true" />
-      <created>1701194713759</created>
-      <option name="number" value="00080" />
-      <option name="presentableId" value="LOCAL-00080" />
-      <option name="project" value="LOCAL" />
-      <updated>1701194713760</updated>
-    </task>
-    <task id="LOCAL-00081" summary="fixed dataProvider constructor">
-      <option name="closed" value="true" />
-      <created>1701195571953</created>
-      <option name="number" value="00081" />
-      <option name="presentableId" value="LOCAL-00081" />
-      <option name="project" value="LOCAL" />
-      <updated>1701195571953</updated>
-    </task>
-    <task id="LOCAL-00082" summary="Added some readME">
-      <option name="closed" value="true" />
-      <created>1701195608010</created>
-      <option name="number" value="00082" />
-      <option name="presentableId" value="LOCAL-00082" />
-      <option name="project" value="LOCAL" />
-      <updated>1701195608010</updated>
-    </task>
-    <task id="LOCAL-00083" summary="fixed minor issue">
-      <option name="closed" value="true" />
-      <created>1701195780142</created>
-      <option name="number" value="00083" />
-      <option name="presentableId" value="LOCAL-00083" />
-      <option name="project" value="LOCAL" />
-      <updated>1701195780144</updated>
-    </task>
-    <task id="LOCAL-00084" summary="added Links to the buttons of dataProvider">
-      <option name="closed" value="true" />
-      <created>1701195878044</created>
-      <option name="number" value="00084" />
-      <option name="presentableId" value="LOCAL-00084" />
-      <option name="project" value="LOCAL" />
-      <updated>1701195878044</updated>
-    </task>
-    <task id="LOCAL-00085" summary="added method to verifyMediaButtonColorTheme">
-      <option name="closed" value="true" />
-      <created>1701196719309</created>
-      <option name="number" value="00085" />
-      <option name="presentableId" value="LOCAL-00085" />
-      <option name="project" value="LOCAL" />
-      <updated>1701196719309</updated>
-    </task>
     <task id="LOCAL-00086" summary="Fixed Typo">
       <option name="closed" value="true" />
       <created>1701197620865</created>
@@ -532,12 +450,82 @@
       <option name="project" value="LOCAL" />
       <updated>1701867969005</updated>
     </task>
-    <option name="localTasksCounter" value="105" />
+    <task id="LOCAL-00105" summary="Code CleanUp">
+      <option name="closed" value="true" />
+      <created>1702050340665</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1702050340666</updated>
+    </task>
+    <task id="LOCAL-00106" summary="Code CleanUp">
+      <option name="closed" value="true" />
+      <created>1702050366137</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1702050366138</updated>
+    </task>
+    <task id="LOCAL-00107" summary="Added a bit documentation">
+      <option name="closed" value="true" />
+      <created>1702050383669</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1702050383669</updated>
+    </task>
+    <task id="LOCAL-00108" summary="Code CleanUp">
+      <option name="closed" value="true" />
+      <created>1702050438730</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1702050438731</updated>
+    </task>
+    <task id="LOCAL-00109" summary="Code CleanUp">
+      <option name="closed" value="true" />
+      <created>1702050460027</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1702050460027</updated>
+    </task>
+    <task id="LOCAL-00110" summary="Code CleanUp">
+      <option name="closed" value="true" />
+      <created>1702050500145</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1702050500145</updated>
+    </task>
+    <task id="LOCAL-00111" summary="Code CleanUp">
+      <option name="closed" value="true" />
+      <created>1702050511644</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1702050511645</updated>
+    </task>
+    <task id="LOCAL-00112" summary="Added Small changed for iOS">
+      <option name="closed" value="true" />
+      <created>1702050546881</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1702050546881</updated>
+    </task>
+    <task id="LOCAL-00113" summary="Code CleanUp">
+      <option name="closed" value="true" />
+      <created>1702050563780</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1702050563780</updated>
+    </task>
+    <option name="localTasksCounter" value="114" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Small typo" />
-    <MESSAGE value="Fixed ionicAccountScreen" />
     <MESSAGE value="fixed dataProvider constructor" />
     <MESSAGE value="Added some readME" />
     <MESSAGE value="fixed minor issue" />
@@ -560,6 +548,8 @@
     <MESSAGE value="fixed &quot;Back&quot; button" />
     <MESSAGE value="code CleanUp" />
     <MESSAGE value="Added indexes back" />
+    <MESSAGE value="Added a bit documentation" />
+    <MESSAGE value="Added Small changed for iOS" />
     <MESSAGE value="Code CleanUp" />
     <option name="LAST_COMMIT_MESSAGE" value="Code CleanUp" />
   </component>
