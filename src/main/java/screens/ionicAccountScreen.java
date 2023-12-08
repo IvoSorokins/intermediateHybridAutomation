@@ -6,31 +6,30 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
 import org.openqa.selenium.support.PageFactory;
 
-// utils imports
-import utils.context;
-import utils.interactions;
-
-import static org.testng.AssertJUnit.assertEquals;
+ import static org.testng.AssertJUnit.assertEquals;
 
 
 public class ionicAccountScreen {
 
     private final AppiumDriver driver;
 
+
     public ionicAccountScreen(AppiumDriver driver) {
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(this.driver), this);
-
     }
 
+    // Method to interact with screen
     public void switchToNewWindow(){
         for (String handle : driver.getWindowHandles()) {
             driver.switchTo().window(handle);
         }
     }
+
     public String getCurrentURL() {
         return driver.getCurrentUrl();
     }
+
     public void verifyUrl(String expectedUrl){
         // Switch to the new window
         switchToNewWindow();
@@ -42,5 +41,4 @@ public class ionicAccountScreen {
         // Assert that the current URL equals the expected URL
         assertEquals("URL is not expected", expectedUrl, currentUrl);
     }
-
 }
