@@ -170,3 +170,5 @@ Error appears when trying to execute `querySelector`- shadow DOM element scripts
 ```MobileElement``` has been replaced with WebElement in java-client v8.   https://github.com/appium/java-client/blob/master/docs/v7-to-v8-migration-guide.md#mobileelement
 
 **Xcode > Window > Devices and Simulators** can be used to get device or simulator UDID, create new simulator on Xcode and get UDID from there
+
+Test Plan for automation: https://docs.google.com/spreadsheets/d/13RBghx3GfOQxVmWaf7B7hXwbqBuxtmt-Fc-PIRjCbhU/edit?usp=sharing
