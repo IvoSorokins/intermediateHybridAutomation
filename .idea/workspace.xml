@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d9ee0eb-3b76-4b4e-97f8-52b8060c6c76" name="Changes" comment="Added documentation">
-      <change afterPath="$PROJECT_DIR$/testSuites/all-tests.xml" afterDir="false" />
+    <list default="true" id="6d9ee0eb-3b76-4b4e-97f8-52b8060c6c76" name="Changes" comment="Typox">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/interactions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/interactions.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +47,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -292,14 +291,6 @@
       <option name="project" value="LOCAL" />
       <updated>1700147847938</updated>
     </task>
-    <task id="LOCAL-00093" summary="Renamed swipeElement to swipeElementHorizontally">
-      <option name="closed" value="true" />
-      <created>1701349471652</created>
-      <option name="number" value="00093" />
-      <option name="presentableId" value="LOCAL-00093" />
-      <option name="project" value="LOCAL" />
-      <updated>1701349471652</updated>
-    </task>
     <task id="LOCAL-00094" summary="fixed ShadowDomHelper">
       <option name="closed" value="true" />
       <created>1701356267994</created>
@@ -516,12 +507,18 @@
       <option name="project" value="LOCAL" />
       <updated>1702053340566</updated>
     </task>
-    <option name="localTasksCounter" value="121" />
+    <task id="LOCAL-00121" summary="Finished README.md">
+      <option name="closed" value="true" />
+      <created>1702055842670</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1702055842670</updated>
+    </task>
+    <option name="localTasksCounter" value="122" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added some readME" />
-    <MESSAGE value="fixed minor issue" />
     <MESSAGE value="added Links to the buttons of dataProvider" />
     <MESSAGE value="added method to verifyMediaButtonColorTheme" />
     <MESSAGE value="Fixed Typo" />
@@ -545,7 +542,9 @@
     <MESSAGE value="Code CleanUp" />
     <MESSAGE value="Code Cleanup" />
     <MESSAGE value="Added documentation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added documentation" />
+    <MESSAGE value="Finished README.md" />
+    <MESSAGE value="Typox" />
+    <option name="LAST_COMMIT_MESSAGE" value="Typox" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -556,6 +555,10 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/automation_Intermediate$allTests_unFavouriteEventFavTabPopUp.ic" NAME="allTests.unFavouriteEventFavTabPopUp Coverage Results" MODIFIED="1701364337489" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

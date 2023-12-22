@@ -156,12 +156,12 @@ public class interactions {
      * so user doesn't have to repeate the same code over and over again
      * @param element The WebElement to click.
      * @param elementName The name of the element (used in the assertion failure message).
-     * @param shouldBeVisible Whether the element should be visible or not is set to true automatically as it should be clicked if displayed
      */
     public void clickElementIfDisplayed(WebElement element,  String elementName){
         assertElementVisibility(element, elementName, true);
         element.click();
     }
+
     // Used for returning boolean value based of element visibility
     public boolean isElementVisible(WebElement element){
         // WebDriverWait timer for a specified number of seconds
@@ -189,7 +189,6 @@ public class interactions {
                 return false;
             }
         }
-
         // Return the visibility of the element
         return isElementVisible;
     }
